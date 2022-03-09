@@ -21,6 +21,8 @@ func _physics_process(delta):
 		elif body.get_name() == "border_bot":
 			print("PIERDE")
 			queue_free()
+			var replay_scn = load("res://title/replay.tscn")
+			get_parent().add_child(replay_scn.instance())
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

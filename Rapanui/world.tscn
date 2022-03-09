@@ -12,7 +12,7 @@ bounce = 1.0
 [node name="world" type="Node2D"]
 
 [node name="environment" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 3 )
+position = Vector2( 0, 15 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 144, 468 )
