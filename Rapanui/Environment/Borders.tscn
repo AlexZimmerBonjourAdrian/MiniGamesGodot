@@ -24,9 +24,10 @@ position = Vector2( 289, 304 )
 shape = SubResource( 1 )
 
 [node name="border_bot" type="StaticBody2D" parent="."]
+position = Vector2( 151, 610 )
 
 [node name="col_bord_bot" type="CollisionShape2D" parent="border_bot"]
-position = Vector2( 149, 664 )
+position = Vector2( -2, 10 )
 shape = SubResource( 2 )
 
 [node name="border_Top" type="StaticBody2D" parent="."]
