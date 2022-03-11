@@ -1,11 +1,44 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://8XwZUqd.png" type="Texture" id=1]
 [ext_resource path="res://undefined - Imgur.png" type="Texture" id=2]
+[ext_resource path="res://Player/Player.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Control/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "ShootAnimation"
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/Control/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.0223908, 0.108815, 0.191514, 0.285094, 0.369969 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0 ]
+}
+
 [node name="Player" type="KinematicBody"]
+script = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
@@ -15,7 +48,12 @@ shape = SubResource( 1 )
 enabled = true
 cast_to = Vector3( 0, 0, -2000 )
 
+[node name="Camera" type="Camera" parent="."]
+current = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/ShootAnimation = SubResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -26,6 +64,8 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Control"]
+position = Vector2( 548.047, -403.953 )
+scale = Vector2( 1.61346, 1.54315 )
 texture = ExtResource( 1 )
 hframes = 4
 
