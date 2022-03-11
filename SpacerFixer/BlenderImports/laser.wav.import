@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/laser.wav-c932c0a5a59cbb124d4d8c07b0da30bc.sample"
+
+[deps]
+
+source_file="res://BlenderImports/laser.wav"
+dest_files=[ "res://.import/laser.wav-c932c0a5a59cbb124d4d8c07b0da30bc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
