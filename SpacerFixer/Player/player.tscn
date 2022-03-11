@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://BlenderImports/Base Gray.material" type="Material" id=1]
 [ext_resource path="res://Player/player.gd" type="Script" id=2]
 [ext_resource path="res://BlenderImports/Black Glass.material" type="Material" id=3]
 [ext_resource path="res://BlenderImports/Wing Blue.material" type="Material" id=4]
+[ext_resource path="res://BlenderImports/crosshair2.png" type="Texture" id=5]
+[ext_resource path="res://BlenderImports/crosshair1.png" type="Texture" id=6]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "player_Cube005"
@@ -64,3 +66,14 @@ material/0 = null
 material/1 = null
 material/2 = null
 material/3 = null
+
+[node name="Gun1" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.63762, -4.06226 )
+
+[node name="Crosshair" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -177.891 )
+texture = ExtResource( 5 )
+
+[node name="Crosshair2" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -150.749 )
+texture = ExtResource( 6 )

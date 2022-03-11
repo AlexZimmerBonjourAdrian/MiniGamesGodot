@@ -5,10 +5,11 @@ const ACCELERATION = 0.75
 var inputVector = Vector3()
 var velo = Vector3()
 var cooldown = 0
-const COOLDOWN = 3
-onready var guns = [$Gun1]
+const COOLDOWN = 8
+
+onready var guns = [$Gun0, $Gun1]
 onready var main = get_tree().current_scene
-var Bullet = load("res://Elements/Bullet.tscn")
+var Bullet = load("res://Bullet.tscn")
 
 func _physics_process(delta):
 	inputVector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -20,27 +21,18 @@ func _physics_process(delta):
 	rotation_degrees.x = velo.y / 2
 	rotation_degrees.y = -velo.x / 2
 	move_and_slide(velo)
-	transform.origin.x = clamp(transform.origin.x, -15,15)
-	transform.origin.y = clamp(transform.origin.y, -10,10)
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-#shooting
-	if Input.is_action_just_pressed("ui_accept") and cooldown == 0:
+	transform.origin.x = clamp(transform.origin.x, -15, 15)
+	transform.origin.y = clamp(transform.origin.y, -10, 10)
+	
+	#shooting
+	if Input.is_action_pressed("ui_accept") and cooldown <= 0:
 		cooldown = COOLDOWN * delta
 		for i in guns:
 			var bullet = Bullet.instance()
-			var position = i.global_transform
 			main.add_child(bullet)
-			bullet.transform = position
+			bullet.transform = i.global_transform
 			bullet.velo = bullet.transform.basis.z * -600
-# Called when the node enters the scene tree for the first time.
+			
+	#cooldown
 	if cooldown > 0:
 		cooldown -= delta
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
