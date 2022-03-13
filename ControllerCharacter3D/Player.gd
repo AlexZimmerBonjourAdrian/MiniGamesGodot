@@ -7,7 +7,7 @@ export var air_friction = 10
 export var jump_impulse = 20
 export var gravity = -40
 
-export var mouse_sensivilty = .1
+export var mouse_sensivility = .1
 export var controller_sensivility = 3
 
 var velocity = Vector3.ZERO
@@ -26,7 +26,10 @@ func _unhandled_input(event):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		
+
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		rotate_y(deg2rad(-event.relative.x * mouse_sensivility ))
+		head.rotate_x(deg2rad(-event.relative.y * mouse_sensivility))
 func _physics_process(delta):
 	 var input_vector = get_input_vector()
 	 var direction = get_direction(input_vector)
