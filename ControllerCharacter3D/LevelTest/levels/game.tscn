@@ -616,4 +616,4 @@ height = 1.0
 depth = 100.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 19 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0853519, 1.94745, 18.9968 )
