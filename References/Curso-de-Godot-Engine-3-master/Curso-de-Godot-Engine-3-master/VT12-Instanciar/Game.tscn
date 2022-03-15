@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Floor.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node
+
+var rec_coso = load(\"res://Coso.tscn\")
+
+func _input(event):
+	if event.is_action_pressed(\"left_click\"):
+		var ins_coso = rec_coso.instance()
+		add_child(ins_coso)
+		ins_coso.position = get_tree().root.get_mouse_position()"
+
+[node name="Game" type="Node" index="0"]
+
+script = SubResource( 1 )
+
+[node name="Floor" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 512.818, 586.234 )
+scale = Vector2( 10.6058, 1 )
+
+
