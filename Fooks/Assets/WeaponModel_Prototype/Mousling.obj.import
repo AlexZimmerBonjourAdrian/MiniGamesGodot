@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/Mousling.obj-6f63e36b85bc729ea484fba55a595068.mesh"
+path="res://.import/Mousling.obj-50d9dc90509a6c354de86141e21de2a1.mesh"
 
 [deps]
 
-files=[ "res://.import/Mousling.obj-6f63e36b85bc729ea484fba55a595068.mesh" ]
+files=[ "res://.import/Mousling.obj-50d9dc90509a6c354de86141e21de2a1.mesh" ]
 
-source_file="res://assets/WeaponModel_Prototype/Mousling.obj"
-dest_files=[ "res://.import/Mousling.obj-6f63e36b85bc729ea484fba55a595068.mesh", "res://.import/Mousling.obj-6f63e36b85bc729ea484fba55a595068.mesh" ]
+source_file="res://Assets/WeaponModel_Prototype/Mousling.obj"
+dest_files=[ "res://.import/Mousling.obj-50d9dc90509a6c354de86141e21de2a1.mesh", "res://.import/Mousling.obj-50d9dc90509a6c354de86141e21de2a1.mesh" ]
 
 [params]
 

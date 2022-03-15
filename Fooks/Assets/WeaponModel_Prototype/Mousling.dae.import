@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Mousling.dae-5fab19612a574b9c7e2a470871cde3a5.scn"
+path="res://.import/Mousling.dae-29a54d6e62a9a433353399d37f70a32f.scn"
 
 [deps]
 
-source_file="res://assets/WeaponModel_Prototype/Mousling.dae"
-dest_files=[ "res://.import/Mousling.dae-5fab19612a574b9c7e2a470871cde3a5.scn" ]
+source_file="res://Assets/WeaponModel_Prototype/Mousling.dae"
+dest_files=[ "res://.import/Mousling.dae-29a54d6e62a9a433353399d37f70a32f.scn" ]
 
 [params]
 
