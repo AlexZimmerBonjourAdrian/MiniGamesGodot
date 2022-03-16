@@ -45,7 +45,7 @@ script = SubResource( 3 )
 [node name="Camera" type="Camera" parent="Head"]
 
 [node name="Reach" type="RayCast" parent="Head/Camera"]
-cast_to = Vector3( 0, -1, -20 )
+cast_to = Vector3( 0, -1, -60 )
 
 [node name="Sprite" type="Sprite" parent="Head/Camera"]
 position = Vector2( 960, 540 )
@@ -53,3 +53,6 @@ texture = ExtResource( 2 )
 
 [node name="Hand" type="Spatial" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.73837, 0 )
+
+[node name="Muzzle" type="Spatial" parent="Head/Hand"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.413908, 2.07804, -2.05587 )
