@@ -15,12 +15,60 @@ export (int, 0, 10) var push = 1
 var velocity = Vector3.ZERO
 var snap_vector = Vector3.ZERO
 
+var weapon_to_spawn
+var weapon_to_drop
+
+#onready var hand = $Head/Hand
+
+#onready var gun_pistol_pickup = preload("res://PickUp/PickUpPistol.tscn")
+#onready var gun_shootgun_pickup = preload("res://PickUp/PickUpShootGun.tscn")
+#onready var gun_machinegun_pickup = preload("res://PickUp/PickUpMachineGun.tscn")
+#
+#onready var gun_pistol = preload("res://weapon/Pistol.tscn")
+#onready var gun_machinegun = preload("res://weapon/machineGun.tscn")
+#onready var gun_shootgun = preload ("res://weapon/shootgun.tscn")
+
+#onready var reach = $Head/Camera/Reach
 onready var head = $Head
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_tree().call_group("weapon", "get_type",self)
 	
-
+#func _process(delta):
+#	if reach.is_colliding():
+#		if reach.is_colliding().get_name() == "PistolPickUp":
+#			weapon_to_spawn = gun_pistol.instance()
+#		elif reach.get_colliider().get_name() == "ShootGunPickUp":
+#			weapon_to_spawn = gun_shootgun.instace()
+#		elif reach.get_collider().get_name() == "MachineGunPickUp":
+#			weapon_to_spawn = gun_machinegun.instance()
+#		else:
+#			weapon_to_spawn = null
+#	else:
+#		weapon_to_spawn = null
+#
+#	if hand.get_child(0) != null:
+#		if hand.get_child(0).get_name() == "Pistol":
+#			weapon_to_drop = gun_pistol_pickup.instance()
+#		elif hand.get_child(0).get_name() == "ShootGun":
+#			weapon_to_drop = gun_shootgun_pickup.instance()
+#		elif hand.get_child(0).get_name() == "MachineGun":
+#			weapon_to_drop = gun_machinegun_pickup.instance()	
+#	else:
+#		weapon_to_drop = null
+#
+#	if Input.is_action_just_pressed("interact"):
+#		if weapon_to_spawn != null:
+#			if hand.get_child(0) != null:
+#				get_parent().add_child(weapon_to_drop)
+#				weapon_to_drop.global_transform = hand.global_transform
+#				weapon_to_drop.dropped = true
+#				hand.get_child(0).queue_free()
+#			reach.get_collider().queue_free()
+#			hand.add_child(weapon_to_spawn)
+#			weapon_to_spawn.rotation = hand.rotation
+#
 func _unhandled_input(event):
 	if event.is_action_pressed("click"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -51,7 +99,14 @@ func _physics_process(delta):
 		var collision = get_slide_collision(idx)
 		if collision.collider.is_in_group("bodies"):
 			collision.collider.apply_central_impulse(-collision.normal * velocity.length() * push)
-		
+		if collision.collider.is_in_group("weapon"):
+			if collision.collider.call("get_type") == "Pistol":
+				collision.collider.queue_free()
+			elif collision.collider.call("get_type") == "ShootGun":
+				collision.collider.queue_free()
+			elif collision.collider.call("get_type") == "MachineGun":
+				collision.collider.queue_free()
+			
 	
 func get_input_vector():
 	var input_vector = Vector3.ZERO

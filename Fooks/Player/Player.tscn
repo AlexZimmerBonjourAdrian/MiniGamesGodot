@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://undefined - Imgur.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -9,6 +10,20 @@ mid_height = 2.0
 [sub_resource type="CapsuleShape" id=2]
 radius = 0.5
 height = 2.0
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Spatial
+
+#func _physics_process(delta):
+##	for idx in get_slide_count():
+##			var collision = get_slide_collision(idx)
+##			if collision.collider.is_in_group(\"bodies\"):
+##				collision.collider.apply_central_impulse(-collision.normal * velocity.length() * push)
+
+	
+	
+
+"
 
 [node name="Player" type="KinematicBody"]
 collision_mask = 7
@@ -25,5 +40,16 @@ shape = SubResource( 2 )
 
 [node name="Head" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.73837, 0 )
+script = SubResource( 3 )
 
 [node name="Camera" type="Camera" parent="Head"]
+
+[node name="Reach" type="RayCast" parent="Head/Camera"]
+cast_to = Vector3( 0, -1, -20 )
+
+[node name="Sprite" type="Sprite" parent="Head/Camera"]
+position = Vector2( 960, 540 )
+texture = ExtResource( 2 )
+
+[node name="Hand" type="Spatial" parent="Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.73837, 0 )
