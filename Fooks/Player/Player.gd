@@ -15,8 +15,10 @@ export (int, 0, 10) var push = 1
 var velocity = Vector3.ZERO
 var snap_vector = Vector3.ZERO
 
-var weapon_to_spawn
-var weapon_to_drop
+
+
+#var weapon_to_spawn
+#var weapon_to_drop
 
 #onready var hand = $Head/Hand
 
@@ -28,8 +30,12 @@ var weapon_to_drop
 #onready var gun_machinegun = preload("res://weapon/machineGun.tscn")
 #onready var gun_shootgun = preload ("res://weapon/shootgun.tscn")
 
-#onready var reach = $Head/Camera/Reach
+onready var reach = $Head/Camera/Reach
 onready var head = $Head
+onready var muzzle = $Head/Hand/Muzzle
+onready var bullet = preload("res://Bullet/Bullet_Prototype.tscn")
+
+var direction = Vector3()
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -91,9 +97,11 @@ func _physics_process(delta):
 	apply_friction(direction, delta)
 	apply_gravity(delta)
 	jump()
+	shoot()
 	apply_controller_rotation()
 	head.rotation.x = clamp(head.rotation.x, deg2rad(-75), deg2rad(75))
 	velocity = move_and_slide_with_snap(velocity, snap_vector, Vector3.UP, true, 4, .785398, false)
+	
 	
 	for idx in get_slide_count():
 		var collision = get_slide_collision(idx)
@@ -162,4 +170,13 @@ func apply_controller_rotation():
 		rotate_y(deg2rad(-axis_vector.x) * controller_sensitivity)
 		head.rotate_x(deg2rad(-axis_vector.y) * controller_sensitivity)
 
+func shoot():
+	if Input.is_action_just_pressed("click"):
+		
+#		if reach.is_colliding():
+		var b = bullet.instance()	
+		muzzle.add_child(b)
+#		b.look_at(reach.get_collision_point(),Vector3.UP)
+		b.shoot = true
+		print("Disparo")
 	
