@@ -15,20 +15,7 @@ export (int, 0, 10) var push = 1
 var velocity = Vector3.ZERO
 var snap_vector = Vector3.ZERO
 
-
-
-#var weapon_to_spawn
-#var weapon_to_drop
-
-#onready var hand = $Head/Hand
-
-#onready var gun_pistol_pickup = preload("res://PickUp/PickUpPistol.tscn")
-#onready var gun_shootgun_pickup = preload("res://PickUp/PickUpShootGun.tscn")
-#onready var gun_machinegun_pickup = preload("res://PickUp/PickUpMachineGun.tscn")
-#
-#onready var gun_pistol = preload("res://weapon/Pistol.tscn")
-#onready var gun_machinegun = preload("res://weapon/machineGun.tscn")
-#onready var gun_shootgun = preload ("res://weapon/shootgun.tscn")
+var weapon = []
 
 onready var reach = $Head/Camera/Reach
 onready var head = $Head
@@ -84,25 +71,35 @@ func _unhandled_input(event):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-			
+	#
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(deg2rad(-event.relative.x * mouse_sensitvity))
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sensitvity))
 			
 			
 func _physics_process(delta):
+	#se devuelve un input vector
 	var input_vector = get_input_vector()
+	#devuelve una direccion a la que se esta moviendo
 	var direction = get_direction(input_vector)
+	#aplica la direccion
 	apply_movement(direction, delta)
+	#aplica la friccion
 	apply_friction(direction, delta)
+	#aplica la gravedad
 	apply_gravity(delta)
+	#chequea los botones de salto
 	jump()
 	shoot()
+	# aplica los controlles de rotacion
 	apply_controller_rotation()
+	#corrige un error par poder girar la camara
 	head.rotation.x = clamp(head.rotation.x, deg2rad(-75), deg2rad(75))
 	velocity = move_and_slide_with_snap(velocity, snap_vector, Vector3.UP, true, 4, .785398, false)
 	
-	
+#	esto es for que recorre y chequea los objetos que coliciona pudiendo chequear y actuar que se esta collisionando algo muy importante
+#   En esto sse colicciona con objetos de mundo, como cajas,
+#   esto tambien es usado para el sistema de pickup
 	for idx in get_slide_count():
 		var collision = get_slide_collision(idx)
 		if collision.collider.is_in_group("bodies"):
@@ -115,26 +112,26 @@ func _physics_process(delta):
 			elif collision.collider.call("get_type") == "MachineGun":
 				collision.collider.queue_free()
 			
-	
+	#asigna los controles de movimiento y setea las direcciones de forma sencilla 
 func get_input_vector():
 	var input_vector = Vector3.ZERO
 	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	input_vector.z = Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")
 	return input_vector.normalized() if input_vector.length() > 1 else input_vector
 	
-	
+#devuelve la diression que se esta moviendo
 func get_direction(input_vector):
 	var direction = Vector3.ZERO
 	direction = (input_vector.x * transform.basis.x) + (input_vector.z * transform.basis.z)
 	return direction
 	
-	
+#aplica el movimiento, dandole una velocidad, acelleracion y asignandole una velocidad maxima
 func apply_movement(direction, delta):
 	if direction != Vector3.ZERO:
 		velocity.x = velocity.move_toward(direction * max_speed, acceleration * delta).x
 		velocity.z = velocity.move_toward(direction * max_speed, acceleration * delta).z
 		
-		
+ #aplica friccion para poder detener al personaje
 func apply_friction(direction, delta):
 	if direction == Vector3.ZERO:
 		if is_on_floor():
@@ -143,16 +140,16 @@ func apply_friction(direction, delta):
 			velocity.x = velocity.move_toward(Vector3.ZERO, air_firction * delta).x
 			velocity.z = velocity.move_toward(Vector3.ZERO, air_firction * delta).z
 			
-			
+	#aplicar gravedad ya que no es un rigidbody y se tiene que hacer manualmente	
 func apply_gravity(delta):
 	velocity.y += gravity * delta
 	velocity.y = clamp(velocity.y, gravity, jump_impulse)
 	
-	
+#actualiza el vector de velocidad si este es piso o no
 func update_snap_vector():
 	snap_vector = -get_floor_normal() if is_on_floor() else Vector3.DOWN
 	
-	
+	#region de salto
 func jump():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		snap_vector = Vector3.ZERO
@@ -160,7 +157,7 @@ func jump():
 	if Input.is_action_just_released("jump") and velocity.y > jump_impulse / 2:
 		velocity.y = jump_impulse / 2
 
-
+#rotacion de camara tanto para el mouse como para joypad
 func apply_controller_rotation():
 	var axis_vector = Vector2.ZERO
 	axis_vector.x = Input.get_action_strength("look_right") - Input.get_action_strength("look_left")
@@ -170,13 +167,17 @@ func apply_controller_rotation():
 		rotate_y(deg2rad(-axis_vector.x) * controller_sensitivity)
 		head.rotate_x(deg2rad(-axis_vector.y) * controller_sensitivity)
 
+
+
+#function Prototype para crear balas 
+#Todo:Cambiar el tipo de disparo segun el arma
 func shoot():
 	if Input.is_action_just_pressed("click"):
-		
+
 #		if reach.is_colliding():
 		var b = bullet.instance()	
 		muzzle.add_child(b)
 #		b.look_at(reach.get_collision_point(),Vector3.UP)
 		b.shoot = true
 		print("Disparo")
-	
+

@@ -2,40 +2,46 @@ extends Spatial
 
 onready var _animation_player: AnimationPlayer = $AnimationPlayer
 
+var state_machine
+var run_speed = 80
+var reloads = ["reload","reload_not_ammo"]
+
+
 var init_animation = 0
 
 var _is_crosshair = false
 
 func _ready():
-	_animation_player.play("Idle")
-
+	state_machine = $AnimationPlayer
+	state_machine.play("idle")
 
 func _unhandled_input(event):
-	if Input.is_action_just_released("click") and _is_crosshair:
-		_animation_player.play("Shoot")
-		_animation_player.stop(false)
+	if event.is_action_pressed("click"):
+		state_machine.play("shoot")
+		
+	elif  event.is_action_released("click"):
+	 _on_AnimationPlayer_animation_finished("shoot")
 	
-	if event.is_action_pressed("Reload"):
-		_animation_player.play("Reload")
-	
-	if event.is_action_pressed("hit"):
-		_animation_player.play("hit")
-	
-	if event.is_action_pressed("Iron_Crosshair"):
+	elif event.is_action_pressed("reload"):
+		state_machine.play("reload")
+#		_animation_player.play("reload")
+#		state_machine.travel("reload")
+	elif event.is_action_pressed("hit"):
+#		_animation_player.play("hit")
+		state_machine.play("hit")
+		
+	elif event.is_action_pressed("Iron_Crosshair"):
 		_animation_player.play("Corsshair")
 		_is_crosshair = true
-	
-	if Input.is_action_just_released("Iron_Crosshair"):
+#	
+	elif Input.is_action_just_released("Iron_Crosshair"):
 	 _animation_player.play("OutCrosshair")
 	 _is_crosshair = false
 	
-	if event.is_action_pressed("click") and _is_crosshair:
-		_animation_player.play("ShootCrosshair")
-		
-	#if event.is_action_pressed("crosshair"):
-	#	_animation_player.play("")
-
-
+	
+#	if event.is_action_pressed("click") and !_is_crosshair:
+#		_animation_player.play("ShootCrosshair")
+#
 
 #func _unhandled_input(event):
 #	if event.is_action_pressed("click"):
@@ -64,3 +70,8 @@ func _unhandled_input(event):
 #
 
 
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+		state_machine.play("idle") 
+	
