@@ -1794,7 +1794,7 @@ animation = "reload"
 animation = "reload_not_ammo"
 
 [sub_resource type="AnimationNodeAnimation" id=27]
-animation = "shoot"
+animation = "Shoot and trigger"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=28]
 

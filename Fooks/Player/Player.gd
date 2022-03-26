@@ -171,6 +171,8 @@ func apply_controller_rotation():
 
 #function Prototype para crear balas 
 #Todo:Cambiar el tipo de disparo segun el arma
+
+
 func shoot():
 	if Input.is_action_just_pressed("click"):
 
