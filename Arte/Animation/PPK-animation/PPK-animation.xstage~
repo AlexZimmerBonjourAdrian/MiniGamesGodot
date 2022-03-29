@@ -18,14 +18,12 @@
     <dwg name="3"/>
     <dwg name="4"/>
     <dwg name="5"/>
-    <dwg name="6"/>
    </drawings>
   </element>
   <element id="9" elementName="Hands" elementFolder="Hands" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
    <drawings>
     <dwg name="1"/>
     <dwg name="2"/>
-    <dwg name="3"/>
    </drawings>
   </element>
   <element id="10" elementName="TimeLine" elementFolder="TimeLine" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
@@ -158,14 +156,12 @@
      </points>
     </column>
     <column type="0" name="ppk" displayOrder="2" width="100" anonymous="true" id="5">
-     <elementSeq exposures="1-4" val="3" id="5"/>
-     <elementSeq exposures="5" val="6" id="5"/>
+     <elementSeq exposures="1-5" val="3" id="5"/>
      <elementSeq exposures="6-8" val="5" id="5"/>
      <elementSeq exposures="86" val="2" id="5"/>
     </column>
     <column type="0" name="Hands" displayOrder="3" width="100" anonymous="true" id="9">
-     <elementSeq exposures="1-4" val="1" id="9"/>
-     <elementSeq exposures="5" val="3" id="9"/>
+     <elementSeq exposures="1-5" val="1" id="9"/>
      <elementSeq exposures="6-8" val="2" id="9"/>
     </column>
     <column type="0" name="ATV-0B1F548140502288" displayOrder="1" width="100" anonymous="true" id="10">
