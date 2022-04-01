@@ -1,6 +1,7 @@
 extends KinematicBody
 
 export var max_speed = 12
+export var max_speed_acceleration = 22
 export var acceleration = 60
 export var friction = 50
 export var air_firction = 10
@@ -17,6 +18,8 @@ var snap_vector = Vector3.ZERO
 
 var weapon = []
 
+var isrunning:bool = false
+
 onready var reach = $Head/Camera/Reach
 onready var head = $Head
 onready var muzzle = $Head/Hand/Muzzle
@@ -24,43 +27,13 @@ onready var bullet = preload("res://Bullet/Bullet_Prototype.tscn")
 
 var direction = Vector3()
 
+
+
+	
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().call_group("weapon", "get_type",self)
-	
-#func _process(delta):
-#	if reach.is_colliding():
-#		if reach.is_colliding().get_name() == "PistolPickUp":
-#			weapon_to_spawn = gun_pistol.instance()
-#		elif reach.get_colliider().get_name() == "ShootGunPickUp":
-#			weapon_to_spawn = gun_shootgun.instace()
-#		elif reach.get_collider().get_name() == "MachineGunPickUp":
-#			weapon_to_spawn = gun_machinegun.instance()
-#		else:
-#			weapon_to_spawn = null
-#	else:
-#		weapon_to_spawn = null
-#
-#	if hand.get_child(0) != null:
-#		if hand.get_child(0).get_name() == "Pistol":
-#			weapon_to_drop = gun_pistol_pickup.instance()
-#		elif hand.get_child(0).get_name() == "ShootGun":
-#			weapon_to_drop = gun_shootgun_pickup.instance()
-#		elif hand.get_child(0).get_name() == "MachineGun":
-#			weapon_to_drop = gun_machinegun_pickup.instance()	
-#	else:
-#		weapon_to_drop = null
-#
-#	if Input.is_action_just_pressed("interact"):
-#		if weapon_to_spawn != null:
-#			if hand.get_child(0) != null:
-#				get_parent().add_child(weapon_to_drop)
-#				weapon_to_drop.global_transform = hand.global_transform
-#				weapon_to_drop.dropped = true
-#				hand.get_child(0).queue_free()
-#			reach.get_collider().queue_free()
-#			hand.add_child(weapon_to_spawn)
-#			weapon_to_spawn.rotation = hand.rotation
 #
 func _unhandled_input(event):
 	if event.is_action_pressed("click"):
@@ -82,15 +55,22 @@ func _physics_process(delta):
 	var input_vector = get_input_vector()
 	#devuelve una direccion a la que se esta moviendo
 	var direction = get_direction(input_vector)
-	#aplica la direccion
-	apply_movement(direction, delta)
+	
+	if isrunning:
+		run(direction,delta)
+	else:
+		#aplica la direccion
+		apply_movement(direction, delta)
+		
+	
+#	apply_movement(direction, delta)
 	#aplica la friccion
 	apply_friction(direction, delta)
 	#aplica la gravedad
 	apply_gravity(delta)
 	#chequea los botones de salto
 	jump()
-	shoot()
+#	ashoot()
 	# aplica los controlles de rotacion
 	apply_controller_rotation()
 	#corrige un error par poder girar la camara
@@ -127,10 +107,12 @@ func get_direction(input_vector):
 	
 #aplica el movimiento, dandole una velocidad, acelleracion y asignandole una velocidad maxima
 func apply_movement(direction, delta):
-	if direction != Vector3.ZERO:
+	if direction != Vector3.ZERO :
 		velocity.x = velocity.move_toward(direction * max_speed, acceleration * delta).x
 		velocity.z = velocity.move_toward(direction * max_speed, acceleration * delta).z
-		
+	
+	
+#	update_Print(velocity.move_toward(direction * max_speed, acceleration * delta).x)
  #aplica friccion para poder detener al personaje
 func apply_friction(direction, delta):
 	if direction == Vector3.ZERO:
@@ -168,18 +150,23 @@ func apply_controller_rotation():
 		head.rotate_x(deg2rad(-axis_vector.y) * controller_sensitivity)
 
 
-
+func update_Print(testprinter):
+	$Control/Background/Print.text = String(testprinter)
 #function Prototype para crear balas 
 #Todo:Cambiar el tipo de disparo segun el arma
 
+func run(direction, delta):
+	if direction != Vector3.ZERO :
+		velocity.x = velocity.move_toward(direction * max_speed_acceleration, acceleration * delta).x
+		velocity.z = velocity.move_toward(direction * max_speed_acceleration, acceleration * delta).z
+#func shoot():
+#	if Input.is_action_just_pressed("click"):
+#
+##		if reach.is_colliding():
+#		var b = bullet.instance()	
+#		muzzle.add_child(b)
+##		b.look_at(reach.get_collision_point(),Vector3.UP)
+#		b.shoot = true
+#		print("Disparo")
 
-func shoot():
-	if Input.is_action_just_pressed("click"):
-
-#		if reach.is_colliding():
-		var b = bullet.instance()	
-		muzzle.add_child(b)
-#		b.look_at(reach.get_collision_point(),Vector3.UP)
-		b.shoot = true
-		print("Disparo")
-
+	
