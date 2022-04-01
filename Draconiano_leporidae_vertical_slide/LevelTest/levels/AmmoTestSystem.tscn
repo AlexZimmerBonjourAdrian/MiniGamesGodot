@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player/Weapond/Ammo.gd" type="Script" id=1]
+[ext_resource path="res://Player/GuiInterfaz/HUD.tscn" type="PackedScene" id=2]
+
+[node name="Ammo" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+
+[node name="Ammo" type="Label" parent="Camera"]
+margin_left = 1666.0
+margin_top = 969.0
+margin_right = 1710.0
+margin_bottom = 983.0
+rect_scale = Vector2( 5, 5 )
+text = "AMMO"
+
+[node name="Cargador" type="Label" parent="Camera"]
+margin_left = 1200.0
+margin_top = 977.0
+margin_right = 1273.0
+margin_bottom = 991.0
+rect_scale = Vector2( 5, 5 )
+text = "CARGADOR"
+
+[node name="Separador" type="Label" parent="Camera"]
+margin_left = 1607.0
+margin_top = 934.0
+margin_right = 1647.0
+margin_bottom = 948.0
+rect_scale = Vector2( 1, 10 )
+text = "/"
+
+[node name="DebugShoot" type="Label" parent="Camera"]
+margin_left = 69.0
+margin_top = 968.0
+margin_right = 115.0
+margin_bottom = 982.0
+rect_scale = Vector2( 4, 4 )
+text = "SHOOT"
+
+[node name="HUD" parent="Camera" instance=ExtResource( 2 )]
+
+[node name="Weapons" type="Spatial" parent="."]
+
+[node name="Weapon_A" type="Spatial" parent="Weapons"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.958768 )
+
+[node name="Weapon_B" type="Spatial" parent="Weapons"]
+
+[connection signal="ready" from="Camera/Cargador" to="." method="_on_Cargador_ready"]

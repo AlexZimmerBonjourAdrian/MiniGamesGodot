@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rocketlauncherModernRotating.obj-80889de0a8ad0f4e95600b24f09e02cd.mesh"
+
+[deps]
+
+files=[ "res://.import/rocketlauncherModernRotating.obj-80889de0a8ad0f4e95600b24f09e02cd.mesh" ]
+
+source_file="res://Assets/obj/Models/rocketlauncherModernRotating.obj"
+dest_files=[ "res://.import/rocketlauncherModernRotating.obj-80889de0a8ad0f4e95600b24f09e02cd.mesh", "res://.import/rocketlauncherModernRotating.obj-80889de0a8ad0f4e95600b24f09e02cd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
