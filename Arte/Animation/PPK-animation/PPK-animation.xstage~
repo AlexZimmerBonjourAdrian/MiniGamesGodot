@@ -18,18 +18,28 @@
     <dwg name="3"/>
     <dwg name="4"/>
     <dwg name="5"/>
+    <dwg name="6"/>
+    <dwg name="7"/>
+    <dwg name="8"/>
+    <dwg name="9"/>
+    <dwg name="10"/>
    </drawings>
   </element>
   <element id="9" elementName="Hands" elementFolder="Hands" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
    <drawings>
     <dwg name="1"/>
     <dwg name="2"/>
+    <dwg name="3"/>
+    <dwg name="4"/>
+    <dwg name="5"/>
+    <dwg name="6"/>
    </drawings>
   </element>
   <element id="10" elementName="TimeLine" elementFolder="TimeLine" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
    <drawings>
     <dwg name="1"/>
     <dwg name="2"/>
+    <dwg name="3"/>
    </drawings>
   </element>
  </elements>
@@ -49,9 +59,9 @@
  </options>
  <timelineMarkers/>
  <scenes>
-  <scene name="Top" id="0b1ede1bdc001111" nbframes="82" startFrame="1" stopFrame="82">
+  <scene name="Top" id="0b1ede1bdc001111" nbframes="20" startFrame="1" stopFrame="20">
    <columns>
-    <column type="0" name="ATV-0B1EC26B10E0142C" display="false" displayOrder="4" width="100" anonymous="true" id="2">
+    <column type="0" name="ATV-0B1EC26B10E0142C" displayOrder="4" width="100" anonymous="true" id="2">
      <elementSeq exposures="1-82" val="1" id="2"/>
     </column>
     <column type="0" name="ATV-0B1EC26B10E01430" displayOrder="5" width="100" anonymous="true" id="3">
@@ -156,17 +166,24 @@
      </points>
     </column>
     <column type="0" name="ppk" displayOrder="2" width="100" anonymous="true" id="5">
-     <elementSeq exposures="1-5" val="3" id="5"/>
-     <elementSeq exposures="6-8" val="5" id="5"/>
-     <elementSeq exposures="86" val="2" id="5"/>
+     <elementSeq exposures="1-2" val="3" id="5"/>
+     <elementSeq exposures="3-4" val="8" id="5"/>
+     <elementSeq exposures="5-6" val="9" id="5"/>
+     <elementSeq exposures="7-8" val="5" id="5"/>
+     <elementSeq exposures="9-10" val="10" id="5"/>
+     <elementSeq exposures="87" val="2" id="5"/>
     </column>
     <column type="0" name="Hands" displayOrder="3" width="100" anonymous="true" id="9">
-     <elementSeq exposures="1-5" val="1" id="9"/>
-     <elementSeq exposures="6-8" val="2" id="9"/>
+     <elementSeq exposures="1-2" val="1" id="9"/>
+     <elementSeq exposures="3-4" val="3" id="9"/>
+     <elementSeq exposures="5-6" val="2" id="9"/>
+     <elementSeq exposures="7-8" val="5" id="9"/>
+     <elementSeq exposures="9-10" val="6" id="9"/>
     </column>
-    <column type="0" name="ATV-0B1F548140502288" displayOrder="1" width="100" anonymous="true" id="10">
+    <column type="0" name="ATV-0B1F548140502288" display="false" displayOrder="1" width="100" anonymous="true" id="10">
      <elementSeq exposures="1" val="1" id="10"/>
      <elementSeq exposures="2-4" val="2" id="10"/>
+     <elementSeq exposures="5-14" val="3" id="10"/>
     </column>
    </columns>
    <options>
@@ -691,6 +708,7 @@
      </module>
      <module type="READ" name="TimeLine" pos="0,0,1" publishUnderTab="TimeLine">
       <options>
+       <disabled val="true"/>
        <showTimelineThumb val="true"/>
        <collapsed val="false"/>
        <version val="1"/>
