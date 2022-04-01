@@ -2,7 +2,7 @@ extends KinematicBody
 
 export var max_speed = 12
 export var max_speed_acceleration = 22
-export var acceleration = 60
+export var acceleration = 120
 export var friction = 50
 export var air_firction = 10
 export var jump_impulse = 20
@@ -56,7 +56,14 @@ func _physics_process(delta):
 	#devuelve una direccion a la que se esta moviendo
 	var direction = get_direction(input_vector)
 	
+	#Running Logic
+	if Input.is_action_pressed("Run"):
+		isrunning = true
+	elif Input.is_action_just_released("Run"):
+		isrunning = false
+	
 	if isrunning:
+		#aplicar correr
 		run(direction,delta)
 	else:
 		#aplica la direccion
