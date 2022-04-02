@@ -18,12 +18,29 @@ var snap_vector = Vector3.ZERO
 
 var weapon = []
 
+onready var state_machine = $AnimationPlayer
 var isrunning:bool = false
+
+var can_slider = true
+var is_sliding = false
+
+var max_horizontal_speed = 60
 
 onready var reach = $Head/Camera/Reach
 onready var head = $Head
 onready var muzzle = $Head/Hand/Muzzle
+onready var touching_ground = $touching_ground
+onready var camera = $Head/Camera
 onready var bullet = preload("res://Bullet/Bullet_Prototype.tscn")
+
+#TODO:maquina de esta
+#var state = 0
+#var  STATE_IDLE = 0
+#var  STATE_MOVE = 1
+#var  STATE_DASH = 2
+
+#var snap = Vector3.DOWN
+
 
 var direction = Vector3()
 
@@ -58,19 +75,29 @@ func _physics_process(delta):
 	
 	#Running Logic
 	if Input.is_action_pressed("Run"):
+#		state_machine.play("Run")
 		isrunning = true
 	elif Input.is_action_just_released("Run"):
+#		state_machine.play("Idle")
 		isrunning = false
 	
 	if isrunning:
+		if(!is_sliding):
 		#aplicar correr
-		run(direction,delta)
+			
+			run(direction,delta)
 	else:
+		if(!is_sliding):
 		#aplica la direccion
-		apply_movement(direction, delta)
+			apply_movement(direction, delta)
 		
 	
 #	apply_movement(direction, delta)
+	#Logica de Deslizarse
+	check_sliding_logic(direction,delta)
+	
+	
+		
 	#aplica la friccion
 	apply_friction(direction, delta)
 	#aplica la gravedad
@@ -176,4 +203,40 @@ func run(direction, delta):
 #		b.shoot = true
 #		print("Disparo")
 
-	
+func check_sliding_logic(direction,delta):
+	update_Print(is_sliding)
+	if(abs(acceleration)>(max_horizontal_speed -1) and touching_ground):
+		if(!is_sliding): can_slider = true
+	else:
+		can_slider = false
+		
+	if(can_slider and Input.is_action_pressed("Slinding")):
+		state_machine.play("Deslizarse")
+		is_sliding = true
+		can_slider = false
+		update_Print(is_sliding)
+	if(is_sliding and !Input.is_action_pressed("Slinding")):
+		state_machine.play_backwards("Deslizarse")
+		is_sliding = false
+		can_slider = true 
+#		update_Print("can_slider" + can_slider)
+	if(is_sliding and touching_ground):
+		update_Print("Entra en slider")
+		move_and_slide(velocity,velocity)
+		
+		#	if(is_sliding and touching_ground):
+	else:
+		is_sliding = false	
+
+# TODO: Terminar maquina de estado basica para control de player
+#func setState(aState):
+#	state = aState
+#
+#func StateMachine():
+#
+#	if(state == STATE_IDLE):
+#		if(get_input_vector()):
+#			setState(STATE_MOVE)
+#	elif(state == STATE_MOVE):
+#		get_input_vector()
+#
