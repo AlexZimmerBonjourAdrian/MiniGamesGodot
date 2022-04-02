@@ -483,14 +483,14 @@ polygon = PoolVector2Array( -6, 0, 1.2, 3.9, 1, 0 )
 depth = 11.435
 
 [node name="CSGPolygon6" type="CSGPolygon" parent="Platforms"]
-transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -22.4, 0.362461, -21.774 )
+transform = Transform( 1.30977e-07, 0, -0.998804, 0, 0.998804, 0, 0.998804, 0, 1.30977e-07, -22.4, 0.362461, -21.774 )
 polygon = PoolVector2Array( -6, 0, 1.2, 3.9, 1, 0 )
 depth = 11.435
 
 [node name="CSGBox20" type="CSGBox" parent="Platforms"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7, 1.1, -16.8 )
+transform = Transform( 0.997854, 0, 0, 0, 3.09912, 0, 0, 0, 0.997854, -16.7, 2.28196, -16.8 )
 width = 11.4
-height = 6.0
+height = 5.43715
 depth = 8.0
 
 [node name="CSGBox17" type="CSGBox" parent="Platforms"]
@@ -506,7 +506,7 @@ height = 6.0
 depth = 8.0
 
 [node name="CSGBox19" type="CSGBox" parent="Platforms"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3, 1.1, -20.8 )
+transform = Transform( 1, 0, 0, 0, 3.15096, 0, 0, 0, 1, 15.3, 1.73168, -20.8 )
 width = 11.4
 height = 6.0
 depth = 8.0
@@ -529,7 +529,7 @@ width = 6.0
 depth = 8.0
 
 [node name="CSGBox5" type="CSGBox" parent="Platforms"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 21, -45 )
+transform = Transform( 1.61456, 0, 0, 0, 1.61456, 0, 0, 0, 1.61456, -16, 27.1462, -45 )
 width = 6.0
 depth = 8.0
 
@@ -539,27 +539,27 @@ width = 6.0
 depth = 8.0
 
 [node name="CSGBox14" type="CSGBox" parent="Platforms"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 17, -2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 17, 3.85321 )
 width = 6.0
 depth = 8.0
 
 [node name="CSGBox21" type="CSGBox" parent="Platforms"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 17, 11 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 17, 23.4082 )
 width = 6.0
 depth = 8.0
 
 [node name="CSGBox6" type="CSGBox" parent="Platforms"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 23, -45 )
+transform = Transform( 1.12758, 0, 0, 0, 1.12758, 0, 0, 0, 1.12758, -3, 18.2116, -45 )
 width = 6.0
 depth = 8.0
 
 [node name="CSGBox7" type="CSGBox" parent="Platforms"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 26, -45 )
+transform = Transform( 2.3019, 0, 0, 0, 1.47683, 0, 0, 0, 1.47683, 10, 36.1747, -45 )
 width = 6.0
 depth = 8.0
 
 [node name="CSGBox8" type="CSGBox" parent="Platforms"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 28, -45 )
+transform = Transform( 1.57192, 0, 0, 0, 1.00109, 0, 0, 0, 1.4597, 25.5438, 47.6468, -45 )
 width = 6.0
 depth = 8.0
 
@@ -574,7 +574,7 @@ width = 16.0
 depth = 26.0
 
 [node name="CSGBox16" type="CSGBox" parent="Platforms"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 16, 36 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.944, 14.5681, 36 )
 width = 16.0
 depth = 26.0
 
