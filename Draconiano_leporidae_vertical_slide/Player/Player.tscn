@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://undefined - Imgur.png" type="Texture" id=2]
@@ -165,10 +165,8 @@ tracks/3/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="BoxShape" id=10]
-extents = Vector3( 0.358643, 0.389608, 0.418203 )
-
 [node name="Player" type="KinematicBody"]
+collision_layer = 3
 collision_mask = 7
 script = ExtResource( 1 )
 
@@ -193,6 +191,20 @@ cast_to = Vector3( 0, -1, -60 )
 [node name="Sprite" type="Sprite" parent="Head/Camera"]
 position = Vector2( 960, 540 )
 texture = ExtResource( 2 )
+
+[node name="DetectionUp" type="RayCast" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, -0.0785113, -0.996913, 0, 0.996913, -0.0785113, 0.109761, 0.409906, -0.637162 )
+enabled = true
+cast_to = Vector3( 0, -1.5, 0 )
+collision_mask = 241
+debug_shape_thickness = 5
+
+[node name="DetectionDown" type="RayCast" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, -0.0260025, -0.999662, 0, 0.999662, -0.0260025, 0.0786467, -0.439737, -0.760655 )
+enabled = true
+cast_to = Vector3( 0, -1.5, 0 )
+collision_mask = 116
+debug_shape_thickness = 5
 
 [node name="Hand" type="Spatial" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.73837, 0 )
@@ -240,10 +252,6 @@ shape = SubResource( 6 )
 anims/Deslizarse = SubResource( 7 )
 anims/Idle = SubResource( 9 )
 anims/RESET = SubResource( 8 )
-
-[node name="Scalated" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64858, -0.994842 )
-shape = SubResource( 10 )
 
 [editable path="Head/Hand/Mousling"]
 [editable path="Head/Hand/img"]

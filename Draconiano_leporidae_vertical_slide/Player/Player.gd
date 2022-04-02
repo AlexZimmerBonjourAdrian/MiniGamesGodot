@@ -81,6 +81,8 @@ func _physics_process(delta):
 #		state_machine.play("Idle")
 		isrunning = false
 	
+	
+	
 	if isrunning:
 		if(!is_sliding):
 		#aplicar correr
@@ -91,7 +93,7 @@ func _physics_process(delta):
 		#aplica la direccion
 			apply_movement(direction, delta)
 		
-	
+	in_on_leadge()
 #	apply_movement(direction, delta)
 	#Logica de Deslizarse
 	check_sliding_logic(direction,delta)
@@ -204,7 +206,7 @@ func run(direction, delta):
 #		print("Disparo")
 
 func check_sliding_logic(direction,delta):
-	update_Print(is_sliding)
+#	update_Print(is_sliding)
 	if(abs(acceleration)>(max_horizontal_speed -1) and touching_ground):
 		if(!is_sliding): can_slider = true
 	else:
@@ -214,14 +216,14 @@ func check_sliding_logic(direction,delta):
 		state_machine.play("Deslizarse")
 		is_sliding = true
 		can_slider = false
-		update_Print(is_sliding)
+#		update_Print(is_sliding)
 	if(is_sliding and !Input.is_action_pressed("Slinding")):
 		state_machine.play_backwards("Deslizarse")
 		is_sliding = false
 		can_slider = true 
 #		update_Print("can_slider" + can_slider)
 	if(is_sliding and touching_ground):
-		update_Print("Entra en slider")
+#		update_Print("Entra en slider")
 		move_and_slide(velocity,velocity)
 		
 		#	if(is_sliding and touching_ground):
@@ -240,3 +242,34 @@ func check_sliding_logic(direction,delta):
 #	elif(state == STATE_MOVE):
 #		get_input_vector()
 #
+var is_on_leadge = false
+#var in_on_leadge() = false
+onready var DetectionUp = $Head/Camera/DetectionUp
+onready var DetectionDown = $Head/Camera/DetectionDown
+
+	
+func in_on_leadge():
+		
+#	update_Print("entra")
+	if DetectionUp.is_colliding():
+		update_Print("entra")
+		is_on_leadge = true
+		subir()
+	elif DetectionDown.is_colliding():
+#		update_Print("entra")
+		is_on_leadge = true
+		subir()
+		
+	
+#	elif DetectionDown.get_collider()
+		
+func subir():
+	if is_on_leadge == true:
+		update_Print(DetectionDown.is_colliding())
+		velocity.y += 60
+#		velocity.z += Vector3.FORWARD.z
+		is_on_leadge = false
+#		update_Print("entra")
+	
+	
+	
