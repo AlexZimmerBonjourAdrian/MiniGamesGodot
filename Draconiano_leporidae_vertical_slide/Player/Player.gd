@@ -51,6 +51,7 @@ var direction = Vector3()
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().call_group("weapon", "get_type",self)
+	get_tree().call_group("Enemys", "set_player",self)
 #
 func _unhandled_input(event):
 	if event.is_action_pressed("click"):
@@ -65,7 +66,8 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(deg2rad(-event.relative.x * mouse_sensitvity))
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sensitvity))
-			
+	
+	
 			
 func _physics_process(delta):
 	#se devuelve un input vector

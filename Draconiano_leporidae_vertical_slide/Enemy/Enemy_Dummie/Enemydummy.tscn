@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Enemy/MaleDummyRed.material" type="Material" id=1]
 [ext_resource path="res://Assets/Enemy/MaleDummyWhite.material" type="Material" id=2]
@@ -623,16 +623,19 @@ tracks/23/imported = false
 tracks/23/enabled = true
 tracks/23/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0.0416667, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
-[sub_resource type="CapsuleShape" id=6]
-radius = 0.6
-height = 3.0
+[sub_resource type="SphereShape" id=7]
+radius = 10.0
 
-[node name="EnemyMale" type="KinematicBody"]
+[sub_resource type="CapsuleShape" id=8]
+margin = 0.001
+radius = 0.7
+height = 2.0
+
+[node name="EnemyMale" type="KinematicBody" groups=["Enemys"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99801, 0 )
 script = ExtResource( 3 )
 
 [node name="Armature" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.04428, 0, 0, 0, 1, 0, 0.00727771, 0 )
 
 [node name="Skeleton" type="Skeleton" parent="Armature"]
 bones/0/name = "HeelIK.R"
@@ -764,15 +767,24 @@ material/1 = null
 
 [node name="RayCast" type="RayCast" parent="Armature"]
 transform = Transform( 1, 0, 0, 0, 0.957598, 0, 0, 0, 1, 0, 0.818977, 0 )
-enabled = true
 cast_to = Vector3( 0, 0, 20 )
-collision_mask = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Alert = SubResource( 3 )
 anims/Idle = SubResource( 4 )
 anims/Stunned = SubResource( 5 )
 
+[node name="SightRange" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="SightRange"]
+shape = SubResource( 7 )
+
+[node name="Eyes" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58182, 0.288642 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 8 )
