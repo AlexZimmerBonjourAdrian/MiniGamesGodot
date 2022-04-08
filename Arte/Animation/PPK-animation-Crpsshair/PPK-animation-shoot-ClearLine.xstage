@@ -49,6 +49,11 @@
     <dwg name="34"/>
     <dwg name="35"/>
     <dwg name="36"/>
+    <dwg name="37"/>
+    <dwg name="38"/>
+    <dwg name="39"/>
+    <dwg name="40"/>
+    <dwg name="41"/>
    </drawings>
   </element>
   <element id="9" elementName="Hands" elementFolder="Hands" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
@@ -85,6 +90,11 @@
     <dwg name="30"/>
     <dwg name="31"/>
     <dwg name="32"/>
+    <dwg name="33"/>
+    <dwg name="34"/>
+    <dwg name="35"/>
+    <dwg name="36"/>
+    <dwg name="37"/>
    </drawings>
   </element>
   <element id="10" elementName="TimeLine" elementFolder="TimeLine" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
@@ -149,6 +159,109 @@
   <element id="18" elementName="Notas" elementFolder="Notas" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
    <drawings>
     <dwg name="1"/>
+   </drawings>
+  </element>
+  <element id="19" elementName="PPK-ClearLine" elementFolder="PPK-ClearLine.19" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
+   <drawings>
+    <dwg name="1"/>
+    <dwg name="10"/>
+    <dwg name="11"/>
+    <dwg name="12"/>
+    <dwg name="13"/>
+    <dwg name="14"/>
+    <dwg name="15"/>
+    <dwg name="16"/>
+    <dwg name="2"/>
+    <dwg name="3"/>
+    <dwg name="4"/>
+    <dwg name="5"/>
+    <dwg name="6"/>
+    <dwg name="7"/>
+    <dwg name="8"/>
+    <dwg name="9"/>
+   </drawings>
+  </element>
+  <element id="21" elementName="Hands-ClearLine" elementFolder="Hands-ClearLine" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
+   <drawings>
+    <dwg name="1"/>
+    <dwg name="10"/>
+    <dwg name="11"/>
+    <dwg name="12"/>
+    <dwg name="13"/>
+    <dwg name="14"/>
+    <dwg name="15"/>
+    <dwg name="16"/>
+    <dwg name="2"/>
+    <dwg name="3"/>
+    <dwg name="4"/>
+    <dwg name="5"/>
+    <dwg name="6"/>
+    <dwg name="7"/>
+    <dwg name="8"/>
+    <dwg name="9"/>
+   </drawings>
+  </element>
+  <element id="22" elementName="Hands-ClearLine" elementFolder="Hands-ClearLine.22" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
+   <drawings>
+    <dwg name="1"/>
+    <dwg name="2"/>
+    <dwg name="3"/>
+    <dwg name="4"/>
+    <dwg name="5"/>
+    <dwg name="6"/>
+    <dwg name="7"/>
+   </drawings>
+  </element>
+  <element id="23" elementName="PPK-ClearLine" elementFolder="PPK-ClearLine.23" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
+   <drawings>
+    <dwg name="1"/>
+    <dwg name="2"/>
+    <dwg name="3"/>
+    <dwg name="4"/>
+    <dwg name="5"/>
+    <dwg name="6"/>
+    <dwg name="7"/>
+    <dwg name="8"/>
+   </drawings>
+  </element>
+  <element id="24" elementName="PPK-Clierline" elementFolder="PPK-Clierline" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
+   <drawings>
+    <dwg name="1"/>
+    <dwg name="10"/>
+    <dwg name="11"/>
+    <dwg name="12"/>
+    <dwg name="13"/>
+    <dwg name="14"/>
+    <dwg name="15"/>
+    <dwg name="16"/>
+    <dwg name="2"/>
+    <dwg name="3"/>
+    <dwg name="4"/>
+    <dwg name="5"/>
+    <dwg name="6"/>
+    <dwg name="7"/>
+    <dwg name="8"/>
+    <dwg name="9"/>
+   </drawings>
+  </element>
+  <element id="25" elementName="Hands-ClierLine" elementFolder="Hands-ClierLine" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements">
+   <drawings>
+    <dwg name="1"/>
+    <dwg name="10"/>
+    <dwg name="11"/>
+    <dwg name="12"/>
+    <dwg name="13"/>
+    <dwg name="14"/>
+    <dwg name="15"/>
+    <dwg name="16"/>
+    <dwg name="2"/>
+    <dwg name="3"/>
+    <dwg name="4"/>
+    <dwg name="5"/>
+    <dwg name="6"/>
+    <dwg name="7"/>
+    <dwg name="8"/>
+    <dwg name="9"/>
    </drawings>
   </element>
  </elements>
@@ -303,28 +416,28 @@
      <elementSeq exposures="5-14" val="3" id="10"/>
     </column>
     <column type="0" name="ATV-0B218C14932296A6" displayOrder="0" width="100" anonymous="true" id="15">
-     <elementSeq exposures="1" val="1" id="15"/>
-     <elementSeq exposures="2" val="2" id="15"/>
-     <elementSeq exposures="3" val="3" id="15"/>
-     <elementSeq exposures="4" val="4" id="15"/>
-     <elementSeq exposures="5" val="5" id="15"/>
-     <elementSeq exposures="6" val="6" id="15"/>
-     <elementSeq exposures="7" val="7" id="15"/>
-     <elementSeq exposures="8" val="8" id="15"/>
-     <elementSeq exposures="9" val="9" id="15"/>
+     <elementSeq exposures="1-2" val="1" id="15"/>
+     <elementSeq exposures="3-4" val="2" id="15"/>
+     <elementSeq exposures="5-6" val="3" id="15"/>
+     <elementSeq exposures="7-8" val="4" id="15"/>
+     <elementSeq exposures="9-10" val="5" id="15"/>
+     <elementSeq exposures="11-12" val="6" id="15"/>
+     <elementSeq exposures="13-14" val="7" id="15"/>
+     <elementSeq exposures="15-16" val="8" id="15"/>
+     <elementSeq exposures="17-18" val="9" id="15"/>
     </column>
     <column type="0" name="ATV-0B218C149323EEE4" displayOrder="0" width="100" anonymous="true" id="16">
-     <elementSeq exposures="1" val="1" id="16"/>
-     <elementSeq exposures="2" val="2" id="16"/>
-     <elementSeq exposures="3" val="3" id="16"/>
-     <elementSeq exposures="4" val="4" id="16"/>
-     <elementSeq exposures="5" val="5" id="16"/>
-     <elementSeq exposures="6" val="6" id="16"/>
-     <elementSeq exposures="7" val="7" id="16"/>
-     <elementSeq exposures="8" val="8" id="16"/>
-     <elementSeq exposures="9" val="9" id="16"/>
+     <elementSeq exposures="1-2" val="1" id="16"/>
+     <elementSeq exposures="3-4" val="2" id="16"/>
+     <elementSeq exposures="5-6" val="3" id="16"/>
+     <elementSeq exposures="7-8" val="4" id="16"/>
+     <elementSeq exposures="9-10" val="5" id="16"/>
+     <elementSeq exposures="11-12" val="6" id="16"/>
+     <elementSeq exposures="13-14" val="7" id="16"/>
+     <elementSeq exposures="15-16" val="8" id="16"/>
+     <elementSeq exposures="17-18" val="9" id="16"/>
     </column>
-    <column type="0" name="ATV-0B21D865F960BD72" display="false" displayOrder="0" width="100" anonymous="true" id="18">
+    <column type="0" name="ATV-0B21D865F960BD72" displayOrder="0" width="100" anonymous="true" id="18">
      <elementSeq exposures="1" val="1" id="18"/>
     </column>
    </columns>
@@ -336,7 +449,7 @@
      <collapsed val="false"/>
     </options>
     <nodeslist>
-     <module type="COMPOSITE" name="Composite" pos="-9,0,11" publishUnderTab="Composite">
+     <module type="COMPOSITE" name="Composite" pos="-9,0,12" publishUnderTab="Composite">
       <options>
        <collapsed val="false"/>
        <version val="1"/>
@@ -355,14 +468,14 @@
        <mergeVector val="false"/>
       </attrs>
      </module>
-     <module type="DISPLAY" name="Display" pos="46,72,3" publishUnderTab="Display">
+     <module type="DISPLAY" name="Display" pos="46,72,4" publishUnderTab="Display">
       <options>
        <collapsed val="false"/>
        <nodeShowThumbnail val="true"/>
        <version val="1"/>
       </options>
      </module>
-     <module type="WRITE" name="Write" pos="-69,65,2" publishUnderTab="Write">
+     <module type="WRITE" name="Write" pos="-67,72,1" publishUnderTab="Write">
       <options>
        <collapsed val="false"/>
        <nodeShowThumbnail val="true"/>
@@ -370,13 +483,13 @@
       </options>
       <attrs>
        <exportToMovie val="false"/>
-       <drawingName val="frames/ppk-shoot-"/>
+       <drawingName val="frames/ppk-shoot-DL-VS"/>
        <moviePath val="frames/output"/>
        <movieFormat val="com.toonboom.quicktime.legacy"/>
        <movieAudio/>
        <movieVideo/>
        <movieVideoaudio/>
-       <leadingZeros val="3"/>
+       <leadingZeros val="2"/>
        <start val="1"/>
        <drawingType val="PNG4"/>
        <enabling>
@@ -396,7 +509,7 @@
        <cleanUpPartitionFolders val="true"/>
       </attrs>
      </module>
-     <module type="READ" name="weapondDraconiano" pos="0,0,9" publishUnderTab="weapondDraconiano">
+     <module type="READ" name="weapondDraconiano" pos="0,0,10" publishUnderTab="weapondDraconiano">
       <options>
        <disabled val="true"/>
        <showTimelineThumb val="true"/>
@@ -510,7 +623,7 @@
        <tileVertical val="false"/>
       </attrs>
      </module>
-     <module type="READ" name="weapondDraconiano_1" pos="0,0,7" publishUnderTab="weapondDraconiano_1">
+     <module type="READ" name="weapondDraconiano_1" pos="0,0,8" publishUnderTab="weapondDraconiano_1">
       <options>
        <disabled val="true"/>
        <showTimelineThumb val="true"/>
@@ -624,7 +737,7 @@
        <tileVertical val="false"/>
       </attrs>
      </module>
-     <module type="READ" name="ppk" pos="10,0,10" publishUnderTab="Drawing">
+     <module type="READ" name="ppk" pos="10,0,11" publishUnderTab="Drawing">
       <options>
        <disabled val="true"/>
        <showTimelineThumb val="true"/>
@@ -738,7 +851,7 @@
        <tileVertical val="false"/>
       </attrs>
      </module>
-     <module type="READ" name="Hands" pos="-3,0,8" publishUnderTab="Hnds">
+     <module type="READ" name="Hands" pos="-3,0,9" publishUnderTab="Hnds">
       <options>
        <disabled val="true"/>
        <showTimelineThumb val="true"/>
@@ -852,7 +965,7 @@
        <tileVertical val="false"/>
       </attrs>
      </module>
-     <module type="READ" name="hands" pos="0,0,4" publishUnderTab="hands">
+     <module type="READ" name="hands" pos="0,0,5" publishUnderTab="hands">
       <options>
        <showTimelineThumb val="true"/>
        <collapsed val="false"/>
@@ -965,7 +1078,7 @@
        <tileVertical val="false"/>
       </attrs>
      </module>
-     <module type="READ" name="TimeLine" pos="0,0,6" publishUnderTab="TimeLine">
+     <module type="READ" name="TimeLine" pos="0,0,7" publishUnderTab="TimeLine">
       <options>
        <disabled val="true"/>
        <showTimelineThumb val="true"/>
@@ -1079,7 +1192,7 @@
        <tileVertical val="false"/>
       </attrs>
      </module>
-     <module type="READ" name="PPK-ClearLine" pos="0,0,5" publishUnderTab="PPK-ClearLine">
+     <module type="READ" name="PPK-ClearLine" pos="0,0,6" publishUnderTab="PPK-ClearLine">
       <options>
        <showTimelineThumb val="true"/>
        <collapsed val="false"/>
@@ -1192,7 +1305,7 @@
        <tileVertical val="false"/>
       </attrs>
      </module>
-     <module type="READ" name="Notas" pos="0,0,1" publishUnderTab="Notas">
+     <module type="READ" name="Notas" pos="0,0,2" publishUnderTab="Notas">
       <options>
        <disabled val="true"/>
        <showTimelineThumb val="true"/>

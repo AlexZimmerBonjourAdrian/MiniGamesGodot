@@ -303,28 +303,28 @@
      <elementSeq exposures="5-14" val="3" id="10"/>
     </column>
     <column type="0" name="ATV-0B218C14932296A6" displayOrder="0" width="100" anonymous="true" id="15">
-     <elementSeq exposures="1-2" val="1" id="15"/>
-     <elementSeq exposures="3-4" val="2" id="15"/>
-     <elementSeq exposures="5-6" val="3" id="15"/>
-     <elementSeq exposures="7-8" val="4" id="15"/>
-     <elementSeq exposures="9-10" val="5" id="15"/>
-     <elementSeq exposures="11-12" val="6" id="15"/>
-     <elementSeq exposures="13-14" val="7" id="15"/>
-     <elementSeq exposures="15-16" val="8" id="15"/>
-     <elementSeq exposures="17-18" val="9" id="15"/>
+     <elementSeq exposures="1" val="1" id="15"/>
+     <elementSeq exposures="2" val="2" id="15"/>
+     <elementSeq exposures="3" val="3" id="15"/>
+     <elementSeq exposures="4" val="4" id="15"/>
+     <elementSeq exposures="5" val="5" id="15"/>
+     <elementSeq exposures="6" val="6" id="15"/>
+     <elementSeq exposures="7" val="7" id="15"/>
+     <elementSeq exposures="8" val="8" id="15"/>
+     <elementSeq exposures="9" val="9" id="15"/>
     </column>
     <column type="0" name="ATV-0B218C149323EEE4" displayOrder="0" width="100" anonymous="true" id="16">
-     <elementSeq exposures="1-2" val="1" id="16"/>
-     <elementSeq exposures="3-4" val="2" id="16"/>
-     <elementSeq exposures="5-6" val="3" id="16"/>
-     <elementSeq exposures="7-8" val="4" id="16"/>
-     <elementSeq exposures="9-10" val="5" id="16"/>
-     <elementSeq exposures="11-12" val="6" id="16"/>
-     <elementSeq exposures="13-14" val="7" id="16"/>
-     <elementSeq exposures="15-16" val="8" id="16"/>
-     <elementSeq exposures="17-18" val="9" id="16"/>
+     <elementSeq exposures="1" val="1" id="16"/>
+     <elementSeq exposures="2" val="2" id="16"/>
+     <elementSeq exposures="3" val="3" id="16"/>
+     <elementSeq exposures="4" val="4" id="16"/>
+     <elementSeq exposures="5" val="5" id="16"/>
+     <elementSeq exposures="6" val="6" id="16"/>
+     <elementSeq exposures="7" val="7" id="16"/>
+     <elementSeq exposures="8" val="8" id="16"/>
+     <elementSeq exposures="9" val="9" id="16"/>
     </column>
-    <column type="0" name="ATV-0B21D865F960BD72" displayOrder="0" width="100" anonymous="true" id="18">
+    <column type="0" name="ATV-0B21D865F960BD72" display="false" displayOrder="0" width="100" anonymous="true" id="18">
      <elementSeq exposures="1" val="1" id="18"/>
     </column>
    </columns>
@@ -1194,6 +1194,7 @@
      </module>
      <module type="READ" name="Notas" pos="0,0,1" publishUnderTab="Notas">
       <options>
+       <disabled val="true"/>
        <showTimelineThumb val="true"/>
        <collapsed val="false"/>
        <version val="1"/>

@@ -15,4 +15,8 @@
  <element id="18" elementName="Notas" elementFolder="Notas" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements"/>
  <element id="19" elementName="PPK-ClearLine" elementFolder="PPK-ClearLine.19" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements"/>
  <element id="21" elementName="Hands-ClearLine" elementFolder="Hands-ClearLine" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements"/>
+ <element id="22" elementName="Hands-ClearLine" elementFolder="Hands-ClearLine.22" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements"/>
+ <element id="23" elementName="PPK-ClearLine" elementFolder="PPK-ClearLine.23" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements"/>
+ <element id="24" elementName="PPK-Clierline" elementFolder="PPK-Clierline" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements"/>
+ <element id="25" elementName="Hands-ClierLine" elementFolder="Hands-ClierLine" pixmapFormat="2" scanType="2" fieldChart="12" vectorType="2" rootFolder="elements"/>
 </elements>
