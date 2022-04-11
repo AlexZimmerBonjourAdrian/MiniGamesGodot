@@ -1,0 +1,105 @@
+<!DOCTYPE spritesheets>
+<spritesheets>
+ <spritesheet resolution="ipad" width="2048" height="2048" name="sheet_Top-PPK-animation" filename="spriteSheets/sheet_Top-PPK-animation-ipad.png">
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="1509,928,519,323" offsetX="272" offsetY="-209.333" name="25-Hands-ClierLine-2.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="1026,928,483,301" offsetX="269.333" offsetY="-225.6" name="25-Hands-ClierLine-3.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="509,928,517,285" offsetX="272.8" offsetY="-174.133" name="25-Hands-ClierLine-13.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="90,928,419,271" offsetX="320.533" offsetY="-199.2" name="25-Hands-ClierLine-12.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="68,928,22,23" offsetX="513.067" offsetY="-242.4" name="24-PPK-Clierline-16.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="46,928,22,23" offsetX="485.867" offsetY="-265.333" name="25-Hands-ClierLine-15.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="23,928,23,22" offsetX="470.667" offsetY="-238.933" name="24-PPK-Clierline-15.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="0,928,23,22" offsetX="506.4" offsetY="-274.667" name="25-Hands-ClierLine-16.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="1490,650,538,278" offsetX="296" offsetY="-196.8" name="25-Hands-ClierLine-1.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="1095,650,395,266" offsetX="316.8" offsetY="-192.267" name="25-Hands-ClierLine-11.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="647,650,448,262" offsetX="238.4" offsetY="-174.4" name="25-Hands-ClierLine-14.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="235,650,412,256" offsetX="236" offsetY="-190.667" name="25-Hands-ClierLine-4.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="76,650,159,238" offsetX="230.667" offsetY="-3.46667" name="24-PPK-Clierline-9.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="1641,395,387,255" offsetX="292.267" offsetY="-185.333" name="25-Hands-ClierLine-9.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="1207,395,434,253" offsetX="302.667" offsetY="-197.333" name="25-Hands-ClierLine-10.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="838,395,369,231" offsetX="255.733" offsetY="-229.6" name="25-Hands-ClierLine-7.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="682,395,156,231" offsetX="230.133" offsetY="-0.8" name="24-PPK-Clierline-10.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="472,395,210,229" offsetX="212.267" offsetY="-11.2" name="24-PPK-Clierline-11.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="264,395,208,228" offsetX="213.333" offsetY="-9.6" name="24-PPK-Clierline-12.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="49,395,215,218" offsetX="176.8" offsetY="-46.6667" name="24-PPK-Clierline-2.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="1654,178,374,217" offsetX="265.067" offsetY="-221.6" name="25-Hands-ClierLine-5.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="1325,178,329,216" offsetX="237.6" offsetY="-217.867" name="25-Hands-ClierLine-6.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="1118,178,207,203" offsetX="154.667" offsetY="-50.6667" name="24-PPK-Clierline-13.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="911,178,207,198" offsetX="154.742" offsetY="-53.2079" name="24-PPK-Clierline-14.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="705,178,206,194" offsetX="172.267" offsetY="-39.7333" name="24-PPK-Clierline-1.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="502,178,203,183" offsetX="160" offsetY="-76.8" name="24-PPK-Clierline-3.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="298,178,204,182" offsetX="159.2" offsetY="-74.4" name="24-PPK-Clierline-4.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="77,178,221,129" offsetX="140.8" offsetY="-131.733" name="24-PPK-Clierline-5.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="1663,0,365,178" offsetX="253.6" offsetY="-223.2" name="25-Hands-ClierLine-8.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="1447,0,216,129" offsetX="138.4" offsetY="-134.133" name="24-PPK-Clierline-7.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="1151,0,296,127" offsetX="176.533" offsetY="-136.8" name="24-PPK-Clierline-8.png" scaleX="0.0416667"/>
+  <sprite scaleY="0.0416667" angleDegrees="0" rect="928,0,223,120" offsetX="140.533" offsetY="-133.333" name="24-PPK-Clierline-6.png" scaleX="0.0416667"/>
+ </spritesheet>
+ <spritesheet resolution="iphone" width="2048" height="512" name="sheet_Top-PPK-animation" filename="spriteSheets/sheet_Top-PPK-animation-iphone.png">
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1799,190,249,158" offsetX="127.5" offsetY="-98.125" name="25-Hands-ClierLine-2.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1567,190,232,147" offsetX="126.25" offsetY="-105.75" name="25-Hands-ClierLine-3.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1319,190,248,140" offsetX="127.875" offsetY="-81.625" name="25-Hands-ClierLine-13.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1061,190,258,136" offsetX="138.75" offsetY="-92.25" name="25-Hands-ClierLine-1.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="859,190,202,133" offsetX="150.25" offsetY="-93.375" name="25-Hands-ClierLine-12.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="668,190,191,131" offsetX="148.5" offsetY="-90.125" name="25-Hands-ClierLine-11.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="452,190,216,129" offsetX="111.75" offsetY="-81.75" name="25-Hands-ClierLine-14.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="253,190,199,126" offsetX="110.625" offsetY="-89.375" name="25-Hands-ClierLine-4.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="66,190,187,126" offsetX="137" offsetY="-86.875" name="25-Hands-ClierLine-9.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="49,190,17,17" offsetX="237.375" offsetY="-128.75" name="25-Hands-ClierLine-16.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="33,190,16,17" offsetX="240.5" offsetY="-113.625" name="24-PPK-Clierline-16.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="17,190,16,17" offsetX="227.75" offsetY="-124.375" name="25-Hands-ClierLine-15.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="0,190,17,16" offsetX="220.625" offsetY="-112" name="24-PPK-Clierline-15.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1838,66,210,124" offsetX="141.875" offsetY="-92.5" name="25-Hands-ClierLine-10.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1757,66,81,118" offsetX="108.125" offsetY="-1.625" name="24-PPK-Clierline-9.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1578,66,179,114" offsetX="119.875" offsetY="-107.625" name="25-Hands-ClierLine-7.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1499,66,79,114" offsetX="107.875" offsetY="-0.375" name="24-PPK-Clierline-10.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1395,66,104,113" offsetX="99.5" offsetY="-5.25" name="24-PPK-Clierline-11.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1292,66,103,113" offsetX="100" offsetY="-4.5" name="24-PPK-Clierline-12.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1111,66,181,108" offsetX="124.25" offsetY="-103.875" name="25-Hands-ClierLine-5.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1004,66,107,108" offsetX="82.875" offsetY="-21.875" name="24-PPK-Clierline-2.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="844,66,160,107" offsetX="111.375" offsetY="-102.125" name="25-Hands-ClierLine-6.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="741,66,103,101" offsetX="72.5" offsetY="-23.75" name="24-PPK-Clierline-13.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="638,66,103,99" offsetX="72.5353" offsetY="-24.9412" name="24-PPK-Clierline-14.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="536,66,102,97" offsetX="80.75" offsetY="-18.625" name="24-PPK-Clierline-1.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="435,66,101,92" offsetX="75" offsetY="-36" name="24-PPK-Clierline-3.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="333,66,102,91" offsetX="74.625" offsetY="-34.875" name="24-PPK-Clierline-4.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="156,66,177,90" offsetX="118.875" offsetY="-104.625" name="25-Hands-ClierLine-8.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="49,66,107,67" offsetX="64.875" offsetY="-62.875" name="24-PPK-Clierline-7.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1903,0,145,66" offsetX="82.75" offsetY="-64.125" name="24-PPK-Clierline-8.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1794,0,109,66" offsetX="66" offsetY="-61.75" name="24-PPK-Clierline-5.png" scaleX="0.0888889"/>
+  <sprite scaleY="0.0888889" angleDegrees="0" rect="1683,0,111,62" offsetX="65.875" offsetY="-62.5" name="24-PPK-Clierline-6.png" scaleX="0.0888889"/>
+ </spritesheet>
+ <spritesheet resolution="iphone-retina" width="2048" height="2048" name="sheet_Top-PPK-animation" filename="spriteSheets/sheet_Top-PPK-animation-iphone-retina.png">
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="1463,1044,575,358" offsetX="301.75" offsetY="-232.229" name="25-Hands-ClierLine-2.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="928,1044,535,332" offsetX="298.792" offsetY="-250.275" name="25-Hands-ClierLine-3.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="356,1044,572,315" offsetX="302.638" offsetY="-193.179" name="25-Hands-ClierLine-13.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="181,1044,175,263" offsetX="255.896" offsetY="-3.84583" name="24-PPK-Clierline-9.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="9,1044,172,255" offsetX="255.304" offsetY="-0.8875" name="24-PPK-Clierline-10.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="1442,737,596,307" offsetX="328.375" offsetY="-218.325" name="25-Hands-ClierLine-1.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="978,737,464,300" offsetX="355.592" offsetY="-220.988" name="25-Hands-ClierLine-12.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="541,737,437,294" offsetX="351.45" offsetY="-213.296" name="25-Hands-ClierLine-11.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="46,737,495,290" offsetX="264.475" offsetY="-193.475" name="25-Hands-ClierLine-14.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="23,737,23,24" offsetX="569.183" offsetY="-268.913" name="24-PPK-Clierline-16.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="0,737,23,24" offsetX="539.008" offsetY="-294.354" name="25-Hands-ClierLine-15.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="1582,454,456,283" offsetX="261.812" offsetY="-211.521" name="25-Hands-ClierLine-4.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="1154,454,428,282" offsetX="324.233" offsetY="-205.604" name="25-Hands-ClierLine-9.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="673,454,481,279" offsetX="335.771" offsetY="-218.917" name="25-Hands-ClierLine-10.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="264,454,409,255" offsetX="283.704" offsetY="-254.712" name="25-Hands-ClierLine-7.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="32,454,232,253" offsetX="235.483" offsetY="-12.425" name="24-PPK-Clierline-11.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="8,454,24,23" offsetX="522.146" offsetY="-265.067" name="24-PPK-Clierline-15.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="1809,202,229,252" offsetX="236.667" offsetY="-10.65" name="24-PPK-Clierline-12.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="1572,202,237,240" offsetX="196.137" offsetY="-51.7708" name="24-PPK-Clierline-2.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="1158,202,414,239" offsetX="294.058" offsetY="-245.837" name="25-Hands-ClierLine-5.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="794,202,364,238" offsetX="263.587" offsetY="-241.696" name="25-Hands-ClierLine-6.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="566,202,228,224" offsetX="171.583" offsetY="-56.2083" name="24-PPK-Clierline-13.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="338,202,228,219" offsetX="171.667" offsetY="-59.0275" name="24-PPK-Clierline-14.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="111,202,227,214" offsetX="191.108" offsetY="-44.0792" name="24-PPK-Clierline-1.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="87,202,24,23" offsetX="561.787" offsetY="-304.708" name="25-Hands-ClierLine-16.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="1814,0,224,202" offsetX="177.5" offsetY="-85.2" name="24-PPK-Clierline-3.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="1589,0,225,200" offsetX="176.613" offsetY="-82.5375" name="24-PPK-Clierline-4.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="1185,0,404,197" offsetX="281.337" offsetY="-247.613" name="25-Hands-ClierLine-8.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="942,0,243,142" offsetX="156.2" offsetY="-146.142" name="24-PPK-Clierline-5.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="704,0,238,142" offsetX="153.538" offsetY="-148.804" name="24-PPK-Clierline-7.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="377,0,327,140" offsetX="195.842" offsetY="-151.762" name="24-PPK-Clierline-8.png" scaleX="0.0375587"/>
+  <sprite scaleY="0.0375587" angleDegrees="0" rect="131,0,246,132" offsetX="155.904" offsetY="-147.917" name="24-PPK-Clierline-6.png" scaleX="0.0375587"/>
+ </spritesheet>
+</spritesheets>

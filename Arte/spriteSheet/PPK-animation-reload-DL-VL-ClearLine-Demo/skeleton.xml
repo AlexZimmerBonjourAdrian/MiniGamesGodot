@@ -1,0 +1,12 @@
+<skeletons>
+ <skeleton name="Top">
+  <nodes>
+   <read id="0" name="Hands-ClierLine"/>
+   <read id="1" name="PPK-Clierline"/>
+  </nodes>
+  <links>
+   <link in="Top" out="0"/>
+   <link in="Top" out="1"/>
+  </links>
+ </skeleton>
+</skeletons>

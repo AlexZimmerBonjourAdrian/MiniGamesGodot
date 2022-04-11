@@ -1,0 +1,9 @@
+<animations>
+ <animation name="PPK-animation-reload-DL-VL-ClearLine-Demo_Top">
+  <attrlinks>
+   <attrlink attr="opacity" node="Hands-ClierLine" value="1"/>
+   <attrlink attr="opacity" node="PPK-Clierline" value="1"/>
+  </attrlinks>
+  <timedvalues/>
+ </animation>
+</animations>

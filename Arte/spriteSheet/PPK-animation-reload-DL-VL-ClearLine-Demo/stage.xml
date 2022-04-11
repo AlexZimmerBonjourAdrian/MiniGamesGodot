@@ -1,0 +1,7 @@
+<stages>
+ <stage name="PPK-animation-Crpsshair_PPK-animation-reload-DL-VL-ClearLine-Demo">
+  <node groupId="0" skinId="0" name="Hands-ClierLine" drwId="1"/>
+  <node groupId="0" skinId="0" name="PPK-Clierline" drwId="2"/>
+  <play drawingAnimation="PPK-animation-reload-DL-VL-ClearLine-Demo_Top" name="Top" skeleton="Top" animation="PPK-animation-reload-DL-VL-ClearLine-Demo_Top"/>
+ </stage>
+</stages>

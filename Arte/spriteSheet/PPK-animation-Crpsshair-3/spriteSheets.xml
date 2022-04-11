@@ -1,0 +1,81 @@
+<!DOCTYPE spritesheets>
+<spritesheets>
+ <spritesheet resolution="ipad" width="2997" height="951" name="sheet_PPK-animation-Crpsshair-3" filename="spriteSheets/sheet_PPK-animation-Crpsshair-3-ipad.png">
+  <sprite scaleY="1" angleDegrees="0" rect="2614,550,383,401" offsetX="101" offsetY="-113" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00011.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="2190,550,424,400" offsetX="88" offsetY="-112" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00012.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1790,550,400,390" offsetX="112" offsetY="-102" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00014.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1388,550,402,389" offsetX="110" offsetY="-101" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00013.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="891,550,497,348" offsetX="15" offsetY="-60" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00002.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="408,550,483,343" offsetX="29" offsetY="-55" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00001.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="0,550,408,302" offsetX="32" offsetY="-14" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00004.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="2502,213,495,337" offsetX="17" offsetY="-49" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00015.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="2059,213,443,332" offsetX="17" offsetY="-44" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00016.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1580,213,479,301" offsetX="30" offsetY="-13" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00003.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1163,213,417,218" offsetX="33" offsetY="70" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00005.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="758,213,405,216" offsetX="33" offsetY="72" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00009.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="355,213,403,213" offsetX="31" offsetY="75" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00010.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="340,213,15,51" offsetX="497" offsetY="233" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00008.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="307,213,33,45" offsetX="462" offsetY="230" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00007.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="2628,0,369,213" offsetX="31" offsetY="75" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00006.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="408,550,483,343" offsetX="29" offsetY="-55" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00017.png" scaleX="1"/>
+ </spritesheet>
+ <spritesheet resolution="ipad-retina" width="2756" height="2846" name="sheet_PPK-animation-Crpsshair-3" filename="spriteSheets/sheet_PPK-animation-Crpsshair-3-ipad-retina.png">
+  <sprite scaleY="1" angleDegrees="0" rect="1995,2046,761,800" offsetX="204" offsetY="-224" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00011.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1149,2046,846,798" offsetX="178" offsetY="-222" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00012.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="351,2046,798,778" offsetX="226" offsetY="-202" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00014.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="324,2046,27,96" offsetX="997" offsetY="469" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00008.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="263,2046,61,84" offsetX="926" offsetY="463" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00007.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1956,1270,800,776" offsetX="222" offsetY="-200" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00013.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="964,1270,992,694" offsetX="32" offsetY="-118" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00002.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="0,1270,964,684" offsetX="60" offsetY="-108" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00001.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1768,599,988,671" offsetX="36" offsetY="-95" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00015.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="886,599,882,661" offsetX="36" offsetY="-85" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00016.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="76,599,810,602" offsetX="67" offsetY="-26" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00004.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1804,0,952,599" offsetX="63" offsetY="-23" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00003.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="975,0,829,434" offsetX="68" offsetY="142" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00005.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="169,0,806,430" offsetX="68" offsetY="146" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00009.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="0,1270,964,684" offsetX="60" offsetY="-108" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00017.png" scaleX="1"/>
+ </spritesheet>
+ <spritesheet resolution="ipad-retina" width="801" height="846" name="sheet_PPK-animation-Crpsshair-3" filename="spriteSheets/sheet_PPK-animation-Crpsshair-3-ipad-retina-01.png">
+  <sprite scaleY="1" angleDegrees="0" rect="69,423,732,423" offsetX="65" offsetY="153" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00006.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="0,0,801,423" offsetX="64" offsetY="153" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00010.png" scaleX="1"/>
+ </spritesheet>
+ <spritesheet resolution="iphone" width="2872" height="190" name="sheet_PPK-animation-Crpsshair-3" filename="spriteSheets/sheet_PPK-animation-Crpsshair-3-iphone.png">
+  <sprite scaleY="1" angleDegrees="0" rect="2690,0,182,190" offsetX="46" offsetY="-55" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00011.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="2490,0,200,189" offsetX="40" offsetY="-54" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00012.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="2300,0,190,184" offsetX="50" offsetY="-49" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00013.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="2111,0,189,184" offsetX="51" offsetY="-49" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00014.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1877,0,234,165" offsetX="6" offsetY="-30" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00002.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1649,0,228,162" offsetX="12" offsetY="-27" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00001.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1416,0,233,159" offsetX="7" offsetY="-24" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00015.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1206,0,210,157" offsetX="7" offsetY="-22" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00016.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1012,0,194,143" offsetX="14" offsetY="-8" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00004.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="785,0,227,142" offsetX="13" offsetY="-7" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00003.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="587,0,198,104" offsetX="14" offsetY="31" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00005.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="394,0,193,103" offsetX="14" offsetY="32" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00009.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="202,0,192,101" offsetX="13" offsetY="34" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00010.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="26,0,176,101" offsetX="13" offsetY="34" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00006.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="18,0,8,26" offsetX="232" offsetY="108" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00008.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="0,0,18,23" offsetX="215" offsetY="107" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00007.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1649,0,228,162" offsetX="12" offsetY="-27" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00017.png" scaleX="1"/>
+ </spritesheet>
+ <spritesheet resolution="iphone-retina" width="2933" height="1054" name="sheet_PPK-animation-Crpsshair-3" filename="spriteSheets/sheet_PPK-animation-Crpsshair-3-iphone-retina.png">
+  <sprite scaleY="1" angleDegrees="0" rect="2509,609,424,445" offsetX="112" offsetY="-125.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00011.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="2038,609,471,444" offsetX="97" offsetY="-124.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00012.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1594,609,444,433" offsetX="124" offsetY="-113.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00014.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1148,609,446,431" offsetX="122" offsetY="-111.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00013.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="596,609,552,386" offsetX="16" offsetY="-66.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00002.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="60,609,536,381" offsetX="32" offsetY="-61.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00001.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="44,609,16,55" offsetX="552" offsetY="259.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00008.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="7,609,37,49" offsetX="512" offsetY="255.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00007.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="2384,236,549,373" offsetX="19" offsetY="-53.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00015.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1893,236,491,368" offsetX="19" offsetY="-48.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00016.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="1441,236,452,335" offsetX="36" offsetY="-15.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00004.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="911,236,530,333" offsetX="34" offsetY="-13.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00003.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="449,236,462,242" offsetX="37" offsetY="77.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00005.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="0,236,449,240" offsetX="37" offsetY="79.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00009.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="2486,0,447,236" offsetX="34" offsetY="83.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00010.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="2078,0,408,236" offsetX="35" offsetY="83.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00006.png" scaleX="1"/>
+  <sprite scaleY="1" angleDegrees="0" rect="60,609,536,381" offsetX="32" offsetY="-61.5" name="PPK-animation-reload-DL-VL-ClearLine-Demo-00017.png" scaleX="1"/>
+ </spritesheet>
+</spritesheets>

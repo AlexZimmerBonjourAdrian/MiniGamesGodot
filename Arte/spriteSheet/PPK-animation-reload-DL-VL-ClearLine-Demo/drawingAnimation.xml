@@ -1,0 +1,42 @@
+<drawingAnimations>
+ <drawingAnimation spritesheet="sheet_Top-PPK-animation" name="PPK-animation-reload-DL-VL-ClearLine-Demo_Top">
+  <drawing node="Hands-ClierLine" name="25-Hands-ClierLine" drwId="1">
+   <drw skinId="0" frame="1" repeat="1" name="25-Hands-ClierLine-1.png"/>
+   <drw skinId="0" frame="2" repeat="1" name="25-Hands-ClierLine-2.png"/>
+   <drw skinId="0" frame="3" repeat="1" name="25-Hands-ClierLine-3.png"/>
+   <drw skinId="0" frame="4" repeat="1" name="25-Hands-ClierLine-4.png"/>
+   <drw skinId="0" frame="5" repeat="1" name="25-Hands-ClierLine-5.png"/>
+   <drw skinId="0" frame="6" repeat="1" name="25-Hands-ClierLine-6.png"/>
+   <drw skinId="0" frame="7" repeat="1" name="25-Hands-ClierLine-15.png"/>
+   <drw skinId="0" frame="8" repeat="1" name="25-Hands-ClierLine-16.png"/>
+   <drw skinId="0" frame="9" repeat="1" name="25-Hands-ClierLine-7.png"/>
+   <drw skinId="0" frame="10" repeat="1" name="25-Hands-ClierLine-8.png"/>
+   <drw skinId="0" frame="11" repeat="1" name="25-Hands-ClierLine-9.png"/>
+   <drw skinId="0" frame="12" repeat="1" name="25-Hands-ClierLine-10.png"/>
+   <drw skinId="0" frame="13" repeat="1" name="25-Hands-ClierLine-11.png"/>
+   <drw skinId="0" frame="14" repeat="1" name="25-Hands-ClierLine-12.png"/>
+   <drw skinId="0" frame="15" repeat="1" name="25-Hands-ClierLine-13.png"/>
+   <drw skinId="0" frame="16" repeat="1" name="25-Hands-ClierLine-14.png"/>
+   <drw skinId="0" frame="17" repeat="1" name="25-Hands-ClierLine-1.png"/>
+  </drawing>
+  <drawing node="PPK-Clierline" name="24-PPK-Clierline" drwId="2">
+   <drw skinId="0" frame="1" repeat="1" name="24-PPK-Clierline-1.png"/>
+   <drw skinId="0" frame="2" repeat="1" name="24-PPK-Clierline-2.png"/>
+   <drw skinId="0" frame="3" repeat="1" name="24-PPK-Clierline-3.png"/>
+   <drw skinId="0" frame="4" repeat="1" name="24-PPK-Clierline-4.png"/>
+   <drw skinId="0" frame="5" repeat="1" name="24-PPK-Clierline-5.png"/>
+   <drw skinId="0" frame="6" repeat="1" name="24-PPK-Clierline-6.png"/>
+   <drw skinId="0" frame="7" repeat="1" name="24-PPK-Clierline-15.png"/>
+   <drw skinId="0" frame="8" repeat="1" name="24-PPK-Clierline-16.png"/>
+   <drw skinId="0" frame="9" repeat="1" name="24-PPK-Clierline-7.png"/>
+   <drw skinId="0" frame="10" repeat="1" name="24-PPK-Clierline-8.png"/>
+   <drw skinId="0" frame="11" repeat="1" name="24-PPK-Clierline-9.png"/>
+   <drw skinId="0" frame="12" repeat="1" name="24-PPK-Clierline-10.png"/>
+   <drw skinId="0" frame="13" repeat="1" name="24-PPK-Clierline-11.png"/>
+   <drw skinId="0" frame="14" repeat="1" name="24-PPK-Clierline-12.png"/>
+   <drw skinId="0" frame="15" repeat="1" name="24-PPK-Clierline-13.png"/>
+   <drw skinId="0" frame="16" repeat="1" name="24-PPK-Clierline-14.png"/>
+   <drw skinId="0" frame="17" repeat="1" name="24-PPK-Clierline-1.png"/>
+  </drawing>
+ </drawingAnimation>
+</drawingAnimations>
