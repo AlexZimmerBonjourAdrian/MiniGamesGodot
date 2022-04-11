@@ -20,3 +20,7 @@ func _on_Area_body_entered(body):
 
 func _on_LightTimer_timeout():
 	$OmniLight.visible = false
+	
+
+func _on_Timer_timeout():
+	queue_free() 

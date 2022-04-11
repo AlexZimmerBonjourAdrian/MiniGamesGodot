@@ -12,6 +12,7 @@ onready var main = get_tree().current_scene
 var Bullet = load("res://Bullet.tscn")
 
 func _physics_process(delta):
+#	constant_move()
 	inputVector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	inputVector.y = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
 	inputVector = inputVector.normalized()
@@ -36,3 +37,5 @@ func _physics_process(delta):
 	#cooldown
 	if cooldown > 0:
 		cooldown -= delta
+
+	

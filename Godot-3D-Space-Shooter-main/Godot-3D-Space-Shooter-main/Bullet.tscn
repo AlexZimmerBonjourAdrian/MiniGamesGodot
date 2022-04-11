@@ -50,5 +50,11 @@ volume_db = -11.107
 stream = ExtResource( 2 )
 unit_db = 13.981
 autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="timeout" from="LightTimer" to="." method="_on_LightTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
