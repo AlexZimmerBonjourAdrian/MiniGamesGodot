@@ -142,6 +142,11 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 14208, 0, 888, 500 )
 
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 1333, 750 )
+
 [sub_resource type="AtlasTexture" id=30]
 flags = 4
 atlas = ExtResource( 2 )
@@ -287,11 +292,6 @@ flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 14314, 0, 842, 474 )
 
-[sub_resource type="AtlasTexture" id=59]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 1333, 750 )
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
@@ -304,6 +304,11 @@ animations = [ {
 "name": "ppk-reload",
 "speed": 30.0
 }, {
+"frames": [ SubResource( 59 ) ],
+"loop": true,
+"name": "ppk-Idle",
+"speed": 30.0
+}, {
 "frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": true,
 "name": "ppk-crosshair",
@@ -312,11 +317,6 @@ animations = [ {
 "frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ) ],
 "loop": true,
 "name": "ppk-shoot",
-"speed": 30.0
-}, {
-"frames": [ SubResource( 59 ) ],
-"loop": true,
-"name": "ppk-Idle",
 "speed": 30.0
 } ]
 
@@ -537,6 +537,20 @@ anims/RESET = SubResource( 63 )
 anims/Reload = SubResource( 64 )
 anims/iDLE = SubResource( 66 )
 anims/shoot = SubResource( 65 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="Control"]
+margin_right = 192.0
+margin_bottom = 60.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Print" type="Label" parent="Control/Background"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Print"
 
 [connection signal="animation_finished" from="CanvasLayer/Control/PPK/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
