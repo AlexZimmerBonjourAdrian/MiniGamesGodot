@@ -87,3 +87,9 @@ billboard = 1
 texture = ExtResource( 7 )
 
 [node name="Particles" parent="." instance=ExtResource( 8 )]
+
+[node name="Missile1" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19726, -1.75568, 0.891812 )
+
+[node name="Missile2" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41668, -1.78596, 0.303287 )

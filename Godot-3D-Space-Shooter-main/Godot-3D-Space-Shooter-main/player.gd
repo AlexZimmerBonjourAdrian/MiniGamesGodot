@@ -6,10 +6,15 @@ var inputVector = Vector3()
 var velo = Vector3()
 var cooldown = 0
 const COOLDOWN = 8
+var dash_speed = 60
+var Aceleration_Multi = 5
 
 onready var guns = [$Gun0, $Gun1]
+onready var missile = [$Missile1, $Missile2]
+
 onready var main = get_tree().current_scene
 var Bullet = load("res://Bullet.tscn")
+var Missile = load("res://Weapon/Rocket/Rocket.tscn")
 
 func _physics_process(delta):
 #	constant_move()
@@ -25,7 +30,16 @@ func _physics_process(delta):
 	transform.origin.x = clamp(transform.origin.x, -15, 15)
 	transform.origin.y = clamp(transform.origin.y, -10, 10)
 	
-	#shooting
+#	Shooting missile
+	if Input.is_action_pressed("ShootRocket") and cooldown <= 0:
+		cooldown = COOLDOWN * delta
+		for j in missile:
+			var missile = Missile.instance()
+			main.add_child(missile)
+			missile.transform = j.global_transform
+			missile.velo = missile.transform.basis.z * -600
+	
+	#shooting gun
 	if Input.is_action_pressed("ui_accept") and cooldown <= 0:
 		cooldown = COOLDOWN * delta
 		for i in guns:
@@ -37,5 +51,13 @@ func _physics_process(delta):
 	#cooldown
 	if cooldown > 0:
 		cooldown -= delta
+#	dash aplication to input
+#	if(Input.is_action_just_pressed("dash")):
+#		velo.x = move_toward(velo.x, inputVector.x * (MAXSPEED + dash_speed), ACCELERATION * Aceleration_Multi )
+#		velo.y = move_toward(velo.y, inputVector.y *(MAXSPEED + dash_speed), ACCELERATION * Aceleration_Multi )
+		
 
-	
+#func impulseDash():
+#	inputVector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left") * dash_speed
+#	inputVector.y = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")  * dash_speed
+#	inputVector
