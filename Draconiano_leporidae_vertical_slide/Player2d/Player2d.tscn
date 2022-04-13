@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Player2d/Player2d.gd" type="Script" id=1]
 [ext_resource path="res://undefined - Imgur.png" type="Texture" id=2]
-[ext_resource path="res://8XwZUqd.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape" id=4]
 
@@ -37,6 +36,10 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 0 ]
 }
 
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+load_path = "res://.import/8XwZUqd.png-e6dabbc01460f86ccf9af16289711f49.stex"
+
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
 
@@ -66,7 +69,7 @@ anchor_bottom = 1.0
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Control"]
 position = Vector2( 548.047, -403.953 )
 scale = Vector2( 1.61346, 1.54315 )
-texture = ExtResource( 3 )
+texture = SubResource( 5 )
 hframes = 4
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]

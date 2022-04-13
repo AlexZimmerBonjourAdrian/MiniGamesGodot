@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 
 window/size/width=1920
 window/size/height=1080
+window/size/fullscreen=true
 
 [input]
 
@@ -196,7 +197,10 @@ Slinding={
 [physics]
 
 common/enable_pause_aware_picking=true
+2d/bp_hash_table_size=23050
+2d/cell_size=300
 
 [rendering]
 
+batching/parameters/batch_buffer_size=29696
 environment/default_environment="res://default_env.tres"
