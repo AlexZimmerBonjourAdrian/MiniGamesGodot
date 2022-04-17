@@ -101,14 +101,14 @@ func _physics_process(delta):
 	check_sliding_logic(direction,delta)
 	
 	
-		
+	
 	#aplica la friccion
 	apply_friction(direction, delta)
 	#aplica la gravedad
 	apply_gravity(delta)
 	#chequea los botones de salto
 	jump()
-#	ashoot()
+#	shoot()
 	# aplica los controlles de rotacion
 	apply_controller_rotation()
 	#corrige un error par poder girar la camara

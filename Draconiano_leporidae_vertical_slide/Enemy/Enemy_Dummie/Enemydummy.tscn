@@ -629,10 +629,12 @@ radius = 10.0
 [sub_resource type="CapsuleShape" id=8]
 margin = 0.001
 radius = 0.7
-height = 2.0
+height = 2.04151
 
-[node name="EnemyMale" type="KinematicBody" groups=["Enemys"]]
+[node name="EnemyMale" type="KinematicBody" groups=["Enemy"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99801, 0 )
+collision_layer = 7
+collision_mask = 7
 script = ExtResource( 3 )
 
 [node name="Armature" type="Spatial" parent="."]
@@ -781,9 +783,6 @@ shape = SubResource( 7 )
 
 [node name="Eyes" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58182, 0.288642 )
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )

@@ -21,14 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="DL-Vertical Slide"
-run/main_scene="res://World/World.tscn"
+run/main_scene="res://2D/World.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
-window/size/fullscreen=true
+window/size/borderless=true
 
 [input]
 
@@ -193,6 +193,12 @@ Slinding={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Enemy"
+3d_physics/layer_3="World"
 
 [physics]
 
