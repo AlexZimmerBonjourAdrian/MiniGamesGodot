@@ -1,10 +1,10 @@
 extends Weapon
 #onready var _animation_player: AnimationPlayer = $AnimationPlayer
-onready var ppk_Crosshai = $CanvasLayer/Control/PPK/Crosshair
-onready var ppk_Crosshai_Shoot = $CanvasLayer/Control/PPK/CrosshairShoot
-onready var ppk_Shoot = $CanvasLayer/Control/PPK/Shoot
-onready var ppk_Reload = $CanvasLayer/Control/PPK/Reload
-onready var ppk_Idle = $CanvasLayer/Control/PPK/Idle
+onready var ppk_Crosshai = $PPK/Crosshair
+onready var ppk_Crosshai_Shoot = $PPK/CrosshairShoot
+onready var ppk_Shoot = $PPK/Shoot
+onready var ppk_Reload = $PPK/Reload
+onready var ppk_Idle = $PPK/Idle
 onready var animation = $AnimationPlayer
 
 var is_crossing 

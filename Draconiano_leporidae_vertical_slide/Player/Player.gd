@@ -28,7 +28,7 @@ var max_horizontal_speed = 60
 
 onready var reach = $Head/Camera/Reach
 onready var head = $Head
-onready var muzzle = $Head/Hand/Muzzle
+#onready var muzzle = $Head/Hand/Muzzle
 onready var touching_ground = $touching_ground
 onready var camera = $Head/Camera
 onready var bullet = preload("res://Bullet/Bullet_Prototype.tscn")
