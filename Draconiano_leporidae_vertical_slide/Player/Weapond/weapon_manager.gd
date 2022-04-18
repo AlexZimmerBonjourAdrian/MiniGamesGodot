@@ -1,57 +1,61 @@
-extends Node
+extends Spatial
 
 
 var all_weapons = {}
 
 var weapons = {}
 
-var hud
+var hud 
 
-var current_weapon # Referencia a el arma que se esta usando el jugador en ese momento
+var current_weapon  # Referencia a el arma que se esta usando el jugador en ese momento
 var current_weapon_slot = "Empty" # The current weapon slot 
 
 var changing_weapon = false 
 var unequipped_weapon = false
+
+var weapon_index = 0 # For switching weapons through mouse wheel
 
 func _ready():
 	
 	hud = owner.get_node("HUD")
 	#ejemplo de enum en godot
 	all_weapons = {
-		"MachineGun" : preload("res://Assets/WeaponModel_Prototype/img.tscn"),
-		"mousling" : preload ("res://Assets/WeaponModel_Prototype/Mousling.tscn")	
+		"Unarmed" : preload("res://Player/weapond/unarmed.tscn"),
+		"Ppk" : preload("res://Player/Weapond/ppk.tscn")
 	}
-	
 	weapons = {
-		"Empty" : $Unaread,
-		"Primary": $Weapon_A,
-		"Secundary": $Weapon_B
-		
+		"Empty" : $Unarmed,
+		"Primary": $Ppk
+#		"Secundary": $Weapon_B
 	}
 	# inicializacion de las referencias usando un for each de las armas 
 	for w in weapons:
 		if weapons[w] != null:
-			weapons[w].weapon.manager = self
+			weapons[w].weapon_manager = self
 			weapons[w].player = owner
 			weapons[w].visible = false
 	
+	#Set current weapon to unarmed
 	current_weapon = weapons["Empty"]
 	change_weapon("Empty")
 	
 	set_process(false)
 	
 	#process mientras se llama el cambio de armas
-func _Process(delta):
+func _process(delta):
 	
 	if unequipped_weapon == false:
 		if current_weapon.is_unequip_finished() == false:
 			return	
+			
 		unequipped_weapon = true
 		
 		current_weapon = weapons[current_weapon_slot]
 		current_weapon.equip()
+		
 	if current_weapon.is_equip_finished() == false:
 		return
+		
 	changing_weapon = false
 	set_process(false)
 			
@@ -65,14 +69,43 @@ func change_weapon(new_weapon_slot):
 		
 	current_weapon_slot = new_weapon_slot
 	changing_weapon = true
-	weapons[current_weapon_slot].update_ammo() # actualiza la cantidad de municion que pose el arma que se esta usando en el momento
 	
+	weapons[current_weapon_slot].update_ammo() # actualiza la cantidad de municion que pose el arma que se esta usando en el momento
+	update_weapon_index()
 	# Change Weapons
 	if current_weapon != null:
 		unequipped_weapon = false
 		current_weapon.unequip()
 		
 	set_process(true)
+
+
+# Scroll weapon change
+func update_weapon_index():
+	match current_weapon_slot:
+		"Empty":
+			weapon_index = 0
+		"Primary":
+			weapon_index = 1
+#		"Secondary":
+#			weapon_index = 2
+
+
+func next_weapon():
+	weapon_index += 1
+	
+	if weapon_index >= weapons.size():
+		weapon_index = 0
+	
+	change_weapon(weapons.keys()[weapon_index])
+
+func previous_weapon():
+	weapon_index -= 1
+	
+	if weapon_index < 0:
+		weapon_index = weapons.size() - 1
+	
+	change_weapon(weapons.keys()[weapon_index])
 
 # update HUB
 func update_hud(weapon_data):
@@ -83,6 +116,6 @@ func update_hud(weapon_data):
 			weapon_slot = "1"
 		"Primary":
 			weapon_slot = "2"
-		"secundary":
-			weapon_slot = "3"
+#		"secundary":
+#			weapon_slot = "3"		
 	hud.update_weapon_ui(weapon_data, weapon_slot)

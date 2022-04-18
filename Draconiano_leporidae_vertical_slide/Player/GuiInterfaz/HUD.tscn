@@ -8,29 +8,35 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="Backround" type="ColorRect" parent="."]
-margin_left = 135.0
-margin_top = 980.0
-margin_right = 232.0
-margin_bottom = 1020.0
+margin_left = 163.0
+margin_top = 924.0
+margin_right = 260.0
+margin_bottom = 964.0
+rect_scale = Vector2( 3, 3 )
 color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
 
 [node name="HealthUi" type="Label" parent="Backround"]
-margin_left = 10.0
-margin_top = 3.0
-margin_right = 84.0
-margin_bottom = 17.0
+margin_left = 12.0
+margin_top = 4.33331
+margin_right = 86.0
+margin_bottom = 18.3333
 text = "Health: 100"
 
 [node name="WeaponUI" type="Label" parent="Backround"]
-margin_left = 11.0
+margin_left = 10.0
 margin_top = 20.0
-margin_right = 85.0
+margin_right = 87.0
 margin_bottom = 34.0
 text = "Pistol:25/50"
 
 [node name="Display" type="ColorRect" parent="Backround"]
-margin_left = -46.0
-margin_top = 1.0
-margin_right = 1.0
-margin_bottom = 41.0
+margin_left = -47.6667
+margin_top = -1.0
+margin_right = -0.666664
+margin_bottom = 39.0
 color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+
+[node name="WeaponSlot" type="Label" parent="Backround/Display"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "1"

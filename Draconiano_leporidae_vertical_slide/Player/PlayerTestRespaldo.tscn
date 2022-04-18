@@ -1,7 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://undefined - Imgur.png" type="Texture" id=2]
+[ext_resource path="res://Assets/WeaponModel_Prototype/img.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/WeaponModel_Prototype/Mousling.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/SwitchWeapon.gd" type="Script" id=5]
 [ext_resource path="res://Player/Weapond/ppk.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Player/GuiInterfaz/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Player/Weapond/weapon_manager.gd" type="Script" id=8]
@@ -28,6 +31,10 @@ script/source = "extends Spatial
 	
 
 "
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=4]
 
 [sub_resource type="BoxShape" id=6]
 extents = Vector3( 0.321427, 0.331875, 0.287418 )
@@ -205,7 +212,6 @@ collision_mask = 116
 debug_shape_thickness = 5
 
 [node name="Camera" type="Spatial" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.713316 )
 visible = false
 
 [node name="Weaponds" type="Spatial" parent="Head/Camera/Camera"]
@@ -218,6 +224,31 @@ visible = false
 
 [node name="Ppk" parent="Head/Camera/Camera/Weaponds" instance=ExtResource( 6 )]
 visible = false
+
+[node name="Hand" type="Spatial" parent="Head"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.73837, 0 )
+visible = false
+script = ExtResource( 5 )
+
+[node name="Muzzle" type="Spatial" parent="Head/Hand"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.413908, 2.07804, -2.05587 )
+
+[node name="Mousling" parent="Head/Hand" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50759, -0.123565 )
+visible = false
+
+[node name="AnimationTree" parent="Head/Hand/Mousling" index="3"]
+parameters/playback = SubResource( 5 )
+
+[node name="img" parent="Head/Hand" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0751052, 2.52519, -0.276625 )
+visible = false
+
+[node name="L_arm_Pole" parent="Head/Hand/img" index="1"]
+visible = false
+
+[node name="AnimationTree" parent="Head/Hand/img" index="6"]
+parameters/playback = SubResource( 4 )
 
 [node name="Control" type="Control" parent="."]
 visible = false
@@ -244,4 +275,6 @@ anims/Idle = SubResource( 9 )
 anims/RESET = SubResource( 8 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
-visible = false
+
+[editable path="Head/Hand/Mousling"]
+[editable path="Head/Hand/img"]

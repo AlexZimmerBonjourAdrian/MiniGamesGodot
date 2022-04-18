@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/prototype_textures/PNG/Green/texture_01.png" type="Texture" id=1]
 [ext_resource path="res://assets/prototype_textures/Vector/texture_01.svg" type="Texture" id=2]
@@ -38,6 +38,12 @@ uv1_triplanar = true
 [sub_resource type="SpatialMaterial" id=7]
 albedo_texture = ExtResource( 2 )
 uv1_triplanar = true
+
+[sub_resource type="Curve3D" id=9]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0.0575104, -0.0224652, 1.3897, 0, 0, 0, 0, 0, 0, 0.128508, 0.0149419, 3.05372, 0, 0, 0, 0, 0, 0, 0.258133, 0.0403855, 6.25651, 0, 0, 0, 0, 0, 0, 0.393349, 0.0673687, 8.79614, 0, 0, 0, 0, 0, 0, 0.748009, 0.13932, 13.3059, 0, 0, 0, 0, 0, 0, 0.714077, 0.130327, 16.7218, 0, 0, 0, 0, 0, 0, 0.726095, 0.130327, 21.32, 0, 0, 0, 0, 0, 0, 0.823833, 0.148315, 25.918, 0, 0, 0, 0, 0, 0, 1.43244, 0.274232, 29.2008, 0, 0, 0, 0, 0, 0, 1.39428, 0.265235, 30.9965, 0, 0, 0, 0, 0, 0, 7.95501, 1.64134, 32.2493, 0, 0, 0, 0, 0, 0, 12.1932, 2.53177, 30.3989, 0, 0, 0, 0, 0, 0, 14.7979, 3.08041, 26.6697, 0, 0, 0, 0, 0, 0, 15.0758, 3.14337, 18.217, 0, 0, 0, 0, 0, 0, 14.4559, 3.01745, 10.5987, 0, 0, 0, 0, 0, 0, 14.1012, 2.94549, 6.08895, 0, 0, 0, 0, 0, 0, 10.9995, 2.29791, 0.00986689, 0, 0, 0, 0, 0, 0, 7.86664, 1.64134, -1.55848, 0, 0, 0, 0, 0, 0, 4.09391, 0.849851, -1.98655, 0, 0, 0, 0, 0, 0, 1.05093, 0.211263, -1.9786, 0, 0, 0, 0, 0, 0, 0.497313, 0.0943367, -0.619576, 0, 0, 0, 0, 0, 0, 0.0575104, -0.0224652, 1.3897 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
 
 [node name="Game" type="Node"]
 script = ExtResource( 6 )
@@ -593,10 +599,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0831, 2.62803, 0 )
 [node name="Enemy2" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.84219, 0.506964, -24.5271 )
 
+[node name="Path" type="Path" parent="Navigation"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 2.85593, -0.0187027 )
+curve = SubResource( 9 )
+
+[node name="PathFollow" type="PathFollow" parent="Navigation/Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0575104, -0.0224652, 1.3897 )
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.80287 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

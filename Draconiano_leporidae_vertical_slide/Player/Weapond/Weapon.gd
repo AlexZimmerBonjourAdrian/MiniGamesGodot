@@ -21,7 +21,7 @@ export var unequip_speed = 1.0
 #Equip/Unequip Cycle
 func equip():
 	animation_player.play("Equip", -1.0, equip_speed)
-	update_ammo()
+#	update_ammo()
 	
 func unequip():
 	animation_player.play("Unequip", -1.0, unequip_speed)
@@ -37,6 +37,13 @@ func is_unequip_finished():
 	else:
 		return true
 
+#show/Hide Weapon
+func show_weapon():
+	visible = true
+
+func hide_weapon():
+	visible = false
+
 # Animation Finished
 func on_animation_finish(anim_name):
 	match anim_name:
@@ -51,4 +58,5 @@ func update_ammo(action = "Refresh"):
 		"Name" : weapon_name
 	}
 	
+	weapon_manager.update_hud(weapon_data)
 	

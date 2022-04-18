@@ -41,6 +41,7 @@ onready var bullet = preload("res://Bullet/Bullet_Prototype.tscn")
 
 #var snap = Vector3.DOWN
 
+onready var weapon_manager = $Head/Camera/Camera/Weaponds
 
 var direction = Vector3()
 
@@ -100,15 +101,19 @@ func _physics_process(delta):
 	#Logica de Deslizarse
 	check_sliding_logic(direction,delta)
 	
-	
-	
 	#aplica la friccion
 	apply_friction(direction, delta)
+	
 	#aplica la gravedad
 	apply_gravity(delta)
+	
 	#chequea los botones de salto
 	jump()
 #	shoot()
+
+#	weapons manager process weapons
+	process_weapons()
+	
 	# aplica los controlles de rotacion
 	apply_controller_rotation()
 	#corrige un error par poder girar la camara
@@ -272,6 +277,13 @@ func subir():
 #		velocity.z += Vector3.FORWARD.z
 		is_on_leadge = false
 #		update_Print("entra")
-	
+
+func process_weapons():
+	if Input.is_action_just_pressed("Empty"):
+		weapon_manager.change_weapon("Empty")
+	if Input.is_action_just_pressed("Primary"):
+		weapon_manager.change_weapon("Primary")
+#	if Input.is_action_just_pressed("Secundary"):
+#		weapon_manager.change_weapon("Secundary")
 	
 	
