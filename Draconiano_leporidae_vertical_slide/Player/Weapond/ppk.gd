@@ -1,4 +1,4 @@
-extends Weapon
+extends Armed
 #onready var _animation_player: AnimationPlayer = $AnimationPlayer
 onready var ppk_Crosshai = $PPK/Crosshair
 onready var ppk_Crosshai_Shoot = $PPK/CrosshairShoot
@@ -6,6 +6,8 @@ onready var ppk_Shoot = $PPK/Shoot
 onready var ppk_Reload = $PPK/Reload
 onready var ppk_Idle = $PPK/Idle
 onready var animation = $AnimationPlayer
+onready var RayNormal = $Normal
+onready var RayCrosshair = $Crosshair
 
 var is_crossing 
 
@@ -81,20 +83,3 @@ func on_animation_finish(anim_name):
 	.on_animation_finish(anim_name)
 #func update_Print(testprinter):
 #	$Control/Background/Print.text = String(testprinter)
-func equip():
-	update_ammo()
-	
-func unequip():
-	pass
-
-func is_equip_finished():
-	return true
-func is_unequip_finished():
-	return true
-
-func update_ammo(action = "Refresh"):
-	
-		var weapon_data = {
-			"Name" : weapon_name
-		}
-		weapon_manager.update_hud(weapon_data)

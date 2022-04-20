@@ -1,62 +1,40 @@
 extends Spatial
 class_name Weapon
 
-#References
+# References
 var weapon_manager = null
 var player = null
-var animation_player
+var ray = null
 
-#weapon states
+# Weapon States
 var is_equipped = false
-var is_firing = false
-var is_reloading = false
 
-#weapon Parameters
-export var weapon_name = "weapon"
+# Weapon Parameters
+export var weapon_name = "Weapon"
+export(Texture) var weapon_image = null
 
-#Optional
-export var equip_speed = 1.0
-export var unequip_speed = 1.0
 
 #Equip/Unequip Cycle
+# Equip/Unequip Cycle
 func equip():
-	animation_player.play("Equip", -1.0, equip_speed)
-#	update_ammo()
-	
+	pass
+
 func unequip():
-	animation_player.play("Unequip", -1.0, unequip_speed)
+	pass
 
 func is_equip_finished():
-	if is_equipped:
-		return true
-	else:
-		return false
+	return true
+
 func is_unequip_finished():
-	if is_equipped:
-		return false
-	else:
-		return true
+	return true
 
-#show/Hide Weapon
-func show_weapon():
-	visible = true
-
-func hide_weapon():
-	visible = false
-
-# Animation Finished
-func on_animation_finish(anim_name):
-	match anim_name:
-		"Unequip":
-			is_equipped = false
-		"Equip":
-			is_equipped = true
-			
+# Update Ammo
 func update_ammo(action = "Refresh"):
 	
 	var weapon_data = {
-		"Name" : weapon_name
+		"Name" : weapon_name,
+#		"Image" : weapon_image
 	}
 	
 	weapon_manager.update_hud(weapon_data)
-	
+

@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Weapon",
+"class": "Armed",
+"language": "GDScript",
+"path": "res://Player/Weapond/armed.gd"
+}, {
 "base": "Spatial",
 "class": "Weapon",
 "language": "GDScript",
 "path": "res://Player/Weapond/Weapon.gd"
 } ]
 _global_script_class_icons={
+"Armed": "",
 "Weapon": ""
 }
 

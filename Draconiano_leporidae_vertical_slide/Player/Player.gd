@@ -26,7 +26,7 @@ var is_sliding = false
 
 var max_horizontal_speed = 60
 
-onready var reach = $Head/Camera/Reach
+#onready var reach = $Head/Camera/Reach
 onready var head = $Head
 #onready var muzzle = $Head/Hand/Muzzle
 onready var touching_ground = $touching_ground
@@ -41,7 +41,7 @@ onready var bullet = preload("res://Bullet/Bullet_Prototype.tscn")
 
 #var snap = Vector3.DOWN
 
-onready var weapon_manager = $Head/Camera/Camera/Weaponds
+onready var weapon_manager = $Head/Camera/Weaponds
 
 var direction = Vector3()
 
@@ -193,8 +193,8 @@ func apply_controller_rotation():
 		head.rotate_x(deg2rad(-axis_vector.y) * controller_sensitivity)
 
 
-func update_Print(testprinter):
-	$Control/Background/Print.text = String(testprinter)
+#func update_Print(testprinter):
+#	$Control/Background/Print.text = String(testprinter)
 #function Prototype para crear balas 
 #Todo:Cambiar el tipo de disparo segun el arma
 
@@ -259,7 +259,7 @@ func in_on_leadge():
 		
 #	update_Print("entra")
 	if DetectionUp.is_colliding():
-		update_Print("entra")
+#		update_Print("entra")
 		is_on_leadge = true
 		subir()
 	elif DetectionDown.is_colliding():
@@ -272,7 +272,7 @@ func in_on_leadge():
 		
 func subir():
 	if is_on_leadge == true:
-		update_Print(DetectionDown.is_colliding())
+#		update_Print(DetectionDown.is_colliding())
 		velocity.y += 60
 #		velocity.z += Vector3.FORWARD.z
 		is_on_leadge = false
@@ -285,5 +285,16 @@ func process_weapons():
 		weapon_manager.change_weapon("Primary")
 #	if Input.is_action_just_pressed("Secundary"):
 #		weapon_manager.change_weapon("Secundary")
+	
+	# Firing
+	if Input.is_action_just_pressed("click"):
+		weapon_manager.fire()
+#	if Input.is_action_just_released("click"):
+#		weapon_manager.find_stop()
+	
+	# Reloading
+	if Input.is_action_just_pressed("reload"):
+		weapon_manager.reload()
+	
 	
 	

@@ -182,7 +182,8 @@ script = SubResource( 3 )
 
 [node name="Camera" type="Camera" parent="Head"]
 
-[node name="Reach" type="RayCast" parent="Head/Camera"]
+[node name="RayCast" type="RayCast" parent="Head/Camera"]
+visible = false
 cast_to = Vector3( 0, -1, -60 )
 
 [node name="Sprite" type="Sprite" parent="Head/Camera"]
@@ -204,14 +205,12 @@ cast_to = Vector3( 0, -1.5, 0 )
 collision_mask = 116
 debug_shape_thickness = 5
 
-[node name="Camera" type="Spatial" parent="Head/Camera"]
-
-[node name="Weaponds" type="Spatial" parent="Head/Camera/Camera"]
+[node name="Weaponds" type="Spatial" parent="Head/Camera"]
 script = ExtResource( 8 )
 
-[node name="Unarmed" parent="Head/Camera/Camera/Weaponds" instance=ExtResource( 9 )]
+[node name="Unarmed" parent="Head/Camera/Weaponds" instance=ExtResource( 9 )]
 
-[node name="Ppk" parent="Head/Camera/Camera/Weaponds" instance=ExtResource( 6 )]
+[node name="Ppk" parent="Head/Camera/Weaponds" instance=ExtResource( 6 )]
 
 [node name="touching_ground" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113807, 0 )
@@ -227,7 +226,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 3 )
 
-[node name="Backround" type="ColorRect" parent="HUD"]
+[node name="Background" type="ColorRect" parent="HUD"]
 margin_left = 163.0
 margin_top = 924.0
 margin_right = 260.0
@@ -235,28 +234,28 @@ margin_bottom = 964.0
 rect_scale = Vector2( 3, 3 )
 color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
 
-[node name="HealthUi" type="Label" parent="HUD/Backround"]
+[node name="HealthUI" type="Label" parent="HUD/Background"]
 margin_left = 12.0
 margin_top = 4.33331
 margin_right = 86.0
 margin_bottom = 18.3333
 text = "Health: 100"
 
-[node name="WeaponUI" type="Label" parent="HUD/Backround"]
+[node name="WeaponUI" type="Label" parent="HUD/Background"]
 margin_left = 10.0
 margin_top = 20.0
 margin_right = 87.0
 margin_bottom = 34.0
 text = "Pistol:25/50"
 
-[node name="Display" type="ColorRect" parent="HUD/Backround"]
+[node name="Display" type="ColorRect" parent="HUD/Background"]
 margin_left = -47.6667
 margin_top = -1.0
 margin_right = -0.666664
 margin_bottom = 39.0
 color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 
-[node name="WeaponSlot" type="Label" parent="HUD/Backround/Display"]
+[node name="WeaponSlot" type="Label" parent="HUD/Background/Display"]
 margin_right = 40.0
 margin_bottom = 14.0
 text = "1"

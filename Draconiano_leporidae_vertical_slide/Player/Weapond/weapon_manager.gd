@@ -1,3 +1,4 @@
+tool
 extends Spatial
 
 
@@ -10,6 +11,8 @@ var hud
 var current_weapon  # Referencia a el arma que se esta usando el jugador en ese momento
 var current_weapon_slot = "Empty" # The current weapon slot 
 
+
+
 var changing_weapon = false 
 var unequipped_weapon = false
 
@@ -17,7 +20,10 @@ var weapon_index = 0 # For switching weapons through mouse wheel
 
 func _ready():
 	
+	 # Adds exception of player to the shooting raycast
 	hud = owner.get_node("HUD")
+#	Raycast.add_exception(owner)
+	 # Agrega una esepcion de detecion para que no detecte al jugador 
 	#ejemplo de enum en godot
 	all_weapons = {
 		"Unarmed" : preload("res://Player/weapond/unarmed.tscn"),
@@ -33,6 +39,7 @@ func _ready():
 		if weapons[w] != null:
 			weapons[w].weapon_manager = self
 			weapons[w].player = owner
+#			weapons[w].ray = get_parent().get_node("Camera/Reach")
 			weapons[w].visible = false
 	
 	#Set current weapon to unarmed
@@ -119,3 +126,15 @@ func update_hud(weapon_data):
 #		"secundary":
 #			weapon_slot = "3"		
 	hud.update_weapon_ui(weapon_data, weapon_slot)
+
+# Firing and Reloading
+func fire():
+	if not changing_weapon:
+		current_weapon.fire()
+		
+#func fire_stop():
+#	current_weapon.fire_stop()
+	
+func reload():
+ if not changing_weapon:
+		current_weapon.reload()
