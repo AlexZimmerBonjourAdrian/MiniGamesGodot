@@ -14,7 +14,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/Weapond/armed.gd"
 }, {
-"base": "Spatial",
+"base": "Node2D",
 "class": "Weapon",
 "language": "GDScript",
 "path": "res://Player/Weapond/Weapon.gd"

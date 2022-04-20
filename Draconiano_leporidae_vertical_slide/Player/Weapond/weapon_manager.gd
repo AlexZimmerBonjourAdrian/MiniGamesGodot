@@ -1,5 +1,4 @@
-tool
-extends Spatial
+extends Node2D
 
 
 var all_weapons = {}
@@ -130,7 +129,8 @@ func update_hud(weapon_data):
 # Firing and Reloading
 func fire():
 	if not changing_weapon:
-		current_weapon.fire()
+#		if current_weapon_slot != "Empty":
+				current_weapon.fire()
 		
 #func fire_stop():
 #	current_weapon.fire_stop()

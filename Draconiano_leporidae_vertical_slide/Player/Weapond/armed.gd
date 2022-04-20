@@ -7,7 +7,6 @@ var animation_player
 # Weapon States
 var is_firing = false
 var is_reloading = false
-
 # Weapon Parameters
 export var ammo_in_mag = 15
 export var extra_ammo = 30
@@ -27,15 +26,16 @@ export var unequip_speed = 1.0
 export var reload_speed = 1.0
 
 
+
 # Fire Cycle
 func fire():
 	if not is_reloading:
 		if ammo_in_mag > 0:
+			
 			if not is_firing:
 				is_firing = true
 				animation_player.get_animation("shoot").loop = true
 				animation_player.play("shoot", -1.0, fire_rate)
-			
 			return
 		
 		elif is_firing:
@@ -44,17 +44,19 @@ func fire():
 func fire_stop():
 	is_firing = false
 	animation_player.get_animation("shoot").loop = false
-
-func fire_bullet(fire="fire"):    # Will be called from the animation track
-#	muzzle_flash.emitting = true
-	update_ammo(fire)
 	
+	
+
+func fire_bullet():    # Will be called from the animation track
+###	muzzle_flash.emitting = true
+#		update_ammo(fire)
+		update_ammo("consume")
+#
 #	ray.force_raycast_update()
 	
 #	if ray.is_colliding():
 #		var impact = Global.instantiate_node(impact_effect, ray.get_collision_point())
 #		impact.emitting = true
-
 
 # Reload
 func reload():
@@ -65,15 +67,18 @@ func reload():
 		update_ammo("reload")
 		is_reloading = true
 
-# Equip/Unequip Cycle
+## Equip/Unequip Cycle
 func equip():
-	animation_player.play("Equip", -1.0, equip_speed)
+	show_weapon()
+#	animation_player.play("Equip", -1.0, equip_speed)
 	is_reloading = false
 
 func unequip():
-	animation_player.play("Unequip", -1.0, unequip_speed)
-
+#	animation_player.play("Unequip", -1.0, unequip_speed)
+	hide_weapon()
 #
+
+
 func is_equip_finished():
 	if is_equipped:
 		return true
@@ -103,12 +108,12 @@ func on_animation_finish(anim_name):
 			is_equipped = true
 		"Reload":
 			is_reloading = false
-			update_ammo("reload")
+			
 
 func update_ammo(action = "Refresh", additional_ammo = 0):
 	
 	match action:
-		"fire":
+		"consume":
 			ammo_in_mag -= 1
 		
 		"reload":
@@ -130,7 +135,6 @@ func update_ammo(action = "Refresh", additional_ammo = 0):
 		"Ammo" : str(ammo_in_mag),
 		"ExtraAmmo" : str(extra_ammo)
 	}
-
 	weapon_manager.update_hud(weapon_data)
 	
 

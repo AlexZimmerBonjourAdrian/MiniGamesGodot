@@ -43,16 +43,13 @@ onready var bullet = preload("res://Bullet/Bullet_Prototype.tscn")
 
 onready var weapon_manager = $Head/Camera/Weaponds
 
-var direction = Vector3()
-
-
-
-	
+var direction = Vector3()	
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().call_group("weapon", "get_type",self)
 	get_tree().call_group("Enemys", "set_player",self)
+	weapon_manager.change_weapon("Empty")
 #
 func _unhandled_input(event):
 	if event.is_action_pressed("click"):
@@ -281,14 +278,17 @@ func subir():
 func process_weapons():
 	if Input.is_action_just_pressed("Empty"):
 		weapon_manager.change_weapon("Empty")
+	
 	if Input.is_action_just_pressed("Primary"):
 		weapon_manager.change_weapon("Primary")
+		
 #	if Input.is_action_just_pressed("Secundary"):
 #		weapon_manager.change_weapon("Secundary")
 	
 	# Firing
 	if Input.is_action_just_pressed("click"):
-		weapon_manager.fire()
+#		if(	!weapon_manager.current_weapon.unequip()):
+			weapon_manager.fire()
 #	if Input.is_action_just_released("click"):
 #		weapon_manager.find_stop()
 	
