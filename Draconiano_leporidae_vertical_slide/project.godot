@@ -30,6 +30,10 @@ config/name="DL-Vertical Slide"
 run/main_scene="res://2D/World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Singleton/Global.gd"
+
 [display]
 
 window/size/width=1920

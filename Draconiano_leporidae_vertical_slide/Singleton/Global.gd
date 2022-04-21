@@ -1,4 +1,8 @@
-extends Node
+extends Node2D
+
+var current_scene = null
+
+var Player = null
 
 func instantiate_node(packed_scene, pos = null, parent = null):
 	var clone = packed_scene.instance()
@@ -13,3 +17,10 @@ func instantiate_node(packed_scene, pos = null, parent = null):
 		clone.global_transform.origin = pos
 		
 	return clone
+	
+func setPlayer(player):
+	Player = player
+
+func getPlayer():
+	return Player
+	

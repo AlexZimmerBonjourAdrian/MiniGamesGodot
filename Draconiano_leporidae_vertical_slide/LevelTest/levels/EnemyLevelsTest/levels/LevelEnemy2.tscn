@@ -602,4 +602,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.84219, 0.506964, -24.5271 )
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="Control"]
+margin_right = 192.0
+margin_bottom = 60.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Print" type="Label" parent="Control/Background"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Print"
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

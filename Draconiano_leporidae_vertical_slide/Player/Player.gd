@@ -48,8 +48,9 @@ var direction = Vector3()
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().call_group("weapon", "get_type",self)
-	get_tree().call_group("Enemys", "set_player",self)
+	get_tree().call_group("Enemy", "set_player",self)
 	weapon_manager.change_weapon("Empty")
+	Global.setPlayer(self)
 #
 func _unhandled_input(event):
 	if event.is_action_pressed("click"):
