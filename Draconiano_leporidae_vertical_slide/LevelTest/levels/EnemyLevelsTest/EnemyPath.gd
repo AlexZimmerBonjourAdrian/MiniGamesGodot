@@ -88,8 +88,9 @@ func setState(astate):
 			
 			
 		STATE_DEAD:
-			update_Print("Estoy Muerto")
-			visible = false
+#			supdate_Print("Estoy Muerto")
+#			visible = false
+			queue_free()
 			
 func dead():
 	update_Print("Estoy Muerto")
