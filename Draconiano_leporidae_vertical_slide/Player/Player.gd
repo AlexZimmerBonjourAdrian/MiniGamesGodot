@@ -32,7 +32,8 @@ onready var head = $Head
 onready var touching_ground = $touching_ground
 onready var camera = $Head/Camera
 onready var bullet = preload("res://Bullet/Bullet_Prototype.tscn")
-
+onready var normal = $Head/Camera/Normal
+onready var crosshair = $Head/Camera/Crosshair
 #TODO:maquina de esta
 #var state = 0
 #var  STATE_IDLE = 0
@@ -290,6 +291,8 @@ func process_weapons():
 	if Input.is_action_just_pressed("click"):
 #		if(	!weapon_manager.current_weapon.unequip()):
 			weapon_manager.fire()
+			detection_enemy_shoot()
+			
 #	if Input.is_action_just_released("click"):
 #		weapon_manager.find_stop()
 	
@@ -298,4 +301,8 @@ func process_weapons():
 		weapon_manager.reload()
 	
 	
-	
+func detection_enemy_shoot():
+	if(normal.is_colliding()):
+		var col = normal.get_collider()
+		if(col.is_in_group("Enemy")):
+			col.call("dead")

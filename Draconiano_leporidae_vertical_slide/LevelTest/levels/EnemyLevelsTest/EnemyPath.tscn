@@ -44,6 +44,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02852, 0 )
 shape = SubResource( 4 )
 
 [node name="RayCast" type="RayCast" parent="Eyes"]
+cast_to = Vector3( 0, -1, -100 )
 
 [node name="ShootTimer" type="Timer" parent="."]
 

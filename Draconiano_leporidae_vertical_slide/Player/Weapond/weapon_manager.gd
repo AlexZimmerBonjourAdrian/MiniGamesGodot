@@ -8,7 +8,7 @@ var weapons = {}
 var hud 
 
 var current_weapon  # Referencia a el arma que se esta usando el jugador en ese momento
-var current_weapon_slot = "Empty" # The current weapon slot 
+var current_weapon_slot = "Primary" # The current weapon slot 
 
 
 

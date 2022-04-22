@@ -519,16 +519,7 @@ frames = SubResource( 60 )
 animation = "ppk-crosshair"
 
 [node name="Idle" type="Sprite" parent="PPK"]
-visible = false
 position = Vector2( -3.12488, -526.203 )
 scale = Vector2( 2.32328, 2.53587 )
 texture = ExtResource( 4 )
 hframes = 19
-
-[node name="Normal" type="RayCast" parent="."]
-enabled = true
-cast_to = Vector3( 0, -1, -100 )
-
-[node name="Crosshair" type="RayCast" parent="."]
-enabled = true
-cast_to = Vector3( 0, -1, -100 )

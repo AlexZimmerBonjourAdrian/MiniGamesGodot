@@ -598,6 +598,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1046, 0.506964, 0 )
 
 [node name="EnemyMale" parent="Navigation" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0831, 2.62803, 0 )
+visible = false
 
 [node name="Enemy2" parent="Navigation" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.84219, 0.506964, -24.5271 )
@@ -613,5 +614,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0575104, -0.0224652, 1.3897 
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79584, 0.55842, 12.0546 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

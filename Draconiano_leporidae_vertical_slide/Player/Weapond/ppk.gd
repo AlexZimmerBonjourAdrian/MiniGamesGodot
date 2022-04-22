@@ -6,8 +6,8 @@ onready var ppk_Shoot = $PPK/Shoot
 onready var ppk_Reload = $PPK/Reload
 onready var ppk_Idle = $PPK/Idle
 onready var animation = $AnimationPlayer
-onready var RayNormal = $Normal
-onready var RayCrosshair = $Crosshair
+#onready var RayNormal = $Camera/Normal
+#onready var RayCrosshair = $Crosshair
 
 var is_crossing 
 
@@ -37,7 +37,7 @@ func _input(event):
 			ppk_Crosshai.visible = false
 			ppk_Crosshai_Shoot.visible = true
 			animation.play("CrosshairShoot") 
-			detection_enemy_crosshair()
+#			detection_enemy_crosshair()
 			
 		if(on_animation_finish("CrosshairShoot") ):
 			ppk_Crosshai_Shoot.visible = false
@@ -60,7 +60,7 @@ func _input(event):
 			ppk_Reload.visible = false
 			ppk_Shoot.visible = true
 			animation.play("shoot")
-			detection_enemy_shoot()
+#			detection_enemy_shoot()
 		elif event.is_action_released("click"):
 			if(on_animation_finish("shoot")):
 				ppk_Shoot.visible = false
@@ -110,15 +110,16 @@ func setIsCrossing(Crossing):
 func on_animation_finish(anim_name):
 	.on_animation_finish(anim_name)
 
-func detection_enemy_shoot():
-	if(get_node("Normal").is_colliding()):
-		var col = get_node("Normal").get_collider()
-		if(col.is_in_group("Enemy")):
-			col.dead()
-func detection_enemy_crosshair():
-	if(get_node("Crosshair").is_colliding()):
-		var col = get_node("Crosshair").get_collider()
-		if(col.is_in_group("Enemy")):
-			col.dead()
+#func detection_enemy_shoot():
+#	if(get_node("Normal").is_colliding()):
+#		var col = get_node("Normal").get_collider()
+#		if(col.is_in_group("Enemy")):
+#			col.call("dead")
+#
+#func detection_enemy_crosshair():
+#	if(get_node("Crosshair").is_colliding()):
+#		var col = get_node("Shoot").get_collider()
+#		if(col.is_in_group("Enemy")):
+#			col.dead()
 #func update_Print(testprinter):
 #	$Control/Background/Print.text = String(testprinter)

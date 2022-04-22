@@ -8,6 +8,7 @@ var velocity = Vector3.ZERO
 var threshold = .1
 var is_dead = false
 var player = null
+
 enum {
 	STATE_STAND,
 	STATE_PATRULLA,
@@ -87,12 +88,11 @@ func setState(astate):
 			
 			
 		STATE_DEAD:
+			update_Print("Estoy Muerto")
 			visible = false
-
- 
-
-
+			
 func dead():
+	update_Print("Estoy Muerto")
 	setState(STATE_DEAD)
 
 func _on_Area_body_entered(body):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://cIbd2yM.png" type="Texture" id=1]
-[ext_resource path="res://2D/Enemy2D/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://2D/Enemy2D/Enemy2D.gd" type="Script" id=2]
 [ext_resource path="res://Enemy/new_animation.tres" type="Animation" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
