@@ -9,6 +9,8 @@ var threshold = .1
 var is_dead = false
 var player = null
 
+
+
 enum {
 	STATE_STAND,
 	STATE_PATRULLA,

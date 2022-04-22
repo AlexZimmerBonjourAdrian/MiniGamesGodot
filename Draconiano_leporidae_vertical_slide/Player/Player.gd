@@ -1,15 +1,9 @@
-extends KinematicBody
+extends "res://Herarchy/PlayerGeneric.gd"
 
-export var max_speed = 12
-export var max_speed_acceleration = 22
-export var acceleration = 120
-export var friction = 50
-export var air_firction = 10
-export var jump_impulse = 20
-export var gravity = -40
 
-export var mouse_sensitvity = .1
-export var controller_sensitivity = 3
+
+#export var mouse_sensitvity = .1
+#export var controller_sensitivity = 3
 
 export (int, 0, 10) var push = 1
 
@@ -19,12 +13,11 @@ var snap_vector = Vector3.ZERO
 var weapon = []
 
 onready var state_machine = $AnimationPlayer
-var isrunning:bool = false
 
-var can_slider = true
-var is_sliding = false
 
-var max_horizontal_speed = 60
+
+
+
 
 #onready var reach = $Head/Camera/Reach
 onready var head = $Head
@@ -35,33 +28,41 @@ onready var bullet = preload("res://Bullet/Bullet_Prototype.tscn")
 onready var normal = $Head/Camera/Normal
 onready var crosshair = $Head/Camera/Crosshair
 #TODO:maquina de esta
-#var state = 0
-#var  STATE_IDLE = 0
-#var  STATE_MOVE = 1
-#var  STATE_DASH = 2
+var state = 0
+var  STATE_IDLE = 0
+var  STATE_MOVE = 1
+var  STATE_DASH = 2
+var  STATE_DYNG = 3
+var  STATE_DEAD = 4
 
 #var snap = Vector3.DOWN
 
-onready var weapon_manager = $Head/Camera/Weaponds
 
-var direction = Vector3()	
+
+
+#direction = Vector3()	
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	._ready()
+#	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#	get_tree().call_group("weapon", "get_type",self)
+#	get_tree().call_group("Enemy", "set_player",self)
 	get_tree().call_group("weapon", "get_type",self)
 	get_tree().call_group("Enemy", "set_player",self)
+	weapon_manager = $Head/Camera/Weaponds
 	weapon_manager.change_weapon("Empty")
 	Global.setPlayer(self)
 #
 func _unhandled_input(event):
-	if event.is_action_pressed("click"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		
-	if event.is_action_pressed("toggle_mouse_mode"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	._unhandled_input(event)
+#	if event.is_action_pressed("click"):
+#		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#
+#	if event.is_action_pressed("toggle_mouse_mode"):
+#		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+#			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+#		else:
+#			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(deg2rad(-event.relative.x * mouse_sensitvity))
@@ -286,7 +287,6 @@ func process_weapons():
 		
 #	if Input.is_action_just_pressed("Secundary"):
 #		weapon_manager.change_weapon("Secundary")
-	
 	# Firing
 	if Input.is_action_just_pressed("click"):
 #		if(	!weapon_manager.current_weapon.unequip()):
@@ -306,3 +306,56 @@ func detection_enemy_shoot():
 		var col = normal.get_collider()
 		if(col.is_in_group("Enemy")):
 			col.call("dead")
+			
+func setState(astate):
+	state = astate
+	match state:
+		STATE_IDLE:
+			pass
+		STATE_MOVE:
+			pass
+		STATE_DASH:
+			pass
+		STATE_DYNG:
+			pass
+		STATE_DEAD:
+			pass
+
+#funciones de entrada y salida de estado 
+#se usan cuando se pasan de estado sea se entra y se 
+#setean o configuran cosas o se sale para modificar o 
+#ejecutar cosas a la hora de salir de estos
+#TODO:Esquematizar las funciones pero no implementarlas ahora
+#TODO:Revisar si es viable para este vertical slide
+#func state_entered(state):
+#	match state:
+#		STATE_IDLE:
+#			pass
+#		STATE_MOVE:
+#			pass
+#		STATE_DASH:
+#			pass
+#		STATE_DYNG:
+#			pass
+#		STATE_DEAD:
+#			pass
+			
+#func state_exit(state):
+#	match state:
+#		STATE_IDLE:
+#			pass
+#		STATE_MOVE:
+#			pass
+#		STATE_DASH:
+#			pass
+#		STATE_DYNG:
+#			pass
+#		STATE_DEAD:
+#			pass
+
+#funcion de muerte	
+#func dying():
+#
+	
+	
+	
