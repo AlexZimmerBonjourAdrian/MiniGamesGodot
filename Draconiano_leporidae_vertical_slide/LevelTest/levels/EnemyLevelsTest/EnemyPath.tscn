@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://LevelTest/levels/EnemyLevelsTest/EnemyPath.gd" type="Script" id=1]
 
@@ -13,6 +13,9 @@ height = 2.0
 [sub_resource type="CylinderShape" id=3]
 radius = 1.3656
 height = 14.1824
+
+[sub_resource type="SphereShape" id=5]
+radius = 12.0
 
 [sub_resource type="SphereShape" id=4]
 radius = 0.7
@@ -36,6 +39,10 @@ shape = SubResource( 2 )
 [node name="detection" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, -0.0883206, -0.996092, 0, 0.996092, -0.0883206, -0.13332, 1.99162, -7.53612 )
 shape = SubResource( 3 )
+
+[node name="Shooting" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55338, 0 )
+shape = SubResource( 5 )
 
 [node name="Eyes" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.02852, 0 )

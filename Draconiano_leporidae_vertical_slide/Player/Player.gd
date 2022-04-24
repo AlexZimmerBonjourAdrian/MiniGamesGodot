@@ -7,8 +7,7 @@ extends "res://Herarchy/PlayerGeneric.gd"
 
 export (int, 0, 10) var push = 1
 
-var velocity = Vector3.ZERO
-var snap_vector = Vector3.ZERO
+
 
 var weapon = []
 
@@ -22,18 +21,16 @@ onready var state_machine = $AnimationPlayer
 #onready var reach = $Head/Camera/Reach
 onready var head = $Head
 #onready var muzzle = $Head/Hand/Muzzle
-onready var touching_ground = $touching_ground
+
 onready var camera = $Head/Camera
 onready var bullet = preload("res://Bullet/Bullet_Prototype.tscn")
 onready var normal = $Head/Camera/Normal
 onready var crosshair = $Head/Camera/Crosshair
 #TODO:maquina de esta
-var state = 0
-var  STATE_IDLE = 0
-var  STATE_MOVE = 1
-var  STATE_DASH = 2
-var  STATE_DYNG = 3
-var  STATE_DEAD = 4
+var is_on_leadge = false
+#var in_on_leadge() = false
+onready var DetectionUp = $Head/Camera/DetectionUp
+onready var DetectionDown = $Head/Camera/DetectionDown
 
 #var snap = Vector3.DOWN
 
@@ -52,6 +49,7 @@ func _ready():
 	weapon_manager = $Head/Camera/Weaponds
 	weapon_manager.change_weapon("Empty")
 	Global.setPlayer(self)
+	touching_ground = $touching_ground
 #
 func _unhandled_input(event):
 	._unhandled_input(event)
@@ -71,48 +69,7 @@ func _unhandled_input(event):
 	
 			
 func _physics_process(delta):
-	#se devuelve un input vector
-	var input_vector = get_input_vector()
-	#devuelve una direccion a la que se esta moviendo
-	var direction = get_direction(input_vector)
-	
-	#Running Logic
-	if Input.is_action_pressed("Run"):
-#		state_machine.play("Run")
-		isrunning = true
-	elif Input.is_action_just_released("Run"):
-#		state_machine.play("Idle")
-		isrunning = false
-	
-	
-	
-	if isrunning:
-		if(!is_sliding):
-		#aplicar correr
-			
-			run(direction,delta)
-	else:
-		if(!is_sliding):
-		#aplica la direccion
-			apply_movement(direction, delta)
-		
-	in_on_leadge()
-#	apply_movement(direction, delta)
-	#Logica de Deslizarse
-	check_sliding_logic(direction,delta)
-	
-	#aplica la friccion
-	apply_friction(direction, delta)
-	
-	#aplica la gravedad
-	apply_gravity(delta)
-	
-	#chequea los botones de salto
-	jump()
-#	shoot()
-
-#	weapons manager process weapons
-	process_weapons()
+	._physics_process(delta)
 	
 	# aplica los controlles de rotacion
 	apply_controller_rotation()
@@ -120,6 +77,11 @@ func _physics_process(delta):
 	head.rotation.x = clamp(head.rotation.x, deg2rad(-75), deg2rad(75))
 	velocity = move_and_slide_with_snap(velocity, snap_vector, Vector3.UP, true, 4, .785398, false)
 	
+	in_on_leadge()
+	
+	process_weapons()
+	
+	check_sliding_logic(direction,delta)
 #	esto es for que recorre y chequea los objetos que coliciona pudiendo chequear y actuar que se esta collisionando algo muy importante
 #   En esto sse colicciona con objetos de mundo, como cajas,
 #   esto tambien es usado para el sistema de pickup
@@ -136,51 +98,25 @@ func _physics_process(delta):
 				collision.collider.queue_free()
 			
 	#asigna los controles de movimiento y setea las direcciones de forma sencilla 
-func get_input_vector():
-	var input_vector = Vector3.ZERO
-	input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	input_vector.z = Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")
-	return input_vector.normalized() if input_vector.length() > 1 else input_vector
-	
+
 #devuelve la diression que se esta moviendo
-func get_direction(input_vector):
-	var direction = Vector3.ZERO
-	direction = (input_vector.x * transform.basis.x) + (input_vector.z * transform.basis.z)
-	return direction
+
 	
 #aplica el movimiento, dandole una velocidad, acelleracion y asignandole una velocidad maxima
-func apply_movement(direction, delta):
-	if direction != Vector3.ZERO :
-		velocity.x = velocity.move_toward(direction * max_speed, acceleration * delta).x
-		velocity.z = velocity.move_toward(direction * max_speed, acceleration * delta).z
-	
+
 	
 #	update_Print(velocity.move_toward(direction * max_speed, acceleration * delta).x)
  #aplica friccion para poder detener al personaje
-func apply_friction(direction, delta):
-	if direction == Vector3.ZERO:
-		if is_on_floor():
-			velocity = velocity.move_toward(Vector3.ZERO, friction * delta)
-		else:
-			velocity.x = velocity.move_toward(Vector3.ZERO, air_firction * delta).x
-			velocity.z = velocity.move_toward(Vector3.ZERO, air_firction * delta).z
+
 			
 	#aplicar gravedad ya que no es un rigidbody y se tiene que hacer manualmente	
-func apply_gravity(delta):
-	velocity.y += gravity * delta
-	velocity.y = clamp(velocity.y, gravity, jump_impulse)
+
 	
 #actualiza el vector de velocidad si este es piso o no
-func update_snap_vector():
-	snap_vector = -get_floor_normal() if is_on_floor() else Vector3.DOWN
+
 	
 	#region de salto
-func jump():
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		snap_vector = Vector3.ZERO
-		velocity.y = jump_impulse
-	if Input.is_action_just_released("jump") and velocity.y > jump_impulse / 2:
-		velocity.y = jump_impulse / 2
+
 
 #rotacion de camara tanto para el mouse como para joypad
 func apply_controller_rotation():
@@ -198,10 +134,7 @@ func apply_controller_rotation():
 #function Prototype para crear balas 
 #Todo:Cambiar el tipo de disparo segun el arma
 
-func run(direction, delta):
-	if direction != Vector3.ZERO :
-		velocity.x = velocity.move_toward(direction * max_speed_acceleration, acceleration * delta).x
-		velocity.z = velocity.move_toward(direction * max_speed_acceleration, acceleration * delta).z
+
 #func shoot():
 #	if Input.is_action_just_pressed("click"):
 #
@@ -212,30 +145,7 @@ func run(direction, delta):
 #		b.shoot = true
 #		print("Disparo")
 
-func check_sliding_logic(direction,delta):
-#	update_Print(is_sliding)
-	if(abs(acceleration)>(max_horizontal_speed -1) and touching_ground):
-		if(!is_sliding): can_slider = true
-	else:
-		can_slider = false
-		
-	if(can_slider and Input.is_action_pressed("Slinding")):
-		state_machine.play("Deslizarse")
-		is_sliding = true
-		can_slider = false
-#		update_Print(is_sliding)
-	if(is_sliding and !Input.is_action_pressed("Slinding")):
-		state_machine.play_backwards("Deslizarse")
-		is_sliding = false
-		can_slider = true 
-#		update_Print("can_slider" + can_slider)
-	if(is_sliding and touching_ground):
-#		update_Print("Entra en slider")
-		move_and_slide(velocity,velocity)
-		
-		#	if(is_sliding and touching_ground):
-	else:
-		is_sliding = false	
+
 
 # TODO: Terminar maquina de estado basica para control de player
 #func setState(aState):
@@ -249,25 +159,10 @@ func check_sliding_logic(direction,delta):
 #	elif(state == STATE_MOVE):
 #		get_input_vector()
 #
-var is_on_leadge = false
-#var in_on_leadge() = false
-onready var DetectionUp = $Head/Camera/DetectionUp
-onready var DetectionDown = $Head/Camera/DetectionDown
+
 
 	
-func in_on_leadge():
-		
-#	update_Print("entra")
-	if DetectionUp.is_colliding():
-#		update_Print("entra")
-		is_on_leadge = true
-		subir()
-	elif DetectionDown.is_colliding():
-#		update_Print("entra")
-		is_on_leadge = true
-		subir()
-		
-	
+
 #	elif DetectionDown.get_collider()
 		
 func subir():
@@ -356,6 +251,45 @@ func setState(astate):
 #funcion de muerte	
 #func dying():
 #
+
+func in_on_leadge():
+		
+#	update_Print("entra")
+	if DetectionUp.is_colliding():
+#		update_Print("entra")
+		is_on_leadge = true
+		subir()
+	elif DetectionDown.is_colliding():
+#		update_Print("entra")
+		is_on_leadge = true
+		subir()
+
+func is_fallen():
+	return is_on_floor()
 	
-	
-	
+
+func check_sliding_logic(direction,delta):
+#	update_Print(is_sliding)
+	if(abs(acceleration)>(max_horizontal_speed -1) and touching_ground):
+		if(!is_sliding): can_slider = true
+	else:
+		can_slider = false
+		
+	if(can_slider and Input.is_action_pressed("Slinding")):
+		state_machine.play("Deslizarse")
+		is_sliding = true
+		can_slider = false
+#		update_Print(is_sliding)
+	if(is_sliding and !Input.is_action_pressed("Slinding")):
+		state_machine.play_backwards("Deslizarse")
+		is_sliding = false
+		can_slider = true 
+#		update_Print("can_slider" + can_slider)
+	if(is_sliding and touching_ground):
+#		update_Print("Entra en slider")
+		move_and_slide(velocity,velocity)
+		
+		#	if(is_sliding and touching_ground):
+	else:
+		is_sliding = false	
+
