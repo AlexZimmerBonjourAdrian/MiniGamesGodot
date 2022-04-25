@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://AfterburnParticles.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/drive-download-20220424T234451Z-001/Dispatcher/OBJ/Dispatcher.obj" type="ArrayMesh" id=2]
+
+[node name="Enemy_2" type="Spatial"]
+
+[node name="Paceship" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Paceship"]
+transform = Transform( -0.401171, 0, 3.50715e-08, 0, 0.401171, 0, -3.50715e-08, 0, -0.401171, 0, 0, 0 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="Particles" parent="." groups=["Enemies"] instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1919, 0.1618, 1.24247 )
+visibility_aabb = AABB( -3.7705, -4, -4.05034, 7.54101, 8, 8.10068 )

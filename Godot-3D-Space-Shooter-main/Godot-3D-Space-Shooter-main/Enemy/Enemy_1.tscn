@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/drive-download-20220424T234451Z-001/Executioner/OBJ/Executioner.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://AfterburnParticles.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/drive-download-20220424T234451Z-001/Executioner/Textures/Executioner_Blue.png" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 3 )
+
+[node name="Enemy_1" type="Spatial"]
+
+[node name="Paceship" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Paceship"]
+transform = Transform( -0.974414, 0, 8.5186e-08, 0, 0.974414, 0, -8.5186e-08, 0, -0.974414, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+
+[node name="Particles" parent="Paceship" groups=["Enemies"] instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27206, -0.0250329, 2.89168 )
+visibility_aabb = AABB( -3.7705, -4, -4.05034, 7.54101, 8, 8.10068 )
+
+[node name="Particles2" parent="Paceship" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.887389, -0.0250329, 2.89168 )
+visibility_aabb = AABB( -3.7705, -4, -4.05034, 7.54101, 8, 8.10068 )
+
+[node name="Particles3" parent="Paceship" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.882414, -0.0250329, 2.89168 )
+visibility_aabb = AABB( -3.7705, -4, -4.05034, 7.54101, 8, 8.10068 )
+
+[node name="Particles4" parent="Paceship" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.18474, -0.0250329, 2.89168 )
+visibility_aabb = AABB( -3.7705, -4, -4.05034, 7.54101, 8, 8.10068 )
+
+[node name="weapons" type="Spatial" parent="Paceship"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -4 )

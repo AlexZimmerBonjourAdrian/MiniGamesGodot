@@ -10,7 +10,7 @@ var dash_speed = 60
 var Aceleration_Multi = 5
 
 onready var guns = [$Gun0, $Gun1]
-onready var missile = [$Missile1, $Missile2]
+#onready var missile = [$Missile1, $Missile2]
 
 onready var main = get_tree().current_scene
 var Bullet = load("res://Bullet.tscn")
@@ -31,14 +31,14 @@ func _physics_process(delta):
 	transform.origin.y = clamp(transform.origin.y, -10, 10)
 	
 #	Shooting missile
-	if Input.is_action_pressed("ShootRocket") and cooldown <= 0:
-		cooldown = COOLDOWN * delta
-		for j in missile:
-			var missile = Missile.instance()
-			main.add_child(missile)
-			missile.transform = j.global_transform
-			missile.velo = missile.transform.basis.z * -600
-	
+#	if Input.is_action_pressed("ShootRocket") and cooldown <= 0:
+#		cooldown = COOLDOWN * delta
+#		for j in missile:
+#			var missile = Missile.instance()
+#			main.add_child(missile)
+#			missile.transform = j.global_transform
+#			missile.velo = missile.transform.basis.z * -600
+#
 	#shooting gun
 	if Input.is_action_pressed("ui_accept") and cooldown <= 0:
 		cooldown = COOLDOWN * delta
