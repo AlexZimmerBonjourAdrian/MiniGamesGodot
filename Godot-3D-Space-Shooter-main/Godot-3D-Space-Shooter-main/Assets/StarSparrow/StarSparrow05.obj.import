@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/StarSparrow05.obj-5b29027a81f04d2801c4729f310c981d.mesh"
+
+[deps]
+
+files=[ "res://.import/StarSparrow05.obj-5b29027a81f04d2801c4729f310c981d.mesh" ]
+
+source_file="res://Assets/StarSparrow/StarSparrow05.obj"
+dest_files=[ "res://.import/StarSparrow05.obj-5b29027a81f04d2801c4729f310c981d.mesh", "res://.import/StarSparrow05.obj-5b29027a81f04d2801c4729f310c981d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
