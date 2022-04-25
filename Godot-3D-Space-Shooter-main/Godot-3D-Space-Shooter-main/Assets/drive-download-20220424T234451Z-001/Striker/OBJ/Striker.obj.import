@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Striker.obj-9e73bde05ac7a0c1903016b2ce113096.mesh"
+
+[deps]
+
+files=[ "res://.import/Striker.obj-9e73bde05ac7a0c1903016b2ce113096.mesh" ]
+
+source_file="res://Assets/drive-download-20220424T234451Z-001/Striker/OBJ/Striker.obj"
+dest_files=[ "res://.import/Striker.obj-9e73bde05ac7a0c1903016b2ce113096.mesh", "res://.import/Striker.obj-9e73bde05ac7a0c1903016b2ce113096.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
