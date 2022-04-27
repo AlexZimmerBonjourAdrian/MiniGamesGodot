@@ -84,6 +84,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 9 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("PPK/Idle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
 
 [sub_resource type="Animation" id=65]
 resource_name = "Reload"
@@ -142,7 +154,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=67]
@@ -572,14 +584,15 @@ scale = Vector2( 1.72533, 1.72533 )
 frames = SubResource( 60 )
 animation = "ppk-crosshair"
 
-[node name="Idle" type="Sprite" parent="PPK"]
+[node name="Sprite" type="Sprite" parent="PPK"]
 visible = false
-position = Vector2( -3.12488, -526.203 )
-scale = Vector2( 2.32328, 2.53587 )
+
+[node name="Idle" type="Sprite" parent="PPK"]
+position = Vector2( -114.063, -501.203 )
+scale = Vector2( 2.20702, 2.4197 )
 texture = ExtResource( 4 )
 hframes = 19
-
-[node name="Sprite" type="Sprite" parent="PPK"]
+frame = 1
 
 [node name="HUD" type="Control" parent="."]
 visible = false
@@ -622,5 +635,3 @@ color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
 margin_right = 40.0
 margin_bottom = 14.0
 text = "1"
-
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -188,6 +188,9 @@ func process_weapons():
 			weapon_manager.fire()
 			detection_enemy_shoot()
 			
+	elif Input.is_action_just_pressed("click") and Input.is_action_just_pressed("Iron_Crosshair"):
+			weapon_manager.fireCrosshair()
+			detection_enemy_shoot()		
 #	if Input.is_action_just_released("click"):
 #		weapon_manager.find_stop()
 	

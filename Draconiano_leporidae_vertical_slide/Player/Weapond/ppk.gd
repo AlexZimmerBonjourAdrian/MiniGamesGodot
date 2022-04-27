@@ -200,6 +200,7 @@ func _crosshair(event):
 		
 #	if(on_animation_finish("CrosshairShoot") and is_shoot_crosshair):
 	if(animation.get_animation("CrosshairShoot") and !animation.is_playing()):
+		on_animation_finish("CrosshairShoot")
 		print("Entra aqui tambien")
 		Hideall()
 		showCrosshair()

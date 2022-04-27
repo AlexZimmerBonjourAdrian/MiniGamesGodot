@@ -44,14 +44,28 @@ func fire():
 
 func fire_stop():
 	is_firing = false
+	is_shoot_crosshair = false
 	animation_player.get_animation("shoot").loop = false
 	
+func fireCrosshair():
+	if not is_reloading:
+		
+		if ammo_in_mag > 0:
+			if not is_shoot_crosshair:
+#				print("Entra")
+				fire_bullet()
+				is_shoot_crosshair = true
+				
+			return
+		elif is_shoot_crosshair:
+			fire_stop()
 	
 
 func fire_bullet():    # Will be called from the animation track
+	update_ammo("consume")
 ###	muzzle_flash.emitting = true
 #		update_ammo(fire)
-		update_ammo("consume")
+		
 #
 #	ray.force_raycast_update()
 	

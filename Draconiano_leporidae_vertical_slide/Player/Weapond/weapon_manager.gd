@@ -131,6 +131,7 @@ func fire():
 	if not changing_weapon:
 #		if current_weapon_slot != "Empty":
 				current_weapon.fire()
+				current_weapon.fireCrosshair()
 		
 #func fire_stop():
 #	current_weapon.fire_stop()
