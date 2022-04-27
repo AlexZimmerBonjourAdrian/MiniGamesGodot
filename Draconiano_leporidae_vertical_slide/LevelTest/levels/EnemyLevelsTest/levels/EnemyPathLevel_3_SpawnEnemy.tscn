@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/prototype_textures/PNG/Green/texture_01.png" type="Texture" id=1]
 [ext_resource path="res://assets/prototype_textures/Vector/texture_01.svg" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://LevelTest/levels/EnemyLevelsTest/levels/EnemyPathLevel.gd" type="Script" id=6]
 [ext_resource path="res://Enemy/Enemy_Dummie/Enemydummy.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Singleton/Gloabl.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Singleton/Manager/EnemyManager.gd" type="Script" id=9]
 
 [sub_resource type="ProceduralSky" id=1]
 
@@ -46,7 +47,7 @@ _data = {
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
 
-[node name="Game" type="Node"]
+[node name="Game" type="Spatial"]
 script = ExtResource( 6 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
@@ -594,21 +595,24 @@ height = 1.0
 depth = 100.0
 
 [node name="Enemy" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1046, 0.506964, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1046, 6.83814, 0 )
+
+[node name="EnemyManager" type="Spatial" parent="Navigation"]
+script = ExtResource( 9 )
 
 [node name="EnemyMale" parent="Navigation" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0831, 2.62803, 0 )
 visible = false
 
 [node name="Enemy2" parent="Navigation" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.84219, 0.506964, -24.5271 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.84219, 5.51706, -24.5271 )
 
 [node name="Path" type="Path" parent="Navigation"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 2.85593, -0.0187027 )
 curve = SubResource( 9 )
 
-[node name="PathFollow" type="PathFollow" parent="Navigation/Path"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0575104, -0.0224652, 1.3897 )
+[node name="PathFollow" type="PathFollow" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9425, 2.83346, 1.371 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

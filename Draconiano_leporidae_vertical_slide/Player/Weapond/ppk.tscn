@@ -1,5 +1,6 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=74 format=2]
 
+[ext_resource path="res://Player/GuiInterfaz/hud.gd" type="Script" id=1]
 [ext_resource path="res://SpriteAnimation/ppk/ppk-reload-spriteSheet copia.png" type="Texture" id=2]
 [ext_resource path="res://SpriteAnimation/ppk/ppk-Crossair-spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://SpriteAnimation/ppk/ppk-shoot-spriteSheet copia.png" type="Texture" id=4]
@@ -27,7 +28,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=63]
 resource_name = "CrosshairShoot"
-step = 0.0333333
+length = 0.366666
+step = 0.0166667
 tracks/0/type = "value"
 tracks/0/path = NodePath("PPK/CrosshairShoot:frame")
 tracks/0/interp = 1
@@ -35,10 +37,52 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0333333, 0.0666666, 0.0999999, 0.133333, 0.166667, 0.2, 0.233333 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.0333333, 0.0666666, 0.0999999, 0.133333, 0.166667, 0.2, 0.233333, 0.266666, 0.3, 0.333333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 2, 3, 4, 5, 6, 7, 8, 9 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9 ]
+}
+
+[sub_resource type="Animation" id=70]
+resource_name = "Crosshair_Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("PPK/Crosshair_Idle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+
+[sub_resource type="Animation" id=69]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("PPK/CrosshairShoot:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("PPK/Crosshair_Idle:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 9 ]
 }
 
 [sub_resource type="Animation" id=65]
@@ -148,146 +192,6 @@ tracks/0/keys = {
 "method": "hide_weapon"
 } ]
 }
-
-[sub_resource type="AtlasTexture" id=59]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 1333, 750 )
-
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 888, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=15]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 1776, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 2664, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 3552, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=18]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 4440, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=19]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 5328, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 6216, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=21]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 7104, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=22]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 7992, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=23]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 8880, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=24]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 9768, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 10656, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 11544, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 12432, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=28]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 13320, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=29]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 14208, 0, 888, 500 )
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 1454, 818 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 1454, 0, 1454, 818 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 2908, 0, 1454, 818 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 4362, 0, 1454, 818 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 5816, 0, 1454, 818 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 7270, 0, 1454, 818 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 8724, 0, 1454, 818 )
-
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 10178, 0, 1454, 818 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 11632, 0, 1454, 818 )
-
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 13086, 0, 1454, 818 )
 
 [sub_resource type="AtlasTexture" id=30]
 flags = 4
@@ -434,8 +338,158 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 14314, 0, 842, 474 )
 
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 1333, 750 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 888, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1776, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 2664, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 3552, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 4440, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 5328, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 6216, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 7104, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 7992, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 8880, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 9768, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 10656, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 11544, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 12432, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 13320, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 14208, 0, 888, 500 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 1454, 818 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1454, 0, 1454, 818 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 2908, 0, 1454, 818 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 4362, 0, 1454, 818 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 5816, 0, 1454, 818 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 7270, 0, 1454, 818 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 8724, 0, 1454, 818 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 10178, 0, 1454, 818 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 11632, 0, 1454, 818 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 13086, 0, 1454, 818 )
+
 [sub_resource type="SpriteFrames" id=60]
 animations = [ {
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "ppk-crosshair",
+"speed": 30.0
+}, {
+"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ) ],
+"loop": true,
+"name": "ppk-shoot",
+"speed": 30.0
+}, {
 "frames": [ SubResource( 59 ) ],
 "loop": true,
 "name": "ppk-Idle",
@@ -450,16 +504,6 @@ animations = [ {
 "loop": true,
 "name": "ppk-crosshair-shoot",
 "speed": 30.0
-}, {
-"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
-"loop": true,
-"name": "ppk-crosshair",
-"speed": 30.0
-}, {
-"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ) ],
-"loop": true,
-"name": "ppk-shoot",
-"speed": 30.0
 } ]
 
 [node name="Ppk" type="Node2D"]
@@ -471,6 +515,8 @@ weapon_name = "Ppk"
 anims/AnimationPlayer = SubResource( 61 )
 anims/Crosshair = SubResource( 62 )
 anims/CrosshairShoot = SubResource( 63 )
+anims/Crosshair_Idle = SubResource( 70 )
+anims/RESET = SubResource( 69 )
 anims/Reload = SubResource( 65 )
 anims/iDLE = SubResource( 66 )
 anims/shoot = SubResource( 67 )
@@ -488,13 +534,20 @@ texture = ExtResource( 3 )
 hframes = 12
 frame = 1
 
+[node name="Crosshair_Idle" type="Sprite" parent="PPK"]
+visible = false
+position = Vector2( 11, -540 )
+scale = Vector2( 1.44921, 1.58667 )
+texture = ExtResource( 3 )
+hframes = 12
+frame = 9
+
 [node name="CrosshairShoot" type="Sprite" parent="PPK"]
 visible = false
 position = Vector2( 89.0626, -534.016 )
 scale = Vector2( 1.30577, 1.43206 )
 texture = ExtResource( 5 )
 hframes = 11
-frame = 1
 
 [node name="Shoot" type="Sprite" parent="PPK"]
 visible = false
@@ -510,6 +563,7 @@ position = Vector2( -137, -526 )
 scale = Vector2( 2.09498, 2.26 )
 texture = ExtResource( 2 )
 hframes = 18
+frame = 16
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PPK"]
 visible = false
@@ -519,7 +573,54 @@ frames = SubResource( 60 )
 animation = "ppk-crosshair"
 
 [node name="Idle" type="Sprite" parent="PPK"]
+visible = false
 position = Vector2( -3.12488, -526.203 )
 scale = Vector2( 2.32328, 2.53587 )
 texture = ExtResource( 4 )
 hframes = 19
+
+[node name="Sprite" type="Sprite" parent="PPK"]
+
+[node name="HUD" type="Control" parent="."]
+visible = false
+margin_left = 109.0
+margin_top = 10.0
+margin_right = 149.0
+margin_bottom = 50.0
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="HUD"]
+margin_left = 163.0
+margin_top = 924.0
+margin_right = 260.0
+margin_bottom = 964.0
+rect_scale = Vector2( 3, 3 )
+color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+
+[node name="HealthUI" type="Label" parent="HUD/Background"]
+margin_left = 12.0
+margin_top = 4.33331
+margin_right = 86.0
+margin_bottom = 18.3333
+text = "Health: 100"
+
+[node name="WeaponUI" type="Label" parent="HUD/Background"]
+margin_left = 10.0
+margin_top = 20.0
+margin_right = 87.0
+margin_bottom = 34.0
+text = "Pistol:25/50"
+
+[node name="Display" type="ColorRect" parent="HUD/Background"]
+margin_left = -47.6667
+margin_top = -1.0
+margin_right = -0.666664
+margin_bottom = 39.0
+color = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+
+[node name="WeaponSlot" type="Label" parent="HUD/Background/Display"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "1"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

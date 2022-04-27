@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="DL-Vertical Slide"
-run/main_scene="res://2D/World.tscn"
+run/main_scene="res://LevelTest/levels/EnemyLevelsTest/levels/EnemyPathLevel_3_SpawnEnemy.tscn"
 config/icon="res://icon.png"
 
 [autoload]

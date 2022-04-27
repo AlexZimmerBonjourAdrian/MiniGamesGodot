@@ -6,6 +6,7 @@ onready var eyes = $Eyes
 
 onready var raycast = $Eyes/RayCast
 onready var nav = get_parent()
+#var target_pos = null
 
 enum {
 	STATE_STAND,
@@ -19,8 +20,14 @@ export var state= STATE_STAND
 var path = []
 var cur_path_idx = 0
 
-func get_target_path(target_pos):
-	path = nav.get_simple_path(global_transform.origin, target_pos)
+func get_target_path(target_pos_func):
+#	target_pos = target_pos_func
+	if(target_pos_func != null):
+		print("Entra en el nav")
+		path = nav.get_simple_path(global_transform.origin, target_pos_func)
+#	else:
+#		get_player()
+#		path = nav.get_simple_path(global_transform.origin, target.global_transform.origin)
 #func process():
 #	global_transform.origin.distance_to(path[cur_path_idx])
 func _process(delta):
@@ -30,7 +37,8 @@ func _process(delta):
 	if (state==STATE_SHOOT_PLAYER):
 		setState(STATE_SHOOT_PLAYER)
 	
-
+func _physics_process(delta):
+	._physics_process(delta)
 func move_to_target():
 	setState(STATE_FOLLOW)
 	
@@ -97,9 +105,6 @@ func setState(astate):
 func dead():
 	update_Print("Estoy Muerto")
 	setState(STATE_DEAD)
-
-
-
 
 func _on_ShootTimer_timeout():
 	if raycast.is_colliding():

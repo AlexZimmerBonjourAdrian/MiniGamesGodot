@@ -25,11 +25,11 @@ func _ready():
 	 # Agrega una esepcion de detecion para que no detecte al jugador 
 	#ejemplo de enum en godot
 	all_weapons = {
-		"Unarmed" : preload("res://Player/weapond/unarmed.tscn"),
+#		"Unarmed" : preload("res://Player/weapond/unarmed.tscn"),
 		"Ppk" : preload("res://Player/Weapond/ppk.tscn")
 	}
 	weapons = {
-		"Empty" : $Unarmed,
+#		"Empty" : $Unarmed,
 		"Primary": $Ppk
 #		"Secundary": $Weapon_B
 	}
@@ -42,8 +42,8 @@ func _ready():
 			weapons[w].visible = false
 	
 	#Set current weapon to unarmed
-	current_weapon = weapons["Empty"]
-	change_weapon("Empty")
+	current_weapon = weapons["Primary"]
+	change_weapon("Primary")
 	
 	set_process(false)
 	
@@ -89,10 +89,10 @@ func change_weapon(new_weapon_slot):
 # Scroll weapon change
 func update_weapon_index():
 	match current_weapon_slot:
-		"Empty":
-			weapon_index = 0
+#		"Empty":
+#			weapon_index = 0
 		"Primary":
-			weapon_index = 1
+			weapon_index = 0
 #		"Secondary":
 #			weapon_index = 2
 
@@ -118,10 +118,10 @@ func update_hud(weapon_data):
 	var weapon_slot = "1"
 	
 	match current_weapon_slot:
-		"Empty":
-			weapon_slot = "1"
+#		"Empty":
+#			weapon_slot = "1"
 		"Primary":
-			weapon_slot = "2"
+			weapon_slot = "1"
 #		"secundary":
 #			weapon_slot = "3"		
 	hud.update_weapon_ui(weapon_data, weapon_slot)

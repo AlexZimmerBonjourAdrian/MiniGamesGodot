@@ -25,8 +25,9 @@ export var equip_speed = 1.0
 export var unequip_speed = 1.0
 export var reload_speed = 1.0
 
-
-
+export var is_shoot = false
+export var is_crosshair = false
+export var is_shoot_crosshair = false
 # Fire Cycle
 func fire():
 	if not is_reloading:
@@ -34,8 +35,8 @@ func fire():
 			
 			if not is_firing:
 				is_firing = true
-				animation_player.get_animation("shoot").loop = true
-				animation_player.play("shoot", -1.0, fire_rate)
+#				animation_player.get_animation("shoot").loop = true
+#				animation_player.play("shoot", -1.0, fire_rate)
 			return
 		
 		elif is_firing:
@@ -108,7 +109,13 @@ func on_animation_finish(anim_name):
 			is_equipped = true
 		"Reload":
 			is_reloading = false
-			
+		"shoot":
+			is_shoot = false
+		"Crosshair":
+			is_crosshair = false	
+		"CrosshairShoot":
+			is_shoot_crosshair = false
+		
 
 func update_ammo(action = "Refresh", additional_ammo = 0):
 	

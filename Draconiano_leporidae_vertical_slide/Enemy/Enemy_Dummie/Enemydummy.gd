@@ -8,6 +8,7 @@ var velocity = Vector3.ZERO
 var threshold = .1
 
 onready var nav = get_parent()
+#onready var nav
 
 func _physics_process(delta):
 	if path.size() > 0:

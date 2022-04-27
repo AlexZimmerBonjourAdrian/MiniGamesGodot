@@ -47,7 +47,7 @@ func _ready():
 	get_tree().call_group("weapon", "get_type",self)
 	get_tree().call_group("Enemy", "set_player",self)
 	weapon_manager = $Head/Camera/Weaponds
-	weapon_manager.change_weapon("Empty")
+#	weapon_manager.change_weapon("Empty")
 	Global.setPlayer(self)
 	touching_ground = $touching_ground
 #
@@ -85,17 +85,17 @@ func _physics_process(delta):
 #	esto es for que recorre y chequea los objetos que coliciona pudiendo chequear y actuar que se esta collisionando algo muy importante
 #   En esto sse colicciona con objetos de mundo, como cajas,
 #   esto tambien es usado para el sistema de pickup
-	for idx in get_slide_count():
-		var collision = get_slide_collision(idx)
-		if collision.collider.is_in_group("bodies"):
-			collision.collider.apply_central_impulse(-collision.normal * velocity.length() * push)
-		if collision.collider.is_in_group("weapon"):
-			if collision.collider.call("get_type") == "Pistol":
-				collision.collider.queue_free()
-			elif collision.collider.call("get_type") == "ShootGun":
-				collision.collider.queue_free()
-			elif collision.collider.call("get_type") == "MachineGun":
-				collision.collider.queue_free()
+#	for idx in get_slide_count():
+#		var collision = get_slide_collision(idx)
+#		if collision.collider.is_in_group("bodies"):
+#			collision.collider.apply_central_impulse(-collision.normal * velocity.length() * push)
+#		if collision.collider.is_in_group("weapon"):
+#			if collision.collider.call("get_type") == "Pistol":
+#				collision.collider.queue_free()
+#			elif collision.collider.call("get_type") == "ShootGun":
+#				collision.collider.queue_free()
+#			elif collision.collider.call("get_type") == "MachineGun":
+#				collision.collider.queue_free()
 			
 	#asigna los controles de movimiento y setea las direcciones de forma sencilla 
 
