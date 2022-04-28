@@ -8,47 +8,22 @@ var animation_player
 var is_firing = false
 var is_reloading = false
 # Weapon Parameters
-
-#var is_equipped = false
-
-onready var mag_size = ammo_in_mag
-#Se puede usar un enum, lo dejo por si acaso
-#enum {
-#	TIPE_PISTOL,
-#	TIPE_CARABINE,
-#	TIPE_RIFLE,
-#	TIPE_SHOTGUN,
-#}
-
-var tipeWeapon = {
-	Name = "value",
-	MultiRai = false,
-	
-}
-
-#Basig info stats initializer to weapon
-#weapons data
-export var damage = 10
-export var fire_rate = 1.0
-export var accuarcy = 1.0
-#export var reload_Speed= 1.0
-#export var weapon_name = "Name"
-export var recoil = 1.0
-export var sound = 1.0
-export var exparcion = 1.0
 export var ammo_in_mag = 15
 export var extra_ammo = 30
-export var equip_speed = 1.0
-export var unequip_speed = 1.0
-export var reload_speed = 1.0
+onready var mag_size = ammo_in_mag
+
+export var damage = 10
+export var fire_rate = 1.0
 
 # Effects
-#export(PackedScene) var impact_effect
-#export(NodePath) var muzzle_flash_path
+export(PackedScene) var impact_effect
+export(NodePath) var muzzle_flash_path
 #onready var muzzle_flash = get_node(muzzle_flash_path)
 
 # Optional
-
+export var equip_speed = 1.0
+export var unequip_speed = 1.0
+export var reload_speed = 1.0
 
 export var is_shoot = false
 export var is_crosshair = false
@@ -109,37 +84,35 @@ func reload():
 
 ## Equip/Unequip Cycle
 func equip():
-#	show_weapon()
+	show_weapon()
 #	animation_player.play("Equip", -1.0, equip_speed)
 	is_reloading = false
 
 func unequip():
 #	animation_player.play("Unequip", -1.0, unequip_speed)
-#	hide_weapon()
-	pass
+	hide_weapon()
 #
 
 
 func is_equip_finished():
-#	if is_equipped:
-#		return true
-#	else:
-#		return false
-	pass
+	if is_equipped:
+		return true
+	else:
+		return false
 
 func is_unequip_finished():
-#	if is_equipped:
-#		return false
-#	else:
-#		return true
-	pass
+	if is_equipped:
+		return false
+	else:
+		return true
+
 
 # Show/Hide Weapon
-#func show_weapon():
-#	visible = true
-#
-#func hide_weapon():
-#	visible = false
+func show_weapon():
+	visible = true
+
+func hide_weapon():
+	visible = false
 
 # Animation Finished
 func on_animation_finish(anim_name):
@@ -181,32 +154,8 @@ func update_ammo(action = "Refresh", additional_ammo = 0):
 		"Name" : weapon_name,
 #		"Image" : weapon_image,
 		"Ammo" : str(ammo_in_mag),
-		"ExtraAmmo" : str(extra_ammo),
-		"TipoArma" : tipeWeapon,
-		"Accuarcy" : accuarcy,
-		"ReloadSpeed" : reload_speed,
-		"Dispercion" : exparcion,
-		"recoil" : recoil
+		"ExtraAmmo" : str(extra_ammo)
 	}
 	weapon_manager.update_hud(weapon_data)
 	
-func getAmmo():
-	return ammo_in_mag
-	
-func getExtraAmmo():
-	return extra_ammo
-	
-func getTipoWeapon():
-	return tipeWeapon
-	
-func getReloadSpeed():
-	return reload_speed
-	
-func getExparcion():
-	return exparcion
-	
-func getRecoil():
-	return recoil
-	
-func getWeaponName():
-	return weapon_name
+
