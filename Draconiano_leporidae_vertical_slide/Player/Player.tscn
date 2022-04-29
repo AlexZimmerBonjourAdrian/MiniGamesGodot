@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://undefined - Imgur.png" type="Texture" id=2]
 [ext_resource path="res://Player/GuiInterfaz/hud.gd" type="Script" id=3]
 [ext_resource path="res://Player/Weapond/ppk.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Player/Weapond/weapon_manager.gd" type="Script" id=8]
-[ext_resource path="res://Player/Weapond/unarmed.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -207,9 +206,6 @@ debug_shape_thickness = 5
 
 [node name="Weaponds" type="Node2D" parent="Head/Camera"]
 script = ExtResource( 8 )
-
-[node name="Unarmed" parent="Head/Camera/Weaponds" instance=ExtResource( 9 )]
-visible = false
 
 [node name="Ppk" parent="Head/Camera/Weaponds" instance=ExtResource( 6 )]
 

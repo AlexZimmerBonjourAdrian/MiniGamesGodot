@@ -11,7 +11,7 @@ var is_equipped = false
 
 # Weapon Parameters
 export var weapon_name = "Weapon"
-export(Texture) var weapon_image = null
+#export(Texture) var weapon_image = null
 
 
 #Equip/Unequip Cycle
@@ -29,7 +29,7 @@ func is_unequip_finished():
 	return true
 
 # Update Ammo
-func update_ammo(action = "Refresh"):
+func update_ammo():
 	
 	var weapon_data = {
 		"Name" : weapon_name,

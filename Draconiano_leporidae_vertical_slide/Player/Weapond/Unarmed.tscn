@@ -1,7 +1,17 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Player/Weapond/unarmed.gd" type="Script" id=1]
+[sub_resource type="GDScript" id=1]
+script/source = "extends Weapon
+
+func fire():
+	pass
+
+func fire_stop():
+	pass
+
+func reload():
+	pass
+"
 
 [node name="Unarmed" type="Node2D"]
-script = ExtResource( 1 )
-weapon_name = "Unarmed"
+script = SubResource( 1 )

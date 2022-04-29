@@ -91,12 +91,12 @@ func apply_movement(direction, delta):
 		velocity.z = velocity.move_toward(direction * max_speed, acceleration * delta).z
 	
 
-func damage(damageResive):
-	Health - damageResive
-	print(Health)
+#func damage(damageResive):
+#	Health - damageResive
+#	print(Health)
 	
-func ActualHealth():
-	print(Health)
+#func ActualHealth():
+#	print(Health)
 
 func get_input_vector():
 	var input_vector = Vector3.ZERO

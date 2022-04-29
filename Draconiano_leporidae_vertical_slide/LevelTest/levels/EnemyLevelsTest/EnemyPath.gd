@@ -30,13 +30,13 @@ func get_target_path(target_pos_func):
 #		path = nav.get_simple_path(global_transform.origin, target.global_transform.origin)
 #func process():
 #	global_transform.origin.distance_to(path[cur_path_idx])
-func _process(delta):
-	if(state==STATE_FOLLOW):
-#		if path.size() > 0:
-		move_to_target()
-	if (state==STATE_SHOOT_PLAYER):
-		setState(STATE_SHOOT_PLAYER)
-	
+#func _process(delta):
+#	if(state==STATE_FOLLOW):
+##		if path.size() > 0:
+#		move_to_target()
+#	if (state==STATE_SHOOT_PLAYER):
+#		setState(STATE_SHOOT_PLAYER)
+#
 func _physics_process(delta):
 	._physics_process(delta)
 func move_to_target():
@@ -72,7 +72,7 @@ func setState(astate):
 		STATE_SHOOT_PLAYER:
 #			var direction = path[cur_path_idx] - global_transform.origin
 #			var dir = direction.normalized()
-			update_ExtraData("Estado_seguir")
+#			update_ExtraData("Estado_seguir")
 #			print(global_transform.origin.distance_to(path[cur_path_idx]))
 #			if(not(path[cur_path_idx] <= .0)):
 			if(path.size() > 0):
