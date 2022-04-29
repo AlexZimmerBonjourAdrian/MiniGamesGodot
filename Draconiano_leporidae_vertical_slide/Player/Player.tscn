@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://undefined - Imgur.png" type="Texture" id=2]
 [ext_resource path="res://Player/GuiInterfaz/hud.gd" type="Script" id=3]
+[ext_resource path="res://Player/Weapond/raycast_manager.gd" type="Script" id=4]
 [ext_resource path="res://Player/Weapond/ppk.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Player/Weapond/weapon_manager.gd" type="Script" id=8]
 
@@ -212,12 +213,16 @@ script = ExtResource( 8 )
 [node name="Normal" type="RayCast" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140813, -0.276949, -0.0666676 )
 enabled = true
-cast_to = Vector3( 0, -1, -100 )
+cast_to = Vector3( 0, -1, -2 )
 collision_mask = 2
 
 [node name="Crosshair" type="RayCast" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.73837, 0 )
 collision_mask = 2
+
+[node name="Spatial" type="Spatial" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268733, -1.08743 )
+script = ExtResource( 4 )
 
 [node name="touching_ground" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113807, 0 )

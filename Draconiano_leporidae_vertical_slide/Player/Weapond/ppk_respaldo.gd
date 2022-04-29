@@ -110,11 +110,11 @@ func _crosshair(event):
 		animation.play("CrosshairShoot") 
 		
 	elif(event.is_action_pressed("click") and animation.get_animation("CrosshairShoot") and !animation.is_playing()):
-		print("Entra aqui tambien")
+#		print("Entra aqui tambien")
 		ppk_Crosshai_Shoot.visible = false
 		ppk_Crosshai.visible = true
 	
-	elif (event.is_action_released("Iron_Crosshair")):
+#	elif (event.is_action_released("Iron_Crosshair")):
 		
 		
 		

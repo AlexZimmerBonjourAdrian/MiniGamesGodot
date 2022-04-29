@@ -45,7 +45,7 @@ func fire():
 func fire_stop():
 	is_firing = false
 	is_shoot_crosshair = false
-	animation_player.get_animation("shoot").loop = false
+#	animation_player.get_animation("shoot").loop = false
 	
 func fireCrosshair():
 	if not is_reloading:

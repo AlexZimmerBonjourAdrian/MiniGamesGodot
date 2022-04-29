@@ -23,7 +23,7 @@ var cur_path_idx = 0
 func get_target_path(target_pos_func):
 #	target_pos = target_pos_func
 	if(target_pos_func != null):
-		print("Entra en el nav")
+#		print("Entra en el nav")
 		path = nav.get_simple_path(global_transform.origin, target_pos_func)
 #	else:
 #		get_player()
@@ -47,7 +47,8 @@ func setState(astate):
 	state=astate
 	match state:
 		STATE_STAND:
-			update_Print("Estado Stand")
+#			update_Print("Estado Stand")
+			print("Etado Stand")
 		STATE_FOLLOW:
 #				update_print("Estado seguir")
 #				print(global_transform.origin.distance_to(path[cur_path_idx]))

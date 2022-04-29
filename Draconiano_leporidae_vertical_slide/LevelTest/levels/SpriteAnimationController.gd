@@ -66,7 +66,7 @@ func _input(event):
 #		ppk_Idle.visible = true
 #		animation.play("iDLE")
 #	print(is_crossing)
-	update_Print(is_crossing)
+#	update_Print(is_crossing)
 
 #	ppk_Reload.visible = false
 #	ppk_Shoot.visible = false
