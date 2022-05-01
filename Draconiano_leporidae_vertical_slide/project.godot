@@ -14,20 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/Weapond/armed.gd"
 }, {
-"base": "Resource",
-"class": "ClassWeapon",
-"language": "GDScript",
-"path": "res://Player/Weapond/classWeapon.gd"
-}, {
 "base": "Node2D",
 "class": "Weapon",
 "language": "GDScript",
 "path": "res://Player/Weapond/Weapon.gd"
+}, {
+"base": "Resource",
+"class": "classWeapon",
+"language": "GDScript",
+"path": "res://Player/Weapond/classWeapon.gd"
 } ]
 _global_script_class_icons={
 "Armed": "",
-"ClassWeapon": "",
-"Weapon": ""
+"Weapon": "",
+"classWeapon": ""
 }
 
 [application]

@@ -1,7 +1,7 @@
 extends Resource
-class_name ClassWeapon
+class_name classWeapon
 
-export(String)var weapon_Name = "Name"
+export(String)var weapon_name = "Name"
 export(float) var equip_speed = 1.0
 export(float) var unequip_speed = 1.0
 export(float) var reload_speed = 1.0

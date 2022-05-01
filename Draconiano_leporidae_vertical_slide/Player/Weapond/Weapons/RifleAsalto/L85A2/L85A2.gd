@@ -1,7 +1,6 @@
 extends Armed
 
-var class_data = load("res://Player/Weapond/Weapons/subfusil/MP5/MP5k.tres")
-
+var class_data = load("res://Player/Weapond/Weapons/RifleAsalto/L85A2/L85A2.tres")
 
 func loadDataWeapon():
 	accuarcy=class_data.accuarcy

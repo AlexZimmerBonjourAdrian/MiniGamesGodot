@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource( 1 )
-weapon_Name = "Name"
+weapon_name = "Name"
 equip_speed = 1.0
 unequip_speed = 1.0
 reload_speed = 1.0

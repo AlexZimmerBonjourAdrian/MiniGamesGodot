@@ -1,6 +1,6 @@
 extends Armed
 
-var class_data = load("res://Player/Weapond/Weapons/subfusil/MP5/MP5k.tres")
+var class_data = load("res://Player/Weapond/Weapons/Pistol/Berreta93r/Berreta93r.tres")
 
 
 func loadDataWeapon():

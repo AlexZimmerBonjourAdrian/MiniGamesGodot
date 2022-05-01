@@ -9,9 +9,6 @@ onready var animation = $AnimationPlayer
 #onready var RayNormal = $Camera/Normal
 #onready var RayCrosshair = $Crosshair
 
-
-
-
 const STATE_IDLE = 1
 const STATE_SHOOT = 2
 const STATE_RELOAD = 3
@@ -20,10 +17,8 @@ const STATE_SHOOTCROSSHAIR = 5
 const STATE_CROSSHAIR_IDLE = 6
 var state = STATE_IDLE;
 
-
-
 var is_crossing 
-
+var class_data = load("res://Player/Weapond/Weapons/Pistol/PPK/PPK.tres")
 
 func _ready():
 
@@ -31,10 +26,14 @@ func _ready():
 		is_crossing= false
 		is_reloading= false
 		setState(STATE_IDLE)
+		
 		#animation_player = $AnimationPlayer
+		loadDataWeapon()
+		
 		
 		animation.connect("animation_finished",self,"on_animation_finish")
 		animation.play("iDLE")
+		
 		
 		
 func _input(event):	
@@ -206,7 +205,24 @@ func _crosshair(event):
 		showCrosshair()
 	
 #	elif (event.is_action_released("Iron_Crosshair")):
-		
+	
+func loadDataWeapon():
+#	print(class_data.get_class().)
+	accuarcy = class_data.accuarcy
+	equip_speed = class_data.equip_speed
+	unequip_speed = class_data.unequip_speed
+	reload_speed = class_data.reload_speed 
+	weapon_name = class_data.weapon_name
+	typeWeapon = class_data.typeWeapon
+	recoil = class_data.recoil
+	offset = class_data.offset
+	multidisparo = class_data.multidisparo
+	exparsion = class_data.exparsion
+	ammo_in_mag = class_data.ammo_in_mag
+	extra_ammo = class_data.extra_ammo
+	damage = class_data.damage
+	fire_rate = class_data.fire_rate
+	
 func Hideall():
 	ppk_Shoot.visible = false
 #	ppk_Reload.visible = false
