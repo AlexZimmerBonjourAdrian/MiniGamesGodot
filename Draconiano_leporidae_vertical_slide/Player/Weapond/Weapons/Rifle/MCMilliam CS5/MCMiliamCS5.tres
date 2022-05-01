@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Player/Weapond/classWeapon.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+weapon_Name = "Name"
+equip_speed = 1.0
+unequip_speed = 1.0
+reload_speed = 1.0
+accuarcy = 1.0
+typeWeapon = "Weapon"
+recoil = 1.0
+offset = 1.0
+multidisparo = false
+exparsion = 1.0
+ammo_in_mag = 15
+extra_ammo = 30
+mag_size = 0
+damage = 10
+fire_rate = 1.0

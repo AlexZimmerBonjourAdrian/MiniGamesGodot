@@ -19,6 +19,7 @@ var weapon_index = 0 # For switching weapons through mouse wheel
 
 func _ready():
 	
+	get_tree().call_group("RayManager","set_WeaponManager",self)
 	 # Adds exception of player to the shooting raycast
 	hud = owner.get_node("HUD")
 #	Raycast.add_exception(owner)
@@ -139,3 +140,8 @@ func fire():
 func reload():
  if not changing_weapon:
 		current_weapon.reload()
+		
+func getCurrentWeapon():
+	return current_weapon
+	
+

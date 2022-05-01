@@ -8,12 +8,7 @@ var animation_player
 var is_firing = false
 var is_reloading = false
 # Weapon Parameters
-export var ammo_in_mag = 15
-export var extra_ammo = 30
-onready var mag_size = ammo_in_mag
 
-export var damage = 10
-export var fire_rate = 1.0
 
 # Effects
 export(PackedScene) var impact_effect
@@ -24,6 +19,18 @@ export(NodePath) var muzzle_flash_path
 export var equip_speed = 1.0
 export var unequip_speed = 1.0
 export var reload_speed = 1.0
+export var accuarcy = 1.0
+export var typeWeapon = "Weapon"
+export var recoil = 1.0
+export var offset = 1.0
+export var multidisparo = false
+export var exparsion=1.0
+export var ammo_in_mag = 15
+export var extra_ammo = 30
+onready var mag_size = ammo_in_mag
+export var damage = 10
+export var fire_rate = 1.0
+
 
 export var is_shoot = false
 export var is_crosshair = false
@@ -154,8 +161,36 @@ func update_ammo(action = "Refresh", additional_ammo = 0):
 		"Name" : weapon_name,
 #		"Image" : weapon_image,
 		"Ammo" : str(ammo_in_mag),
-		"ExtraAmmo" : str(extra_ammo)
-	}
+		"ExtraAmmo" : str(extra_ammo),
+		"Accuarcy" : accuarcy,
+# 		"typeWeapon": typeWeapon,
+		"Recoil"	: recoil,
+		"Offset"    : offset,
+		"Multidisparo": multidisparo,
+		"Exparsion" : exparsion,
+		"typeWeapon" : typeWeapon
+		}
+	
 	weapon_manager.update_hud(weapon_data)
 	
+func getName():
+	return weapon_name
+func getAmmo():
+	return ammo_in_mag
+func getExtraWeapon():
+	return extra_ammo
+func getAccuarcy():
+	return accuarcy
+func getRecoil():
+	return recoil
+func getOffset():
+	return offset
+func getMultidisparo():
+	return multidisparo
+func getExparsion():
+	return exparsion
+func getReturn():
+	return typeWeapon
+func getTypeWeapon():
+	return typeWeapon		
 

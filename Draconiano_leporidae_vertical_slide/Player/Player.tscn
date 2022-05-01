@@ -180,7 +180,17 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.73837, 0 )
 script = SubResource( 3 )
 
+[node name="RayManager" type="Spatial" parent="Head" groups=["RayManager"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.01893 )
+script = ExtResource( 4 )
+
 [node name="Camera" type="Camera" parent="Head"]
+
+[node name="Normal" type="RayCast" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140813, -0.276949, -0.0666676 )
+enabled = true
+cast_to = Vector3( 0, -1, -2 )
+collision_mask = 2
 
 [node name="RayCast" type="RayCast" parent="Head/Camera"]
 visible = false
@@ -205,24 +215,14 @@ cast_to = Vector3( 0, -1.5, 0 )
 collision_mask = 116
 debug_shape_thickness = 5
 
-[node name="Weaponds" type="Node2D" parent="Head/Camera"]
-script = ExtResource( 8 )
-
-[node name="Ppk" parent="Head/Camera/Weaponds" instance=ExtResource( 6 )]
-
-[node name="Normal" type="RayCast" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.140813, -0.276949, -0.0666676 )
-enabled = true
-cast_to = Vector3( 0, -1, -2 )
-collision_mask = 2
-
 [node name="Crosshair" type="RayCast" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.73837, 0 )
 collision_mask = 2
 
-[node name="Spatial" type="Spatial" parent="Head/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268733, -1.08743 )
-script = ExtResource( 4 )
+[node name="Weaponds" type="Node2D" parent="Head/Camera"]
+script = ExtResource( 8 )
+
+[node name="Ppk" parent="Head/Camera/Weaponds" instance=ExtResource( 6 )]
 
 [node name="touching_ground" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113807, 0 )
