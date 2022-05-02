@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://ScriptableObject/PlayerStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+MAXSPEED = 10.0
+ACCELERATION = 0.4
+cooldown = 0.0
+COOLDOWN = 8.0
+dash_speed = 60.0
+Aceleration_Multi = 5.0
+turn_speed = 20.0
+Speed = 30.0
+ammo = 500
+extra_ammo = 40
+ammo_to_mag = 100
