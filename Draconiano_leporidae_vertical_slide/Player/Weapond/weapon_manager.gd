@@ -43,16 +43,15 @@ func _ready():
 	}
 	weapons = {
 		"Empty" : $unarmed,
-		"Primary": $weapon_1
-#		"Secondary": $weapon_2
+		"Primary": $weapon_1,
+		"Secondary": $weapon_2
 	}
 	# inicializacion de las referencias usando un for each de las armas 
+
+# Initialize references for each weapons
 	for w in weapons:
-		if weapons[w] != null:
-			weapons[w].weapon_manager = self
-			weapons[w].player = owner
-#   		weapons[w].ray = get_parent().get_node("Camera/Reach")
-			weapons[w].visible = false
+		if is_instance_valid(weapons[w]):
+			weapon_setup(weapons[w])
 #	for w in weapons:
 #		if is_instance_valid(weapons[w]):
 #			weapon_setup(weapons[w])
@@ -72,6 +71,16 @@ func _ready():
 #		w.visible = false	
 	
 	#process mientras se llama el cambio de armas
+	
+# Initializes Weapon's values
+func weapon_setup(w):
+	if(current_weapon != null):
+		w.weapon_manager = self
+		w.player = owner
+#	w.ray = get_node(ray_path)
+		w.visible = false
+		w.Empty = false
+	
 func _process(delta):
 	
 	if unequipped_weapon == false:
@@ -101,8 +110,9 @@ func change_weapon(new_weapon_slot):
 	current_weapon_slot = new_weapon_slot
 	changing_weapon = true
 	
-	weapons[current_weapon_slot].update_ammo() # Updates the weapon data on UI, as soon as we change a weapon
-	update_weapon_index()
+	if(weapons[current_weapon_slot] != null):
+		weapons[current_weapon_slot].update_ammo() # Updates the weapon data on UI, as soon as we change a weapon
+		update_weapon_index()
 	
 	# Change Weapons
 	if is_instance_valid(current_weapon):
@@ -119,8 +129,8 @@ func update_weapon_index():
 			weapon_index = 0
 		"Primary":
 			weapon_index = 1
-#		"Secondary":
-#			weapon_index = 2
+		"Secondary":
+			weapon_index = 2
 
 
 func next_weapon():
@@ -141,15 +151,15 @@ func previous_weapon():
 
 # update HUB
 func update_hud(weapon_data):
-	var weapon_slot = "0"
+	var weapon_slot = "1"
 	
 	match current_weapon_slot:
 		"Empty":
-			weapon_slot = "0"
-		"Primary":
 			weapon_slot = "1"
-#		"secondary":
-#			weapon_slot = "2"	
+		"Primary":
+			weapon_slot = "2"
+		"secondary":
+			weapon_slot = "3"	
 				
 	hud.update_weapon_ui(weapon_data, weapon_slot)
 
@@ -167,8 +177,9 @@ func reload():
  if not changing_weapon:
 		current_weapon.reload()
 		
-func getCurrentWeapon():
-	return current_weapon
+func isCurrentWeaponNull():
+	if(current_weapon == null):
+		return true
 	
 func add_ammo(amount):
 	if is_instance_valid(current_weapon) == false || current_weapon.name == "Unarmed":
@@ -176,46 +187,46 @@ func add_ammo(amount):
 	
 	current_weapon.update_ammo("add", amount)
 	return true
-	
+
 func add_weapon(weapon_data):
 	if not weapon_data["Name"] in all_weapons:
 		return
 	
-#	if is_instance_valid(weapons["Primary"]) == false:
+	if is_instance_valid(weapons["Primary"]) == false:
 #
 #		# Instance the new weapon
-#		var weapon = Global.instantiate_node(all_weapons[weapon_data["Name"]], Vector3.ZERO, self)
+		var weapon = Global.instantiate_node(all_weapons[weapon_data["Name"]], Vector3.ZERO, self)
 #
 #		# Initialize the new weapon references
-#		weapon_setup(weapon)
-#		weapon.ammo_in_mag = weapon_data["Ammo"]
-#		weapon.extra_ammo = weapon_data["ExtraAmmo"]
-#		weapon.mag_size = weapon_data["MagSize"]
-#		weapon.transform.origin = weapon.equip_pos
+		weapon_setup(weapon)
+		weapon.ammo_in_mag = weapon_data["Ammo"]
+		weapon.extra_ammo = weapon_data["ExtraAmmo"]
+		weapon.mag_size = weapon_data["MagSize"]
+		weapon.transform.origin = weapon.equip_pos
 #
 #		# Update the dictionary and change weapon
-#		weapons["Primary"] = weapon
-#		change_weapon("Primary")
+		weapons["Primary"] = weapon
+		change_weapon("Primary")
 #
-#		return
+		return
 
-#	if is_instance_valid(weapons["Secondary"]) == false:
+	if is_instance_valid(weapons["Secondary"]) == false:
 #
 #		# Instance the new weapon
-#		var weapon = Global.instantiate_node(all_weapons[weapon_data["Name"]], Vector3.ZERO, self)
+		var weapon = Global.instantiate_node(all_weapons[weapon_data["Name"]], Vector3.ZERO, self)
 #
 #		# Initialize the new weapon references
-#		weapon_setup(weapon)
-#		weapon.ammo_in_mag = weapon_data["Ammo"]
-#		weapon.extra_ammo = weapon_data["ExtraAmmo"]
-#		weapon.mag_size = weapon_data["MagSize"]
-#		weapon.transform.origin = weapon.equip_pos
+		weapon_setup(weapon)
+		weapon.ammo_in_mag = weapon_data["Ammo"]
+		weapon.extra_ammo = weapon_data["ExtraAmmo"]
+		weapon.mag_size = weapon_data["MagSize"]
+		weapon.transform.origin = weapon.equip_pos
 #
 #		# Update the dictionary and change weapon
-#		weapons["Secondary"] = weapon
-#		change_weapon("Secondary")
+		weapons["Secondary"] = weapon
+		change_weapon("Secondary")
 #
-#		return
+		return
 		
 	# Will be called from player.gd
 func drop_weapon():
@@ -294,7 +305,12 @@ func hide_interaction_prompt():
 func isUnarmed():
 	if weapon_index == 0:
 		return true
-	
+
+
 #func CreateAutomaticWeapon():
+#
+#
+#	if Input.is_action_just_pressed("click"):
+#
 
 	

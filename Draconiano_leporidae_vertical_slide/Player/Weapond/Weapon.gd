@@ -5,7 +5,7 @@ class_name Weapon
 var weapon_manager = null
 var player = null
 var ray = null
-
+var isEmpty = false
 # Weapon States
 var is_equipped = false
 
@@ -30,11 +30,10 @@ func is_unequip_finished():
 
 # Update Ammo
 func update_ammo():
-	
 	var weapon_data = {
 		"Name" : weapon_name,
 #		"Image" : weapon_image
 	}
-	
-	weapon_manager.update_hud(weapon_data)
+	if(weapon_manager != null):
+		weapon_manager.update_hud(weapon_data)
 
