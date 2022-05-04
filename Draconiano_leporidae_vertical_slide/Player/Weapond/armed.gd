@@ -9,6 +9,8 @@ var is_firing = false
 var is_reloading = false
 # Weapon Parameters
 
+#rigidbody Version
+export(PackedScene) var weapon_pickup
 
 # Effects
 export(PackedScene) var impact_effect
@@ -31,7 +33,6 @@ onready var mag_size = ammo_in_mag
 export var damage = 10
 export var fire_rate = 1.0
 
-
 export var is_shoot = false
 export var is_crosshair = false
 export var is_shoot_crosshair = false
@@ -51,7 +52,7 @@ func fire():
 
 func fire_stop():
 	is_firing = false
-	is_shoot_crosshair = false
+#	is_shoot_crosshair = false
 #	animation_player.get_animation("shoot").loop = false
 	
 func fireCrosshair():
@@ -64,8 +65,8 @@ func fireCrosshair():
 				is_shoot_crosshair = true
 				
 			return
-		elif is_shoot_crosshair:
-			fire_stop()
+#		elif is_shoot_crosshair:
+#			fire_stop()
 	
 
 func fire_bullet():    # Will be called from the animation track
@@ -194,3 +195,8 @@ func getReturn():
 func getTypeWeapon():
 	return typeWeapon		
 
+func drop_weapon():
+	var pickup = Global.instantiate_node(weapon_pickup, global_transform.origin - player.global_transform.basis.z.normalized())
+	pickup.ammo_in_mag = ammo_in_mag
+	pickup.extra_ammo = extra_ammo
+	pickup.mag_size = mag_size	

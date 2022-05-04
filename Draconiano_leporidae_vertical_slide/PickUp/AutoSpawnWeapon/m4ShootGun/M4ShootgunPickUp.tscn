@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/WeaponModel_Prototype/arms.material" type="Material" id=1]
+[ext_resource path="res://PickUp/weapon_pickup.gd" type="Script" id=2]
+
+[sub_resource type="CylinderMesh" id=1]
+material = ExtResource( 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = ExtResource( 1 )
+
+[node name="M4Shootgun" type="KinematicBody"]
+script = ExtResource( 2 )
+
+[node name="M4Shootgun" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="M4Shootgun"]
+transform = Transform( -4.66938e-08, -1.80731, 0, 0.2, -6.16172e-07, 0, 0, 0, 0.2, 0.0331423, 0, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="M4Shootgun"]
+transform = Transform( -6.55671e-09, -0.603, 0, 0.15, -2.6358e-08, 0, 0, 0, 0.15, 2.29525, 0, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="M4Shootgun"]
+transform = Transform( 0.466056, -0.0473524, 0, 0.126864, 0.2818, 0, 0, 0, 0.168613, -2.19573, -0.173358, 0.00100493 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="MeshInstance4" type="MeshInstance" parent="M4Shootgun"]
+transform = Transform( 0.148379, -0.00367051, 0, 0.00361334, 0.150727, 0, 0, 0, 0.168613, -1.52485, -0.117028, 0.0124664 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="MeshInstance5" type="MeshInstance" parent="M4Shootgun"]
+transform = Transform( 0.0845469, -0.00209147, 0, 0.00222793, 0.0929358, 0, 0, 0, 0.168613, -1.52485, 0.247233, 0.0124664 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="MeshInstance6" type="MeshInstance" parent="M4Shootgun"]
+transform = Transform( 0.0476544, -0.00117885, 0, 0.00171257, 0.0714378, 0, 0, 0, 0.0688513, 2.7993, 0.146778, 0.0124664 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = null

@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://undefined - Imgur.png" type="Texture" id=2]
 [ext_resource path="res://Player/GuiInterfaz/hud.gd" type="Script" id=3]
 [ext_resource path="res://Player/Weapond/raycast_manager.gd" type="Script" id=4]
-[ext_resource path="res://Player/Weapond/ppk.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Player/Weapond/Weapons/Unarmed/unarmed.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/Weapond/armed.gd" type="Script" id=6]
 [ext_resource path="res://Player/Weapond/weapon_manager.gd" type="Script" id=8]
 
 [sub_resource type="CapsuleMesh" id=1]
@@ -217,12 +218,19 @@ debug_shape_thickness = 5
 
 [node name="Crosshair" type="RayCast" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.73837, 0 )
+visible = false
 collision_mask = 2
 
 [node name="Weaponds" type="Node2D" parent="Head/Camera"]
 script = ExtResource( 8 )
 
-[node name="Ppk" parent="Head/Camera/Weaponds" instance=ExtResource( 6 )]
+[node name="unarmed" parent="Head/Camera/Weaponds" instance=ExtResource( 5 )]
+
+[node name="weapon_1" type="Node2D" parent="Head/Camera/Weaponds"]
+script = ExtResource( 6 )
+
+[node name="weapon_2" type="Node2D" parent="Head/Camera/Weaponds"]
+script = ExtResource( 6 )
 
 [node name="touching_ground" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.113807, 0 )

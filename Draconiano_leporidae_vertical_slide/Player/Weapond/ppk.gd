@@ -9,13 +9,7 @@ onready var animation = $AnimationPlayer
 #onready var RayNormal = $Camera/Normal
 #onready var RayCrosshair = $Crosshair
 
-const STATE_IDLE = 1
-const STATE_SHOOT = 2
-const STATE_RELOAD = 3
-const STATE_CROSSHAIR = 4
-const STATE_SHOOTCROSSHAIR = 5
-const STATE_CROSSHAIR_IDLE = 6
-var state = STATE_IDLE;
+
 
 var is_crossing 
 var class_data = load("res://Player/Weapond/Weapons/Pistol/PPK/PPK.tres")
@@ -25,7 +19,6 @@ func _ready():
 		Hideall()
 		is_crossing= false
 		is_reloading= false
-		setState(STATE_IDLE)
 		
 		#animation_player = $AnimationPlayer
 		loadDataWeapon()
@@ -180,12 +173,6 @@ func setIsCrossing(Crossing):
 	
 func on_animation_finish(anim_name):
 	.on_animation_finish(anim_name)
-
-func getState():
-	return state
-
-func setState(aState):
-	state = aState
 	
 					
 				

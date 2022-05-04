@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://PickUp/weapon_pickup.gd" type="Script" id=1]
+[ext_resource path="res://Assets/WeaponModel_Prototype/arms.material" type="Material" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 2 )
+
+[sub_resource type="CylinderMesh" id=2]
+material = ExtResource( 2 )
+rings = 1
+
+[sub_resource type="CubeMesh" id=3]
+material = ExtResource( 2 )
+
+[node name="PpkPickUp" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="PPK" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="PPK"]
+transform = Transform( 0.205868, 0, 0, 0, 0.0602703, 0, 0, 0, 0.0593361, -0.0260354, 0, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="PPK"]
+transform = Transform( -8.53013e-09, 0.195147, -8.53013e-09, 0, -3.56495e-09, -0.0815565, -0.0815565, -3.56495e-09, 1.55829e-16, 0.385983, 0, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="MeshInstance3" type="MeshInstance" parent="PPK"]
+transform = Transform( 0.053384, 0.0294134, 0, -0.0146954, 0.10685, 0, 0, 0, 0.049516, -0.215284, -0.135303, -0.0146147 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = null

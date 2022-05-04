@@ -19,6 +19,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/Weapond/Weapon.gd"
 }, {
+"base": "RigidBody",
+"class": "Weapon_pickup",
+"language": "GDScript",
+"path": "res://PickUp/weapon_pickup.gd"
+}, {
 "base": "Resource",
 "class": "classWeapon",
 "language": "GDScript",
@@ -27,6 +32,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Armed": "",
 "Weapon": "",
+"Weapon_pickup": "",
 "classWeapon": ""
 }
 
