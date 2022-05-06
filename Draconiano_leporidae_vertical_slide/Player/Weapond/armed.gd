@@ -171,8 +171,8 @@ func update_ammo(action = "Refresh", additional_ammo = 0):
 		"Exparsion" : exparsion,
 		"typeWeapon" : typeWeapon
 		}
-	
-	weapon_manager.update_hud(weapon_data)
+	if(weapon_manager != null):
+		weapon_manager.update_hud(weapon_data)
 	
 func getName():
 	return weapon_name

@@ -20,31 +20,7 @@ export var state= STATE_STAND
 var path = []
 var cur_path_idx = 0
 
-func get_target_path(target_pos_func):
-#	target_pos = target_pos_func
-	if(target_pos_func != null):
-#		print("Entra en el nav")
-		path = nav.get_simple_path(global_transform.origin, target_pos_func)
-#	else:
-#		get_player()
-#		path = nav.get_simple_path(global_transform.origin, target.global_transform.origin)
-#func process():
-#	global_transform.origin.distance_to(path[cur_path_idx])
-#func _process(delta):
-#	if(state==STATE_FOLLOW):
-##		if path.size() > 0:
-#		move_to_target()
-#	if (state==STATE_SHOOT_PLAYER):
-#		setState(STATE_SHOOT_PLAYER)
-#
-func _physics_process(delta):
-	._physics_process(delta)
-func move_to_target():
-	setState(STATE_FOLLOW)
-	
-	
-func setState(astate):
-	state=astate
+func _process(delta):
 	match state:
 		STATE_STAND:
 #			update_Print("Estado Stand")
@@ -102,9 +78,36 @@ func setState(astate):
 #			supdate_Print("Estoy Muerto")
 #			visible = false
 			queue_free()
+func get_target_path(target_pos_func):
+#	target_pos = target_pos_func
+	if(target_pos_func != null):
+#		print("Entra en el nav")
+		path = nav.get_simple_path(global_transform.origin, target_pos_func)
+#	else:
+#		get_player()
+#		path = nav.get_simple_path(global_transform.origin, target.global_transform.origin)
+#func process():
+#	global_transform.origin.distance_to(path[cur_path_idx])
+#func _process(delta):
+#	if(state==STATE_FOLLOW):
+##		if path.size() > 0:
+#		move_to_target()
+#	if (state==STATE_SHOOT_PLAYER):
+#		setState(STATE_SHOOT_PLAYER)
+#
+func _physics_process(delta):
+	._physics_process(delta)
+func move_to_target():
+	setState(STATE_FOLLOW)
+	
+	
+func setState(astate):
+	state=astate
+	
 			
 func dead():
-	update_Print("Estoy Muerto")
+#	update_Print("Estoy Muerto")
+	print("Estoy muerto")
 	setState(STATE_DEAD)
 
 func _on_ShootTimer_timeout():
@@ -115,10 +118,10 @@ func _on_ShootTimer_timeout():
 
 func set_player(p):
 	player = p
-func update_ExtraData(ExtraData):
-	$Control/Background/ExtraData.text = String(ExtraData)
-func update_Print(testprinter):
-	$Control/Background/Print.text = String(testprinter)
+#func update_ExtraData(ExtraData):
+#	$Control/Background/ExtraData.text = String(ExtraData)
+#func update_Print(testprinter):
+#	$Control/Background/Print.text = String(testprinter)
 #	$Control/Background/ExtraData.text = String(extradata)
 #function Prototype para crear balas 
 #Todo:Cambiar el tipo de disparo segun el arma

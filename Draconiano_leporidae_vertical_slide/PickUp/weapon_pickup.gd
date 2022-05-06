@@ -1,5 +1,4 @@
 extends RigidBody
-class_name Weapon_pickup
 
 export var weapon_name = "Weapon"
 export var ammo_in_mag = 5
@@ -10,8 +9,8 @@ export var weapon_type = "weapon"
 
 
 
-#func _ready():
-#	connect("sleeping_state_changed",self, "on_sleeping")
+func _ready():
+	connect("sleeping_state_changed",self, "on_sleeping")
 
 func get_weapon_pickup_data():
 	return{

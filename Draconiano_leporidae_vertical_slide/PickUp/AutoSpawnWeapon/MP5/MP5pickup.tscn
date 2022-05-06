@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/WeaponModel_Prototype/arms.material" type="Material" id=1]
 [ext_resource path="res://PickUp/weapon_pickup.gd" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.204884, 0.23062, 0.194734 )
 
 [sub_resource type="CylinderMesh" id=1]
 material = ExtResource( 1 )
@@ -9,8 +12,12 @@ material = ExtResource( 1 )
 [sub_resource type="CubeMesh" id=2]
 material = ExtResource( 1 )
 
-[node name="MP5pickup" type="KinematicBody"]
+[node name="MP5pickup" type="RigidBody" groups=["weapon"]]
 script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 3.63105, 0, 0, 0, 1.49216, 0, 0, 0, 1, 0.103105, -0.0905505, 0 )
+shape = SubResource( 3 )
 
 [node name="MP5" type="Spatial" parent="."]
 

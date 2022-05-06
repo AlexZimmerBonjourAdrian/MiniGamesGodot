@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Player/Weapond/Weapon.gd"
 }, {
-"base": "RigidBody",
-"class": "Weapon_pickup",
-"language": "GDScript",
-"path": "res://PickUp/weapon_pickup.gd"
-}, {
 "base": "Resource",
 "class": "classWeapon",
 "language": "GDScript",
@@ -32,7 +27,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Armed": "",
 "Weapon": "",
-"Weapon_pickup": "",
 "classWeapon": ""
 }
 
@@ -208,6 +202,11 @@ Run={
 Slinding={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777238,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Secondary={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":50,"unicode":0,"echo":false,"script":null)
  ]
 }
 

@@ -82,20 +82,8 @@ func _physics_process(delta):
 	process_weapons()
 	
 	check_sliding_logic(direction,delta)
-#	esto es for que recorre y chequea los objetos que coliciona pudiendo chequear y actuar que se esta collisionando algo muy importante
-#   En esto sse colicciona con objetos de mundo, como cajas,
-#   esto tambien es usado para el sistema de pickup
-#	for idx in get_slide_count():
-#		var collision = get_slide_collision(idx)
-#		if collision.collider.is_in_group("bodies"):
-#			collision.collider.apply_central_impulse(-collision.normal * velocity.length() * push)
-#		if collision.collider.is_in_group("weapon"):
-#			if collision.collider.call("get_type") == "Pistol":
-#				collision.collider.queue_free()
-#			elif collision.collider.call("get_type") == "ShootGun":
-#				collision.collider.queue_free()
-#			elif collision.collider.call("get_type") == "MachineGun":
-#				collision.collider.queue_free()
+
+	pickUp_functiion()
 			
 	#asigna los controles de movimiento y setea las direcciones de forma sencilla 
 
@@ -296,3 +284,19 @@ func check_sliding_logic(direction,delta):
 	else:
 		is_sliding = false	
 
+func pickUp_functiion():
+	#	esto es for que recorre y chequea los objetos que coliciona pudiendo chequear y actuar que se esta collisionando algo muy importante
+#   En esto sse colicciona con objetos de mundo, como cajas,
+#   esto tambien es usado para el sistema de pickup
+	for idx in get_slide_count():
+		var collision = get_slide_collision(idx)
+#		if collision.collider.is_in_group("bodies"):
+#			collision.collider.apply_central_impulse(-collision.normal * velocity.length() * push)
+		if collision.collider.is_in_group("weapon"):
+				var weapon_data = collision.collider.call("get_weapon_pickup_data")
+				weapon_manager.add_weapon(weapon_data)
+				collision.collider.queue_free()
+#			elif collision.collider.call("get_type") == "ShootGun":
+#				collision.collider.queue_free()
+#			elif collision.collider.call("get_type") == "MachineGun":
+#				collision.collider.queue_free()
