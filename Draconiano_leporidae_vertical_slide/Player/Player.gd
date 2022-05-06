@@ -166,10 +166,11 @@ func process_weapons():
 		weapon_manager.change_weapon("Empty")
 	
 	if Input.is_action_just_pressed("Primary"):
+		print("Estoy llamando al primer slot")
 		weapon_manager.change_weapon("Primary")
 		
-#	if Input.is_action_just_pressed("Secundary"):
-#		weapon_manager.change_weapon("Secundary")
+	if Input.is_action_just_pressed("Secondary"):
+		weapon_manager.change_weapon("Secondary")
 	# Firing
 	if Input.is_action_just_pressed("click"):
 #		if(	!weapon_manager.current_weapon.unequip()):

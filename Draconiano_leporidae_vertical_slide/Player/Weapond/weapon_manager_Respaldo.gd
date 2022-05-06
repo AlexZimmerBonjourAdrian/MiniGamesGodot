@@ -53,7 +53,11 @@ func _ready():
 	for w in weapons:
 		if is_instance_valid(weapons[w]):
 			weapon_setup(weapons[w])
-
+#	for w in weapons:
+#		if is_instance_valid(weapons[w]):
+#			weapon_setup(weapons[w])
+	
+	#Set current weapon to unarmed
 	current_weapon = weapons["Empty"]
 	change_weapon("Empty")
 	
@@ -87,7 +91,7 @@ func _process(delta):
 		unequipped_weapon = true
 		
 		current_weapon = weapons[current_weapon_slot]
-		current_weapon.equip()
+#		current_weapon.equip()
 		
 #	if current_weapon.is_equip_finished() == false:
 #		return

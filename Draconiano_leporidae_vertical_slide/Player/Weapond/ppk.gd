@@ -16,7 +16,6 @@ var class_data = load("res://Player/Weapond/Weapons/Pistol/PPK/PPK.tres")
 
 func _ready():
 
-		Hideall()
 		is_crossing= false
 		is_reloading= false
 		
@@ -75,10 +74,13 @@ func _input(event):
 		
 		
 		
-		
-		
-		
-		
+#
+#func equip():
+#	.equip()
+#
+#func unequip():	
+#	.unequip()
+#
 		
 
 #func _input(event):	

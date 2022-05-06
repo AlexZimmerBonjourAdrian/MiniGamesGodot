@@ -14,7 +14,8 @@ func instantiate_node(packed_scene, pos = null, parent = null):
 	parent.add_child(clone)
 	
 	if pos != null:
-		clone.global_transform.origin = pos
+		var Post2 = Vector2(pos.x,pos.y)
+		clone.global_transform.origin = Post2
 		
 	return clone
 	
