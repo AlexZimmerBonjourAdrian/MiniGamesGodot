@@ -245,6 +245,9 @@ autostart = true
 [node name="Player" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79584, 0.55842, 12.0546 )
 
+[node name="Camera" parent="Player/Head" index="1"]
+current = true
+
 [node name="weapon_1" parent="Player/Head/Camera/Weaponds" index="1"]
 script = null
 

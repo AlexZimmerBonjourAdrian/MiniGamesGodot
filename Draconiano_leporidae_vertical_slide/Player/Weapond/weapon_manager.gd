@@ -87,8 +87,10 @@ func _process(delta):
 		unequipped_weapon = true
 		
 		current_weapon = weapons[current_weapon_slot]
+		
 		current_weapon.equip()
 		
+	
 #	if current_weapon.is_equip_finished() == false:
 #		return
 		
@@ -118,17 +120,19 @@ func change_weapon(new_weapon_slot):
 		if is_instance_valid(weapons["Primary"]) == true:
 			if(current_weapon != null):
 				print("Entra en el current Weapon de la arma primaria")
+				CreateWeaponChange()
 				weapons[current_weapon_slot].update_ammo() # Updates the weapon data on UI, as soon as we change a weapon
 				update_weapon_index()
 				current_weapon.equip()
 #				unequipped_weapon = false
 		if is_instance_valid(weapons["Secondary"]) == true:
 			if(current_weapon != null):
+				CreateWeaponChange()
 				weapons[current_weapon_slot].update_ammo() # Updates the weapon data on UI, as soon as we change a weapon
 				update_weapon_index()
 				current_weapon.equip()
 #				unequipped_weapon = false
-		
+			
 	if is_instance_valid(current_weapon):
 #		if(check_is_Aviable()):
 			unequipped_weapon = false
@@ -400,29 +404,54 @@ func check_is_Aviable():
 func RandomWeapon():
 	var rand_weapon = rand_range(0,4)
 	if(rand_weapon == 0):
-		return auto_spawn_weapon['ppk']
-		
-
-
+		return{
+			"Name" : "ppk",
+			"Ammo" : 15,
+			"ExtraAmmo" : 60,
+			"MagSize" : 15,
+			"typeweapon" : "pistol"
+			}
 	if(rand_weapon == 1):
-		if(rand_weapon == 0):
-			return auto_spawn_weapon['ppk']
+		return{
+			"Name" : "ppk",
+			"Ammo" : 15,
+			"ExtraAmmo" : 60,
+			"MagSize" : 15,
+			"typeweapon" : "pistol"
+			}
 		
 	elif(rand_weapon == 2):
-		if(rand_weapon == 0):
-			return auto_spawn_weapon['ppk']
+		return{
+			"Name" : "ppk",
+			"Ammo" : 15,
+			"ExtraAmmo" : 60,
+			"MagSize" : 15,
+			"typeweapon" : "pistol"
+			}
 		
 	elif(rand_weapon == 3):
-		if(rand_weapon == 0):
-			return auto_spawn_weapon['ppk']
+		return{
+			"Name" : "ppk",
+			"Ammo" : 15,
+			"ExtraAmmo" : 60,
+			"MagSize" : 15,
+			"typeweapon" : "pistol"
+			}
 		
 	elif(rand_weapon == 4):
-		if(rand_weapon == 0):
-			return auto_spawn_weapon['ppk']
+		return{
+				"Name" : "ppk",
+				"Ammo" : 15,
+				"ExtraAmmo" : 60,
+				"MagSize" : 15,
+				"typeweapon" : "pistol"
+				}
 		
 func CreateWeaponChange():
-	if is_instance_valid(weapons["Primary"]) == false:
-		var weapon = Global.instantiate_node(RandomWeapon(), Vector3.ZERO, 2)
+	if is_instance_valid(weapons["Primary"]) != false:
+		print("Entra en Create Weapon Change")
+		var randomWeapon = RandomWeapon()
+		var weapon = Global.instantiate_node(auto_spawn_weapon["ppk"], Vector3.ZERO,weapons["Primary"])
 		weapon_setup(weapon)		
 		weapon.ammo_in_mag = 50
 		weapon.extra_ammo = 60
@@ -431,9 +460,11 @@ func CreateWeaponChange():
 		weapons["Primary"] = weapon
 		change_weapon("Primary")
 	
-	elif is_instance_valid(weapons["Secondary"]) == false:
-		RandomWeapon()
-		var weapon = Global.instantiate_node(RandomWeapon(), Vector3.ZERO, 3)
+	elif is_instance_valid(weapons["Secondary"]) != false:
+		print("Entra en Create Weapon Change")
+#		var weapon = Global.instantiate_node(all_weapons[weapon_data["Name"]], Vector3.ZERO,  weapons["Secondary"])
+		var randomWeapon = RandomWeapon()
+		var weapon = Global.instantiate_node(auto_spawn_weapon[randomWeapon["Name"]], Vector3.ZERO, weapons["Secondary"])
 		weapon_setup(weapon)		
 		weapon.ammo_in_mag = 50
 		weapon.extra_ammo = 60
