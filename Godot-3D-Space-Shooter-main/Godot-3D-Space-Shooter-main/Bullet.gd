@@ -17,6 +17,7 @@ func _on_Area_body_entered(body):
 		explodeSound.play()
 		visible = false
 		$Area/CollisionShape.disabled = true
+#		particles.queue_free()
 
 func _on_LightTimer_timeout():
 	$OmniLight.visible = false

@@ -24,6 +24,10 @@ config/name="3d Wap Shooter"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Score="*res://Score/Score.gd"
+
 [display]
 
 window/size/width=1920

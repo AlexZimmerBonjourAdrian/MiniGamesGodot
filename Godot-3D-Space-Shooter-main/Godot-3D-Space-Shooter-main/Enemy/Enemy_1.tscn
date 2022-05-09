@@ -34,3 +34,6 @@ visibility_aabb = AABB( -3.7705, -4, -4.05034, 7.54101, 8, 8.10068 )
 
 [node name="weapons" type="Spatial" parent="Paceship"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -4 )
+
+[node name="RayCast" type="RayCast" parent="Paceship/weapons"]
+cast_to = Vector3( 0, -1, -100 )
