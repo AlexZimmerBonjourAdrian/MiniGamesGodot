@@ -37,10 +37,10 @@ func _ready():
 	}
 	
 	auto_spawn_weapon = {
-		"Ppk" : preload("res://Player/Weapond/ppk.tscn"),
-		"MP5" : preload("res://Player/Weapond/Weapons/subfusil/MP5/MP5.tscn"),
-		"M4ShootGun"  : preload("res://Player/Weapond/Weapons/ShootGun/M4Shootgun/M4ShootGun.tscn"),
-		"Calico" : preload("res://Player/Weapond/Weapons/Pistol/CalicoM950/Calico.tscn")
+		"ppk" : preload("res://Player/Weapond/ppk.tscn"),
+#		"MP5" : preload("res://Player/Weapond/Weapons/subfusil/MP5/MP5.tscn"),
+#		"M4ShootGun"  : preload("res://Player/Weapond/Weapons/ShootGun/M4Shootgun/M4ShootGun.tscn"),
+#		"Calico" : preload("res://Player/Weapond/Weapons/Pistol/CalicoM950/Calico.tscn")
 	}
 	weapons = {
 		"Empty" : $unarmed,
@@ -397,5 +397,47 @@ func check_is_Aviable():
 	if is_instance_valid(weapons["Secondary"]) == false:
 		print("No hay arma secundaria")
 		return
+func RandomWeapon():
+	var rand_weapon = rand_range(0,4)
+	if(rand_weapon == 0):
+		return auto_spawn_weapon['ppk']
+		
+
+
+	if(rand_weapon == 1):
+		if(rand_weapon == 0):
+			return auto_spawn_weapon['ppk']
+		
+	elif(rand_weapon == 2):
+		if(rand_weapon == 0):
+			return auto_spawn_weapon['ppk']
+		
+	elif(rand_weapon == 3):
+		if(rand_weapon == 0):
+			return auto_spawn_weapon['ppk']
+		
+	elif(rand_weapon == 4):
+		if(rand_weapon == 0):
+			return auto_spawn_weapon['ppk']
+		
+func CreateWeaponChange():
+	if is_instance_valid(weapons["Primary"]) == false:
+		var weapon = Global.instantiate_node(RandomWeapon(), Vector3.ZERO, 2)
+		weapon_setup(weapon)		
+		weapon.ammo_in_mag = 50
+		weapon.extra_ammo = 60
+		weapon.mag_size = 15
+	#		weapon.transform.origin = weapon.equip_pos
+		weapons["Primary"] = weapon
+		change_weapon("Primary")
 	
-#func is_duplicated():
+	elif is_instance_valid(weapons["Secondary"]) == false:
+		RandomWeapon()
+		var weapon = Global.instantiate_node(RandomWeapon(), Vector3.ZERO, 3)
+		weapon_setup(weapon)		
+		weapon.ammo_in_mag = 50
+		weapon.extra_ammo = 60
+		weapon.mag_size = 15
+	#		weapon.transform.origin = weapon.equip_pos
+		weapons["Secondary"] = weapon
+		change_weapon("Secondary")
