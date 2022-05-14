@@ -1,0 +1,59 @@
+<!DOCTYPE SceneVersion>
+<SceneVersion VersionName="mp5k-DL-VS-idle" Modified="2022-05-13 21:51:52" ID="1">
+ <Element Name="Gui" ID="2" Folder="Gui">
+  <Drawing Key="" Name="1" Version="1"/>
+ </Element>
+ <Element Name="weapondDraconiano" ID="6" Folder="weapondDraconiano">
+  <Drawing Key="" Name="mp5k_crosshair" Version="1"/>
+ </Element>
+ <Element Name="weapondDraconiano" ID="7" Folder="weapondDraconiano.7">
+  <Drawing Key="" Name="mp5k_crosshair_My_Vision" Version="1"/>
+ </Element>
+ <Element Name="weapondDraconiano" ID="8" Folder="weapondDraconiano.8">
+  <Drawing Key="" Name="mp5k_idle" Version="1"/>
+ </Element>
+ <Element Name="mp5k-Idle" ID="9" Folder="mp5k-Idle.9">
+  <Drawing Key="" Name="1" Version="1"/>
+  <Drawing Key="" Name="2" Version="1"/>
+ </Element>
+ <Element Name="mp5k-Crosshair_3" ID="10" Folder="mp5k-Crosshair_3">
+  <Drawing Key="" Name="1" Version="1"/>
+  <Drawing Key="" Name="2" Version="1"/>
+ </Element>
+ <Element Name="mp5k-crosshair_2" ID="11" Folder="mp5k-crosshair_2">
+  <Drawing Key="" Name="1" Version="1"/>
+ </Element>
+ <Element Name="mp5K-Arma" ID="12" Folder="mp5K-Arma">
+  <Drawing Key="" Name="1" Version="1"/>
+  <Drawing Key="" Name="10" Version="1"/>
+  <Drawing Key="" Name="11" Version="1"/>
+  <Drawing Key="" Name="2" Version="1"/>
+  <Drawing Key="" Name="3" Version="1"/>
+  <Drawing Key="" Name="4" Version="1"/>
+  <Drawing Key="" Name="5" Version="1"/>
+  <Drawing Key="" Name="6" Version="1"/>
+  <Drawing Key="" Name="7" Version="1"/>
+  <Drawing Key="" Name="8" Version="1"/>
+  <Drawing Key="" Name="9" Version="1"/>
+  <Drawing Key="" Name="12" Version="1"/>
+  <Drawing Key="" Name="13" Version="1"/>
+  <Drawing Key="" Name="14" Version="1"/>
+ </Element>
+ <Element Name="mp5k" ID="15" Folder="mp5k.15">
+  <Drawing Key="" Name="1" Version="1"/>
+ </Element>
+ <Element Name="mp5k-hand" ID="16" Folder="mp5k-hand">
+  <Drawing Key="" Name="1" Version="1"/>
+  <Drawing Key="" Name="2" Version="1"/>
+  <Drawing Key="" Name="3" Version="1"/>
+  <Drawing Key="" Name="4" Version="1"/>
+  <Drawing Key="" Name="5" Version="1"/>
+  <Drawing Key="" Name="6" Version="1"/>
+ </Element>
+ <Element Name="mp5k-crosshair" ID="19" Folder="mp5k-crosshair">
+  <Drawing Key="" Name="1" Version="1"/>
+ </Element>
+ <Element Name="mp5k" ID="20" Folder="mp5k.20">
+  <Drawing Key="" Name="crosshair" Version="1"/>
+ </Element>
+</SceneVersion>
