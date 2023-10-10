@@ -1,14 +1,14 @@
-extends KinematicBody
+extends CharacterBody3D
 
 const MOVE_SPEED = 4
 const MOUSE_SENS = 0.5
 
-onready var anim_player = $AnimationPlayer
-onready var raycast = $RayCast
+@onready var anim_player = $AnimationPlayer
+@onready var raycast = $RayCast3D
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	yield(get_tree(), "idle_frame")
+#	await get_tree().idle_frame
 	get_tree().call_group("Enemys", "set_player",self)
 	
 func _input(event):

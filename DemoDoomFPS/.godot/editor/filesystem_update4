@@ -1,0 +1,4 @@
+res://default_env.tres
+res://World/World.tscn
+res://Player/Player.gd
+res://Player/Player.tscn

@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://cIbd2yM.png" type="Texture" id=1]
+[ext_resource path="res://cIbd2yM.png" type="Texture2D" id=1]
 [ext_resource path="res://Enemy/new_animation.tres" type="Animation" id=2]
 [ext_resource path="res://Enemy/Enemy.gd" type="Script" id=3]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="CapsuleShape3D" id=1]
 
 [sub_resource type="Animation" id=2]
 resource_name = "die"
@@ -16,8 +16,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.00217629, 0.235039, 0.420024, 0.611538 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 0.00217629, 0.235039, 0.420024, 0.611538 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 5, 7, 8, 9 ]
 }
@@ -33,22 +33,22 @@ tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.00870516, 0.15234, 0.293799, 0.4222, 0.570188 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array( 0.00870516, 0.15234, 0.293799, 0.4222, 0.570188 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 0 ]
 }
 
-[node name="Enemy" type="KinematicBody" groups=["Enemys"]]
+[node name="Enemy" type="CharacterBody3D" groups=["Enemys"]]
 script = ExtResource( 3 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="RayCast" type="RayCast" parent="."]
+[node name="RayCast3D" type="RayCast3D" parent="."]
 enabled = true
-cast_to = Vector3( 0, 0, 2000 )
+target_position = Vector3( 0, 0, 2000 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = ExtResource( 2 )

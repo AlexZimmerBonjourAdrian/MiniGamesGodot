@@ -1,23 +1,23 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://c7fkp104emuqv"]
 
-[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource type="PackedScene" path="res://Enemy/Enemy.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://b18w2dsejev7m" path="res://Player/Player.tscn" id="2"]
 
-[node name="World" type="Spatial"]
+[node name="World" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource("2")]
 
-[node name="Enemy" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.79271, 0, -6.35483 )
+[node name="Enemy" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.79271, 0, -6.35483)
 
-[node name="Enemy2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13892, 0, -6.35483 )
+[node name="Enemy2" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13892, 0, -6.35483)
 
-[node name="Enemy3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2533, 0, -3.89501 )
+[node name="Enemy3" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2533, 0, -3.89501)
 
-[node name="Enemy4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2043, 0, -3.50847 )
+[node name="Enemy4" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2043, 0, -3.50847)
 
-[node name="Enemy5" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2043, 0, 4.04669 )
+[node name="Enemy5" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2043, 0, 4.04669)
