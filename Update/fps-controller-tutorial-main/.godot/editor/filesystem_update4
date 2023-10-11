@@ -1,0 +1,4 @@
+res://default_env.tres
+res://levels/game.tscn
+res://player/player.tscn
+res://player/player.gd

@@ -1,0 +1,545 @@
+[gd_scene load_steps=10 format=3 uid="uid://bifinkd8dlt13"]
+
+[ext_resource type="PackedScene" path="res://player/player.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://xwk41i1tckj0" path="res://assets/prototype_textures/Vector/texture_01.svg" id="3"]
+[ext_resource type="Texture2D" uid="uid://d38ghpgwnme4u" path="res://assets/prototype_textures/PNG/Green/texture_01.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://mh3xgq1unx8t" path="res://assets/prototype_textures/PNG/Orange/texture_01.png" id="5"]
+
+[sub_resource type="StandardMaterial3D" id="3"]
+albedo_texture = ExtResource("5")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="4"]
+material = SubResource("3")
+
+[sub_resource type="ConvexPolygonShape3D" id="5"]
+points = PackedVector3Array(-1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1)
+
+[sub_resource type="StandardMaterial3D" id="6"]
+albedo_texture = ExtResource("4")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="7"]
+albedo_texture = ExtResource("3")
+uv1_triplanar = true
+
+[node name="Game" type="Node"]
+
+[node name="Boxes" type="Node" parent="."]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody2" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody3" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody4" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 2, -3)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody5" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 4, -3)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody6" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 6, -3)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody7" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 2, -32)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody8" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 4, -32)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody9" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 6, -32)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody10" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, -32)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody11" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, -32)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody12" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 6, -32)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody13" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2, -32)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody14" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 4, -32)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody15" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 6, -32)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody16" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 2, 13)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody17" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 4, 13)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody18" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 6, 13)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody19" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 18.7, 32)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody20" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 20.7, 32)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody21" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 22.7, 32)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody22" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 18.7, -36)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody23" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 20.7, -36)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="RigidBody24" type="RigidBody3D" parent="Boxes" groups=["bodies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 22.7, -36)
+collision_layer = 8
+collision_mask = 15
+continuous_cd = true
+sleeping = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boxes/RigidBody24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boxes/RigidBody24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("5")
+
+[node name="Platforms" type="CSGCombiner3D" parent="."]
+material_override = SubResource("6")
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Platforms"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -40, 0.362461, 26.226)
+polygon = PackedVector2Array(-6, 0, 1, 4, 1, 0)
+depth = 10.0
+
+[node name="CSGPolygon2" type="CSGPolygon3D" parent="Platforms"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11, 0.362461, 26.226)
+polygon = PackedVector2Array(-6, 0, 1.2, 3.9, 1, 0)
+depth = 11.435
+
+[node name="CSGPolygon4" type="CSGPolygon3D" parent="Platforms"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0.362461, 26.226)
+polygon = PackedVector2Array(-6, 0, 1.2, 3.9, 1, 0)
+depth = 11.435
+
+[node name="CSGPolygon3" type="CSGPolygon3D" parent="Platforms"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -22.4, 0.362461, 16.226)
+polygon = PackedVector2Array(-6, 0, 1.2, 3.9, 1, 0)
+depth = 11.435
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 8, -14)
+size = Vector3(12, 6, 8)
+
+[node name="CSGBox11" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 5, 1)
+size = Vector3(12, 6, 8)
+
+[node name="CSGBox12" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 3, 14)
+size = Vector3(12, 6, 8)
+
+[node name="CSGBox15" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7, 1.1, 21.2)
+size = Vector3(11.4, 6, 8)
+
+[node name="CSGPolygon5" type="CSGPolygon3D" parent="Platforms"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11, 0.362461, -11.774)
+polygon = PackedVector2Array(-6, 0, 1.2, 3.9, 1, 0)
+depth = 11.435
+
+[node name="CSGPolygon6" type="CSGPolygon3D" parent="Platforms"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -22.4, 0.362461, -21.774)
+polygon = PackedVector2Array(-6, 0, 1.2, 3.9, 1, 0)
+depth = 11.435
+
+[node name="CSGBox20" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.7, 1.1, -16.8)
+size = Vector3(11.4, 6, 8)
+
+[node name="CSGBox17" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3, 1.1, 14.2)
+size = Vector3(11.4, 6, 8)
+
+[node name="CSGBox18" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3, 1.1, -2.8)
+size = Vector3(11.4, 6, 8)
+
+[node name="CSGBox19" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3, 1.1, -20.8)
+size = Vector3(11.4, 6, 8)
+
+[node name="CSGBox2" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 10, -30)
+size = Vector3(12, 6, 8)
+
+[node name="CSGBox3" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 13, -45)
+size = Vector3(12, 6, 8)
+
+[node name="CSGBox4" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 18, -45)
+size = Vector3(6, 1, 8)
+
+[node name="CSGBox5" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 21, -45)
+size = Vector3(6, 1, 8)
+
+[node name="CSGBox13" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 17, -15)
+size = Vector3(6, 1, 8)
+
+[node name="CSGBox14" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 17, -2)
+size = Vector3(6, 1, 8)
+
+[node name="CSGBox21" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 17, 11)
+size = Vector3(6, 1, 8)
+
+[node name="CSGBox6" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 23, -45)
+size = Vector3(6, 1, 8)
+
+[node name="CSGBox7" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 26, -45)
+size = Vector3(6, 1, 8)
+
+[node name="CSGBox8" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 28, -45)
+size = Vector3(6, 1, 8)
+
+[node name="CSGBox9" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 30, -38)
+size = Vector3(16, 1, 26)
+
+[node name="CSGBox10" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 16, -38)
+size = Vector3(16, 1, 26)
+
+[node name="CSGBox16" type="CSGBox3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 16, 36)
+size = Vector3(16, 1, 26)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Platforms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 30, -37)
+operation = 2
+radius = 3.913
+
+[node name="Walls" type="CSGCombiner3D" parent="."]
+material_override = SubResource("7")
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.368918, 0)
+size = Vector3(100, 1, 100)
+
+[node name="CSGBox2" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 49, -50)
+size = Vector3(100, 1, 100)
+
+[node name="CSGBox3" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 49, 50)
+size = Vector3(100, 1, 100)
+
+[node name="CSGBox4" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -50, 49, 2.18557e-06)
+size = Vector3(100, 1, 100)
+
+[node name="CSGBox5" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 50, 49, -2.18557e-06)
+size = Vector3(100, 1, 100)
+
+[node name="Player" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0853519, 1.94745, 18.9968)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.244597, 0.969625, 0, -0.969625, 0.244597, 0, 28.0079, 0)

@@ -1,0 +1,38 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1696985072
+AfterburnParticles.tscn::PackedScene::-1::1696984363::0::1::::<><>::
+Bullet.gd::GDScript::-1::1696984363::0::1::::<>CharacterBody3D<>::
+Bullet.tscn::PackedScene::-1::1696984363::0::1::::<><>::res://Bullet.gd<>res://Sounds/laser.wav<>res://Sounds/explosion.wav
+crosshair1.png::CompressedTexture2D::225488157166190108::1696967198::1696984394::1::::<><>::
+crosshair2.png::CompressedTexture2D::4920717817045022029::1696967198::1696984394::1::::<><>::
+default_env.tres::Environment::-1::1696984363::0::1::::<><>::
+enemy.gd::GDScript::-1::1696984363::0::1::::<>CharacterBody3D<>::
+enemy.tscn::PackedScene::-1::1696984363::0::1::::<><>::res://Blender Imports/Base.material<>res://Blender Imports/Wing.material<>res://Blender Imports/Material.material<>res://enemy.gd<>res://AfterburnParticles.tscn
+EnemySpawner.gd::GDScript::-1::1696984363::0::1::::<>Node3D<>::
+EnemySpawner.tscn::PackedScene::-1::1696984363::0::1::::<><>::res://EnemySpawner.gd
+environment.png::CompressedTexture2D::146252566681893572::1696967198::1696984389::1::::<><>::
+explosion.wav::AudioStreamWAV::1727322957247054965::1696967198::1696984389::1::::<><>::
+icon.png::CompressedTexture2D::8956102528327315490::1696967198::1696984389::1::::<><>::
+KillParticles.gd::GDScript::-1::1696984363::0::1::::<>Node3D<>::
+KillParticles.tscn::PackedScene::-1::1696984363::0::1::::<><>::res://KillParticles.gd
+laser.wav::AudioStreamWAV::7260807814744261683::1696967198::1696984389::1::::<><>::
+Main.tscn::PackedScene::-1::1696984363::0::1::::<><>::res://player.tscn<>res://EnemySpawner.tscn<>res://environment.png<>res://StarParticles.tscn
+player.gd::GDScript::-1::1696984363::0::1::::<>CharacterBody3D<>::
+player.tscn::PackedScene::-1::1696984363::0::1::::<><>::res://Blender Imports/Wing Blue.material<>res://Blender Imports/Base Gray.material<>res://Blender Imports/Booster.material<>res://Blender Imports/Black Glass.material<>res://player.gd<>res://crosshair1.png<>res://crosshair2.png<>res://AfterburnParticles.tscn
+README.md::TextFile::-1::1696967198::0::1::::<><>::
+Sprite-0001.png::CompressedTexture2D::2206712716483796760::1696967198::1696984389::1::::<><>::
+Sprite-0002.png::CompressedTexture2D::5911169919901179486::1696967198::1696984389::1::::<><>::
+StarParticles.tscn::PackedScene::-1::1696984363::0::1::::<><>::
+::res://Blender Imports/::1696984390
+Base Gray.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+Base.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+Black Glass.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+Booster.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+enemy.gltf::PackedScene::2385118554914370834::1696967198::1696984390::1::::<><>::
+Material.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+player.gltf::PackedScene::4557877992979013288::1696967198::1696984390::1::::<><>::
+Wing Blue.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+Wing.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+::res://Sounds/::1696984389
+explosion.wav::AudioStreamWAV::898235875568988092::1696967198::1696984389::1::::<><>::
+laser.wav::AudioStreamWAV::5142581231417378201::1696967198::1696984389::1::::<><>::

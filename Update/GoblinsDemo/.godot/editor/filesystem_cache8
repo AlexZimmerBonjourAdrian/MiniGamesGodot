@@ -1,0 +1,11 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1696984467
+dungeon.tscn::PackedScene::-1::1696984450::0::1::::<><>::res://tileset.tres<>res://troll.tscn
+icon.png::CompressedTexture2D::104040910195308209::1696967198::1696984468::1::::<><>::
+isotiles.png::CompressedTexture2D::7298106096983816798::1696967198::1696984469::1::::<><>::
+README.md::TextFile::-1::1696967198::0::1::::<><>::
+tileset.tres::TileSet::-1::1696984450::0::1::::<><>::res://isotiles.png
+tileset_edit.tscn::PackedScene::-1::1696984450::0::1::::<><>::res://isotiles.png
+troll.gd::GDScript::-1::1696984450::0::1::::<>CharacterBody2D<>::
+troll.png::CompressedTexture2D::2417607613417115390::1696967198::1696984468::1::::<><>::
+troll.tscn::PackedScene::-1::1696984451::0::1::::<><>::res://troll.gd<>res://troll.png

@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg4f6xk4m1chh"]
+
+[ext_resource type="PackedScene" path="res://Player/player.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://Manager/EnemySpawner.tscn" id="2"]
+
+[sub_resource type="Sky" id="1"]
+
+[sub_resource type="Environment" id="2"]
+background_mode = 2
+background_energy_multiplier = 2.36
+sky = SubResource("1")
+glow_enabled = true
+glow_bloom = 0.21
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("2")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+far = 1000.0
+
+[node name="EnemySpawner" parent="." instance=ExtResource("2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -363.512)
+
+[node name="player" parent="." instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30.4809)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
+disabled = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 94.9582, 0)
+layers = 3
+shadow_enabled = true
+
+[editable path="player"]

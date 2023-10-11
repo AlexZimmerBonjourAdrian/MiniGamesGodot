@@ -1,0 +1,33 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1696984294
+Booster.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+default_env.tres::Environment::3990490094724583679::1696968301::0::1::::<><>::
+icon.png::CompressedTexture2D::1574762316285609281::1696967199::1696968113::1::::<><>::
+::res://BlenderImports/::1696968117
+Base Gray.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+Base.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+Black Glass.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+crosshair1.png::CompressedTexture2D::6806471176817142059::1696967198::1696968117::1::::<><>::
+crosshair2.png::CompressedTexture2D::3847491134171772833::1696967198::1696968117::1::::<><>::
+enemy.gltf::PackedScene::2908313998112379193::1696967198::1696968114::1::::<><>::
+environment.png::CompressedTexture2D::8340083122761387916::1696967198::1696968113::1::::<><>::
+explosion.wav::AudioStreamWAV::2024146474669549084::1696967198::1696968114::1::::<><>::
+laser.wav::AudioStreamWAV::1959408780265100470::1696967198::1696968114::1::::<><>::
+Material.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+player.gltf::PackedScene::4278373371053370747::1696967198::1696968114::1::::<><>::
+Wing Blue.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+Wing.material::StandardMaterial3D::-1::1696967198::0::1::::<><>::
+::res://Elements/::1696967198
+Bullet.gd::GDScript::-1::1696968102::0::1::::<>CharacterBody3D<>::
+Bullet.tscn::PackedScene::-1::1696968102::0::1::::<><>::res://Elements/Bullet.gd
+::res://Enemy/::1696967198
+enemy.gd::GDScript::-1::1696968102::0::1::::<>CharacterBody3D<>::
+enemy.tscn::PackedScene::-1::1696968102::0::1::::<><>::res://BlenderImports/Base.material<>res://BlenderImports/Wing.material<>res://BlenderImports/Material.material<>res://Enemy/enemy.gd
+::res://Level/::1696968301
+main.tscn::PackedScene::5254201553476799277::1696968301::0::1::::<><>::res://Player/player.tscn<>res://Manager/EnemySpawner.tscn
+::res://Manager/::1696967198
+EnemySpawner.gd::GDScript::-1::1696968102::0::1::::<>Node3D<>::
+EnemySpawner.tscn::PackedScene::-1::1696968102::0::1::::<><>::res://Manager/EnemySpawner.gd
+::res://Player/::1696967198
+player.gd::GDScript::-1::1696968102::0::1::::<>CharacterBody3D<>::
+player.tscn::PackedScene::-1::1696968102::0::1::::<><>::res://BlenderImports/Base Gray.material<>res://Player/player.gd<>res://BlenderImports/Black Glass.material<>res://BlenderImports/Wing Blue.material<>res://BlenderImports/crosshair2.png<>res://BlenderImports/crosshair1.png
