@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://do3hxb0715q10"]
 
-[ext_resource path="res://Environment/background.png" type="Texture2D" id=1]
-[ext_resource path="res://Environment/Borders.tscn" type="PackedScene" id=2]
+[ext_resource type="Texture2D" uid="uid://8pelg54g1sc2" path="res://Environment/background.png" id="1"]
+[ext_resource type="PackedScene" path="res://Environment/Borders.tscn" id="2"]
 
 [node name="environment" type="Node2D"]
 
@@ -10,7 +10,8 @@ offset_left = -6.0
 offset_top = -3.0
 offset_right = 290.0
 offset_bottom = 603.0
-texture = ExtResource( 1 )
-expand = true
+texture = ExtResource("1")
+expand_mode = 1
 
-[node name="borders" parent="." instance=ExtResource( 2 )]
+[node name="borders" parent="." instance=ExtResource("2")]
+position = Vector2(-5, -5)

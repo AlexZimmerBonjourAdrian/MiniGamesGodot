@@ -1,3 +1,2 @@
 res://default_env.tres
-res://title/titulo.tscn
-res://title/titulo.gd
+res://Environment/Environment.tscn

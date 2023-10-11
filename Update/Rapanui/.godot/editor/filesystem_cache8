@@ -1,28 +1,28 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1696967693
-default_env.tres::Environment::-1::1696967674::0::1::::<><>::
+::res://::1696990871
+default_env.tres::Environment::1616613174051653433::1696968039::0::1::::<><>::
 icon.png::CompressedTexture2D::7716490155664817341::1696967198::1696967694::1::::<><>::
 world.tscn::PackedScene::-1::1696967674::0::1::::<><>::res://Player/Player.tscn<>res://Environment/Environment.tscn<>res://ball/Ball.tscn<>res://Environment/stage_blocks.tscn
 ::res://assets/::1696967198
-::res://assets/fonts/::1696967198
+::res://assets/fonts/::1696967694
 advanced_pixel-7.ttf::FontFile::3578634602463683557::1696967198::1696967694::1::::<><>::
 substitule.tres::FontFile::-1::1696967675::0::1::::<><>::res://assets/fonts/advanced_pixel-7.ttf
-::res://ball/::1696967198
+::res://ball/::1696967695
 Ball.gd::GDScript::-1::1696967675::0::1::::<>RigidBody2D<>::
 Ball.tscn::PackedScene::-1::1696967675::0::1::::<><>::res://ball/bola2-b.png<>res://ball/Ball.gd
 bola2-b.png::CompressedTexture2D::107021792546268403::1696967198::1696967695::1::::<><>::
-::res://Environment/::1696967198
+::res://Environment/::1696967695
 background.png::CompressedTexture2D::2347460380880906487::1696967198::1696967695::1::::<><>::
 barra5.png::CompressedTexture2D::2743587116203389698::1696967198::1696967695::1::::<><>::
 block.tscn::PackedScene::-1::1696967675::0::1::::<><>::res://Environment/barra5.png
 Borders.tscn::PackedScene::-1::1696967675::0::1::::<><>::
 Environment.tscn::PackedScene::-1::1696967675::0::1::::<><>::res://Environment/background.png<>res://Environment/Borders.tscn
 stage_blocks.tscn::PackedScene::-1::1696967675::0::1::::<><>::res://Environment/block.tscn
-::res://Player/::1696967198
+::res://Player/::1696967695
 nave-g.png::CompressedTexture2D::3091419283305309103::1696967198::1696967695::1::::<><>::
 Player.gd::GDScript::-1::1696967675::0::1::::<>CharacterBody2D<>::
 Player.tscn::PackedScene::-1::1696967675::0::1::::<><>::res://Player/nave-g.png<>res://Player/Player.gd
-::res://title/::1696967198
+::res://title/::1696968039
 Blue Button 1.png::CompressedTexture2D::1196210248365310267::1696967198::1696967695::1::::<><>::
 Blue Button 2.png::CompressedTexture2D::3221487199595027671::1696967198::1696967695::1::::<><>::
 Blue-focus.png::CompressedTexture2D::2669502466324042245::1696967198::1696967695::1::::<><>::
@@ -35,5 +35,5 @@ main_title.tres::FontFile::-1::1696967675::0::1::::<><>::res://assets/fonts/adva
 main_title.tscn::PackedScene::-1::1696967675::0::1::::<><>::res://icon.png<>res://title/main_title.tres<>res://assets/fonts/substitule.tres
 replay.gd::GDScript::-1::1696967675::0::1::::<>Node2D<>::
 replay.tscn::PackedScene::-1::1696967675::0::1::::<><>::res://title/but_replay.tscn<>res://title/replay.gd<>res://title/but_quit.tscn
-titulo.gd::GDScript::-1::1696967675::0::1::::<>Node2D<>::
-titulo.tscn::PackedScene::-1::1696967675::0::1::::<><>::res://Environment/background.png<>res://title/main_title.tscn<>res://title/but_start.tscn<>res://title/but_quit.tscn<>res://title/titulo.gd
+titulo.gd::GDScript::-1::1696967850::0::1::::<>Node2D<>::
+titulo.tscn::PackedScene::1853791273987151661::1696968039::0::1::::<><>::uid://8pelg54g1sc2::::res://Environment/background.png<>res://title/main_title.tscn<>res://title/but_start.tscn<>res://title/but_quit.tscn<>res://title/titulo.gd
